@@ -1,0 +1,163 @@
+﻿:root {
+    --nav-background-color: #000f31;
+    --nav-text-color: white;
+    --a-text-color: #6edcfd;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0366d6;
+}
+
+    a:hover {
+        color: var(--a-text-color);
+    }
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/*
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+*/
+
+html {
+    font-size: 14px;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font: normal 100% Arial,Helvetica,sans-serif;
+}
+
+.footer {
+    background-color: var(--nav-background-color);
+    background-size: cover;
+    padding: 10px 15px 10px 15px;
+    color: white;
+}
+
+    .footer h3 {
+        padding: 20px 0 20px 0
+    }
+
+.fast-link {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+    .fast-link a {
+        color: white;
+    }
+
+.navbar {
+    padding: 1.5rem 1rem;
+}
+
+
+.navbar-gipro {
+    background-color: var(--nav-background-color);
+}
+
+.brand-gipro {
+    color: var(--nav-text-color);
+    font-weight: bold;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--nav-text-color);
+    font-weight: 600;
+}
+
+.navbar-dark
+.navbar-toggler {
+    color: var(--nav-text-color);
+    border-color: var(--nav-text-color);
+}
+
+.icon-bar {
+    padding-left: 20%;
+}
+
+    .icon-bar > .content {
+        margin-left: 1rem;
+        display: inline-flex;
+        margin-bottom: 1rem;
+    }
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+.slogan-box {
+    position: absolute;
+    margin: 20px 0 0 20px;
+    padding: 20px;
+    background-color: #0029505c;
+}
+
+    .slogan-box p {
+        color: white;
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+
+
+
+#particles-js {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 10, 27, 0.5);
+}
+
+.stat-numeric {
+    font-size: 2rem;
+    color: #0029505c;
+    font-weight: 600;
+}

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="@ViewData["Robots"]" />
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <title>@ViewData["Title"] | ОАО "ГИПРОЖИВМАШ"</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/flagicons/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/brands.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
+    <link rel="stylesheet" href="~/css/site.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-gipro navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand brand-gipro" asp-area="" asp-controller="Home" asp-action="Index">ОАО "ГИПРОЖИВМАШ"</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-gipro" asp-area="" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-gipro" asp-area="" asp-controller="Home" asp-action="Contacts">КОНТАКТЫ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-link-gipro dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ЯЗЫК
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"></span> Русский</a>
+                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> English</a>
+                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-by"></span> Беларускi</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-12">
+                    <h3 class="text-center">ОАО ГИПРОЖИВМАШ</h3>
+                    <p class="text-justify">
+                        Мы по праву занимает пьедестал лидера строительного творчества в регионе, республике и ближнем зарубежье.
+                        Мы создаем и реализуем проекты любой степени сложности с полной отдачей сил,мастерства и опыта.
+                        Наши специалисты умеют доводить до совершенства любую деталь,творчески подходить к решению нестандартных задач.
+                    </p>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <h3 class="text-center">СВЯЖИТЕСЬ С НАМИ</h3>
+                    <div class="icon-bar">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="content">
+                            ул. Малайчука 12, 6 этаж <br />
+                            г. Гомель, 246000, <br />
+                            Республика Беларусь <br />
+                        </div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fas fa-phone"></i>
+                        <div class="content">+375 232 55-55-55</div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fas fa-fax"></i>
+                        <div class="content">+375 232 55-55-55</div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fas fa-envelope"></i>
+                        <div class="content">gipro@gomel.by</div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="content">
+                            Пн.-пт.: 8.00 - 17.00
+                            <br />
+                            Обед: 12.30 - 13.00
+                            <br />
+                            Выходной: Сб., Вс.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <h3 class="text-center">БЫСТРЫЕ ССЫЛКИ</h3>
+                    <div class="fast-link">
+                        <a asp-area="" asp-controller="Site" asp-action="Index">Главная</a>
+                    </div>
+                    <div class="fast-link">
+                        <a asp-area="" asp-controller="Site" asp-action="Index">Услуги</a>
+                    </div>
+                    <div class="fast-link">
+                        <a asp-area="" asp-controller="Site" asp-action="Index">Контакты</a>
+                    </div>
+                </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/particles/particles.min.js"></script>
+    <script src="~/lib/animateNumber/jquery.animateNumber.min.js"></script>
+    <script src="~/lib/aosAnimate/aos.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

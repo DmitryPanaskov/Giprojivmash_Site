@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="d-none d-md-block w-100">
+        <div id="particles-js">
+            <div class="slogan-box">
+                <p>
+                    ВОПЛАЩАЕМ ВАШИ ИДЕИ В РEАЛЬНОСТЬ
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ </h3>
+        @{
+            /* <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="clients">0</span> ДОВОЛЬНЫХ КЛИЕНТОВ</h3>
+            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="projects">0</span> РЕАЛИЗОВАННЫХ ПРОЕКТОВ</h3>*/
+        }
+    </div>
+</div>
+
+<br />
+<div class="row">
+    <div class="d-none d-md-block col-md-3" data-aos="fade-right">
+        <img src="~/images/logo1.png" class="img-fluid" />
+    </div>
+    <div class="col-md-9" data-aos="fade-left">
+        <p class="text-justify">
+            За 40 лет своей деятельности ОАО «Гипроживмаш» разработало проекты, по которым построены и реконструированы десятки зданий и сооружений промышленного назначения, объекты соцкультбыта и здравоохранения, природоохранные объекты.
+            ОАО «Гипроживмаш» осуществляет такие лицензируемые виды деятельности, как проектирование и строительство зданий и сооружений I и II уровней ответственности и проведение инженерных изысканий для этих целей; деятельность в области по обеспечению промышленной, пожарной и охранной безопасности. В последнее десятилетие предприятие выполняет работы для Республики Беларусь.
+            Все было за 40 лет существования Гипроживмаша - успешные 80 - ые и тяжелые 90 - ые годы прошлого столетия: кризис, сокращение объемов работ, жесткое реформирование. Но коллектив выдержал испытание.
+            Сейчас смело можно утверждать - ОАО "Гипроживмаш", имеющий с 2001 года сертификат соответствия Системы менеджмента качества проектирования требованиям СТБ ISO 9001 - один из ведущих в нашей Республике отраслевых проектных институтов.
+        </p>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/gomelAdm-min.png" />
+    </div>
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/gosStand-min.png" />
+    </div>
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/minArh-min.png" />
+    </div>
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/offSite-min.png" />
+    </div>
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/preSite-min.png" />
+    </div>
+    <div class="col-md-2 col-4 mb-3">
+        <img class="img-fluid" src="~/images/partners/stroyExp-min.png" />
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $('#years').animateNumber(
+            {
+                number: 50,
+            },
+            {
+                easing: 'swing',
+                duration: 3000
+            });
+        $('#projects').animateNumber(
+            {
+                number: 1000
+            },
+            {
+                easing: 'swing',
+                duration: 3000
+            });
+
+        $('#clients').animateNumber(
+            {
+                number: 100
+            },
+            {
+                easing: 'swing',
+                duration: 3000
+            });
+    </script>
+}
