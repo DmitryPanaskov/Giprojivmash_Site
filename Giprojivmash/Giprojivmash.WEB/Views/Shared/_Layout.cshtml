@@ -7,19 +7,18 @@
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Keywords"]" />
     <title>@ViewData["Title"] | ОАО "ГИПРОЖИВМАШ"</title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/flagicons/css/flag-icon.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/brands.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-gipro navbar-expand-sm navbar-toggleable-sm navbar-dark box-shadow mb-3">
+        <nav class="navbar navbar-nav navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand brand-gipro" asp-area="" asp-controller="Home" asp-action="Index">ОАО "ГИПРОЖИВМАШ"</a>
+                <div class="navbar-brand">ОАО "ГИПРОЖИВМАШ"</div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,13 +26,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link nav-link-gipro" asp-area="" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-gipro" asp-area="" asp-controller="Home" asp-action="Contacts">КОНТАКТЫ</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Services">УСЛУГИ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">О НАС</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">ПОРТФОЛИО</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">КОНТАКТЫ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">ВАКАНСИИ</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link nav-link-gipro dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ЯЗЫК
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -47,62 +58,48 @@
             </div>
         </nav>
     </header>
-            @RenderBody()
-    <footer class="border-top footer">
+    @RenderBody()
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 col-12">
-                    <h3 class="text-center">ОАО ГИПРОЖИВМАШ</h3>
-                    <p class="text-justify">
-                        Мы по праву занимает пьедестал лидера строительного творчества в регионе, республике и ближнем зарубежье.
-                        Мы создаем и реализуем проекты любой степени сложности с полной отдачей сил,мастерства и опыта.
-                        Наши специалисты умеют доводить до совершенства любую деталь,творчески подходить к решению нестандартных задач.
-                    </p>
+                <div class="col-sm-2 col-12">
+                    <img class="img-fluid" src="~/images/logo/logo_gipro_white.png" alt="Гипроживмаш" />
                 </div>
-                <div class="col-sm-4 col-12">
+                <div class="col-sm-8 col-12">
                     <h3 class="text-center">СВЯЖИТЕСЬ С НАМИ</h3>
                     <div class="icon-bar">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fa fa-map-marker"></i>
                         <div class="content">
-                            ул. Малайчука 12, 6 этаж <br />
-                            г. Гомель, 246000, <br />
-                            Республика Беларусь <br />
+                            ул. Малайчука 12, 6 этаж, г. Гомель, 246000, Республика Беларусь
                         </div>
                     </div>
                     <div class="icon-bar">
-                        <i class="fas fa-phone"></i>
+                        <i class="fa fa-phone"></i>
                         <div class="content">+375 232 55-55-55</div>
                     </div>
                     <div class="icon-bar">
-                        <i class="fas fa-fax"></i>
+                        <i class="fa fa-fax"></i>
                         <div class="content">+375 232 55-55-55</div>
                     </div>
                     <div class="icon-bar">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fa fa-envelope"></i>
                         <div class="content">gipro@gomel.by</div>
                     </div>
                     <div class="icon-bar">
-                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fa fa-calendar"></i>
                         <div class="content">
-                            Пн.-пт.: 8.00 - 17.00
-                            <br />
-                            Обед: 12.30 - 13.00
-                            <br />
-                            Выходной: Сб., Вс.
+                            Пн.-пт.: 8.00 - 17.00, Выходной: Сб., Вс., Обед: 12.30 - 13.00
+                        </div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fa fa-vk"></i>
+                        <div class="content">
+                            <a target="_blank" href="https://vk.com/giprojivmash">vk.com/giprojivmash</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 col-12">
-                    <h3 class="text-center">БЫСТРЫЕ ССЫЛКИ</h3>
-                    <div class="fast-link">
-                        <a asp-area="" asp-controller="Site" asp-action="Index">Главная</a>
-                    </div>
-                    <div class="fast-link">
-                        <a asp-area="" asp-controller="Site" asp-action="Index">Услуги</a>
-                    </div>
-                    <div class="fast-link">
-                        <a asp-area="" asp-controller="Site" asp-action="Index">Контакты</a>
-                    </div>
+                <div class="col-sm-2 col-12">
+                    <img class="img-fluid" src="~/images/logo/logo_stroy.png" alt="Гомельстройкомплекс" />
                 </div>
             </div>
         </div>

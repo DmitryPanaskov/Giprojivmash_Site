@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Giprojivmash.WEB</AssemblyName>
     <RootNamespace>Giprojivmash.WEB</RootNamespace>
+    <ApplicationIcon></ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

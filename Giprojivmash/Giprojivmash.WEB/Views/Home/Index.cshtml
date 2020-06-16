@@ -1,17 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная";
 }
 
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="d-none d-md-block w-100">
-            <div id="particles-js">
-                <div class="slogan-box-1">
-                    <p>
-                        ВОПЛАЩАЕМ ВАШИ ИДЕИ В РEАЛЬНОСТЬ
-                    </p>
-                </div>
-            </div>
+    <div class="d-none d-md-block w-100">
+        <div id="particles-js">
+        </div>
+        <div class="slogan-box-1">
+            <p>
+                ВСЕ НАЧИНАЕТСЯ С ПРОЕКТА
+            </p>
         </div>
     </div>
 </div>
@@ -21,48 +20,69 @@
     <div class="row">
         <div class="col-md-12">
             <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ </h3>
+            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_rb">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РЕСПУБЛИКИ БЕЛАРУСЬ </h3>
+            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_sng">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РОССИИ, УКРАИНЫ, КАЗАХСТАНА, ЛИТВЫ </h3>
         </div>
     </div>
 
     <br />
     <div class="row">
         <div class="d-none d-md-block col-md-3" data-aos="fade-right">
-            <img src="~/images/logo1.png" class="img-fluid" />
+            <img src="~/images/logo/logo_gipro_blue_bim.png" class="img-fluid" alt="Гипроживмаш BIM" />
         </div>
         <div class="col-md-9" data-aos="fade-left">
             <p class="text-justify">
-                За 40 лет своей деятельности ОАО «Гипроживмаш» разработало проекты, по которым построены и реконструированы десятки зданий и сооружений промышленного назначения, объекты соцкультбыта и здравоохранения, природоохранные объекты.
-                ОАО «Гипроживмаш» осуществляет такие лицензируемые виды деятельности, как проектирование и строительство зданий и сооружений I и II уровней ответственности и проведение инженерных изысканий для этих целей; деятельность в области по обеспечению промышленной, пожарной и охранной безопасности. В последнее десятилетие предприятие выполняет работы для Республики Беларусь.
-                Все было за 40 лет существования Гипроживмаша - успешные 80 - ые и тяжелые 90 - ые годы прошлого столетия: кризис, сокращение объемов работ, жесткое реформирование. Но коллектив выдержал испытание.
-                Сейчас смело можно утверждать - ОАО "Гипроживмаш", имеющий с 2001 года сертификат соответствия Системы менеджмента качества проектирования требованиям СТБ ISO 9001 - один из ведущих в нашей Республике отраслевых проектных институтов.
+                ОАО «Гипроживмаш» - это в первую очередь специалисты,
+                имеющие опыт и современный взгляд на решение любых проблем.
+                Мы творчески подходим к решению любых задач, доводим до совершенства любую деталь.
+                Для нас нет невыполнимых задач, мы беремся за проекты любой сложности и всегда стараемся выполнить все качественно и в срок.
             </p>
+            <p>
+                ОАО «Гипроживмаш» осуществляет работы по проектированию и строительству зданий и сооружений,
+                геодезенические и картографические работы, осуществляет работы в области промышленной и пожарной безопасности,
+                осуществляет деятельность по обеспечению безопасности юридических и физических лиц.
+            </p>
+            <p>
+                ОАО «Гипроживмаш» имеет сертификат соответствия Системы менеджмента качества проектирования требованиям СТБ ISO 9001
+            </p>
+
         </div>
     </div>
     <br />
 
     <div class="row">
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/gomelAdm-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="https://www.belorusneft.by/">
+                <img class="img-fluid grayscale" src="~/images/partners/belneft.png" />
+            </a>
         </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/gosStand-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="http://www.gomeldrev.by/">
+                <img class="img-fluid" src="~/images/partners/gomeldrev.png" />
+            </a>
         </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/minArh-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="https://www.gomelenergo.by/">
+                <img class="img-fluid" src="~/images/partners/gomelenergo.png" />
+            </a>
         </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/offSite-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="https://www.gomselmash.by/">
+                <img class="img-fluid" src="~/images/partners/gomselmash.png" />
+            </a>
         </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/preSite-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="http://belfert.by/">
+                <img class="img-fluid" src="~/images/partners/himzavod.png" />
+            </a>
         </div>
-        <div class="col-md-2 col-4 mb-3">
-            <img class="img-fluid" src="~/images/partners/stroyExp-min.png" />
+        <div class="grayscale col-4 mb-3" data-aos="fade-up">
+            <a target="_blank" href="http://kristall.by/">
+                <img class="img-fluid" src="~/images/partners/kristall.png" />
+            </a>
         </div>
     </div>
 </div>
-
-
 
 @section Scripts{
     <script>
@@ -72,6 +92,24 @@
         $('#years').animateNumber(
             {
                 number: 45,
+                color: "#fab702"
+            },
+            {
+                easing: 'swing',
+                duration: 3000
+            });
+        $('#proj_rb').animateNumber(
+            {
+                number: 300,
+                color: "#fab702"
+            },
+            {
+                easing: 'swing',
+                duration: 3000
+            });
+        $('#proj_sng').animateNumber(
+            {
+                number: 20,
                 color: "#fab702"
             },
             {
