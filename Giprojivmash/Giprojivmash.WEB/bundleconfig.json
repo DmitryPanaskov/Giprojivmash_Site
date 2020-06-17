@@ -8,17 +8,19 @@
   {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
-      "wwwroot/js/*.js"
-    ],
-    "minify": {
-      "enabled": true,
-      "renameLocals": true
-    }
+      "wwwroot/js/site.js"
+    ]
   },
   {
-    "outputFileName": "wwwroot/font/font.min.css",
+    "outputFileName": "wwwroot/js/particles-config.min.js",
     "inputFiles": [
-      "wwwroot/font/font.css"
+      "wwwroot/js/particles-config.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/animateNumber-config.min.js",
+    "inputFiles": [
+      "wwwroot/js/animateNumber-config.js"
     ]
   }
 ]

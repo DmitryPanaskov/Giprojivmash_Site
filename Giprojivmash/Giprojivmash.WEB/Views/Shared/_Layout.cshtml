@@ -16,14 +16,14 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-nav navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
+        <nav class="navbar navbar-nav navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
             <div class="container">
                 <div class="navbar-brand">ОАО "ГИПРОЖИВМАШ"</div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
@@ -59,10 +59,13 @@
         </nav>
     </header>
     @RenderBody()
+    <div class="preloader row h-100 justify-content-center align-items-center">
+       <img class="img" src="/images/preloader.gif"/>
+    </div>
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2 col-12">
+                <div class="d-none d-sm-block col-sm-2">
                     <img class="img-fluid" src="~/images/logo/logo_gipro_white.png" alt="Гипроживмаш" />
                 </div>
                 <div class="col-sm-8 col-12">
@@ -98,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2 col-12">
+                <div class="d-none d-sm-block col-sm-2">
                     <img class="img-fluid" src="~/images/logo/logo_stroy.png" alt="Гомельстройкомплекс" />
                 </div>
             </div>

@@ -7,8 +7,11 @@
 
 @font-face {
     font-family: 'Proxima Nova Condensed';
-    src: local('Proxima Nova Condensed Light'), local('Proxima-Nova-Condensed-Light'), url('ProximaNovaCond-Light.woff2') format('woff2'), url('ProximaNovaCond-Light.woff') format('woff'), url('ProximaNovaCond-Light.ttf') format('truetype');
-    font-weight: 300;
+    src: local('Proxima Nova Condensed Light'),
+         url('ProximaNovaCond-Light.woff2') format('woff2'),
+         url('ProximaNovaCond-Light.woff') format('woff'),
+         url('ProximaNovaCond-Light.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -56,6 +59,7 @@ html {
 
 p {
     line-height: 1.5rem;
+    width: 100%;
 }
 
 @media (min-width: 576px) {
@@ -80,7 +84,6 @@ html {
 
 body {
     margin: 0;
-    font-weight: 600;
     font-size: 100%;
     font-family: 'Proxima Nova Condensed';
 }
@@ -233,5 +236,26 @@ canvas {
     }
 
 .grayscale > a:hover:after {
+    display: none;
+}
+
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1001;
+    background-color: white;
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
     display: none;
 }
