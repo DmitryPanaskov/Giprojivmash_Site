@@ -91,10 +91,7 @@
 @section Scripts{
     <script>
         $(".btn-circle").click(function () {
-            var btn = this;
-            console.log(btn);
-
-            console.log(btn.textContent());
+            $(this + "i").addClass("aaa");
             /*
             if (btn.hasAttribute("aria-expanded", "true")) {
                 btn.children().removeClass("fa-angle-double-down");
