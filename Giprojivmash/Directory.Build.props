@@ -12,7 +12,7 @@
         <AdditionalFiles Include="$(MSBuildThisFileDirectory)\stylecop.json" Link="stylecop.json" />
         <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" ExcludeAssets="All" PrivateAssets="All" />
         <PackageReference Include="SonarAnalyzer.CSharp" Version="8.0.0.9566" ExcludeAssets="All" PrivateAssets="All"/>
-        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8" ExcludeAssets="All" PrivateAssets="All"/>
-        <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="2.9.8" ExcludeAssets="All" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0" ExcludeAssets="All" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="3.0.0" ExcludeAssets="All" PrivateAssets="All"/>
     </ItemGroup>
 </Project>

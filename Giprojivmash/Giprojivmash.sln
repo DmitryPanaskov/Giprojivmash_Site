@@ -10,11 +10,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{42E2
 		README.md = README.md
 		stylecop.json = stylecop.json
 	EndProjectSection
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.WEB", "Giprojivmash.WEB\Giprojivmash.WEB.csproj", "{6F1B723C-3807-4DE3-A00D-8A4E7F8692FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C15D637-9A48-4CC2-B272-9FD123A0FF36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giprojivmash.DAL", "Giprojivmash.DAL\Giprojivmash.DAL.csproj", "{5DEB9DF2-3A47-4F63-9BA6-A59111297902}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Giprojivmash_Site", "Giprojivmash_Site\Giprojivmash_Site.sqlproj", "{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BFFC7A6F-6BFE-4085-924A-957B5419ED4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiprojivmashIntegrationTests", "GiprojivmashIntegrationTests\GiprojivmashIntegrationTests.csproj", "{530F45A8-E1FA-4273-811C-7B5265EFD7AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.DAL", "Giprojivmash.DAL\Giprojivmash.DAL.csproj", "{0197DCB2-E45E-4750-8AFA-78F036CBC76E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.BLL", "Giprojivmash.BLL\Giprojivmash.BLL.csproj", "{204B978B-AFEC-4F17-9AB7-1006A3F8B76C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,19 +35,29 @@ Global
 		{6F1B723C-3807-4DE3-A00D-8A4E7F8692FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F1B723C-3807-4DE3-A00D-8A4E7F8692FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F1B723C-3807-4DE3-A00D-8A4E7F8692FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DEB9DF2-3A47-4F63-9BA6-A59111297902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DEB9DF2-3A47-4F63-9BA6-A59111297902}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DEB9DF2-3A47-4F63-9BA6-A59111297902}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DEB9DF2-3A47-4F63-9BA6-A59111297902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{530F45A8-E1FA-4273-811C-7B5265EFD7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530F45A8-E1FA-4273-811C-7B5265EFD7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530F45A8-E1FA-4273-811C-7B5265EFD7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530F45A8-E1FA-4273-811C-7B5265EFD7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0197DCB2-E45E-4750-8AFA-78F036CBC76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0197DCB2-E45E-4750-8AFA-78F036CBC76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0197DCB2-E45E-4750-8AFA-78F036CBC76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0197DCB2-E45E-4750-8AFA-78F036CBC76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{204B978B-AFEC-4F17-9AB7-1006A3F8B76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204B978B-AFEC-4F17-9AB7-1006A3F8B76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204B978B-AFEC-4F17-9AB7-1006A3F8B76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204B978B-AFEC-4F17-9AB7-1006A3F8B76C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6F1B723C-3807-4DE3-A00D-8A4E7F8692FD} = {4C15D637-9A48-4CC2-B272-9FD123A0FF36}
-		{5DEB9DF2-3A47-4F63-9BA6-A59111297902} = {4C15D637-9A48-4CC2-B272-9FD123A0FF36}
-	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {76F96483-393D-462A-972C-212AD60F5771}
+		SolutionGuid = {DF3B43D3-F553-4F7C-8111-F58666FB5E80}
 	EndGlobalSection
 EndGlobal

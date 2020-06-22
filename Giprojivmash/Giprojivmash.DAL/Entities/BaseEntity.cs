@@ -1,4 +1,4 @@
-﻿namespace Giprojivmash.DAL.Entity
+﻿namespace Giprojivmash.DAL.Entities
 {
     public class BaseEntity
     {
