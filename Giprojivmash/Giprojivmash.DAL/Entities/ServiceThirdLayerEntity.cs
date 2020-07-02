@@ -7,6 +7,6 @@ namespace Giprojivmash.DAL.Entities
     {
         public string Description { get; set; }
 
-        public int ServiceThirdLayerId { get; set; }
+        public int ServiceSecondLayerId { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Threading.Tasks;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
@@ -17,7 +16,7 @@ namespace GiprojivmahsIntegrationTests
             {
                 new ServiceFirstLayerEntity
                 {
-                   Description = "1",
+                     Description = "1",
                 },
                 new ServiceFirstLayerEntity
                 {
@@ -27,7 +26,7 @@ namespace GiprojivmahsIntegrationTests
 
             foreach (var serviceFirstLayer in serviceFirstLayers)
             {
-                context.ServiceFirstLayers.Add(serviceFirstLayer);
+                await context.ServiceFirstLayers.AddAsync(serviceFirstLayer);
                 await context.SaveChangesAsync();
             }
         }
@@ -40,18 +39,23 @@ namespace GiprojivmahsIntegrationTests
                 new ServiceSecondLayerEntity
                 {
                     ServiceFirstLayerId = 1,
-                    Description = "1 1 1",
+                    Description = "1",
                 },
                 new ServiceSecondLayerEntity
                 {
                     ServiceFirstLayerId = 1,
-                    Description = "2 1 2",
+                    Description = "2",
+                },
+                new ServiceSecondLayerEntity
+                {
+                    ServiceFirstLayerId = 2,
+                    Description = "3",
                 },
             };
 
             foreach (var serviceSecondLayer in serviceSecondLayers)
             {
-                context.ServiceSecondLayers.Add(serviceSecondLayer);
+                await context.ServiceSecondLayers.AddAsync(serviceSecondLayer);
                 await context.SaveChangesAsync();
             }
         }
@@ -63,41 +67,237 @@ namespace GiprojivmahsIntegrationTests
             {
                 new ServiceThirdLayerEntity
                 {
-                    ServiceThirdLayerId = 1,
-                    Description = "1 1 1",
+                    ServiceSecondLayerId = 1,
+                    Description = "1",
                 },
                 new ServiceThirdLayerEntity
                 {
-                    ServiceThirdLayerId = 1,
-                    Description = "1 1 1",
+                    ServiceSecondLayerId = 1,
+                    Description = "2",
                 },
                 new ServiceThirdLayerEntity
                 {
-                    ServiceThirdLayerId = 1,
-                    Description = "1 1 1",
+                    ServiceSecondLayerId = 1,
+                    Description = "3",
+                },
+                new ServiceThirdLayerEntity
+                {
+                    ServiceSecondLayerId = 2,
+                    Description = "1",
+                },
+                new ServiceThirdLayerEntity
+                {
+                    ServiceSecondLayerId = 3,
+                    Description = "1",
                 },
             };
 
             foreach (var serviceThirdLayer in serviceThirdLayers)
             {
-                context.ServiceThirdLayers.Add(serviceThirdLayer);
+                await context.ServiceThirdLayers.AddAsync(serviceThirdLayer);
                 await context.SaveChangesAsync();
             }
         }
 
-        public static RestoreDataBase(GiprojivmashContext context)
+        public static async Task SetContact(GiprojivmashContext context)
         {
             Validator(context);
-            context.Database.ExecuteSqlRaw(@"DROP DATABASE Giprojivmash_Site");
-            const string dacPacName = "Giprojivmashe_Site.dacpac";
-            const string connectionString = "Server=localhost;Database=Giprojivmash_Test;trusted_connection=true";
-            var path = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\", dacPacName));
-            var dacPack = new DacServices(connectionString);
-            var dacOptions = new DacDeployOptions { CreateNewDatabase = true };
-            using (var dp = DacPackage.Load(path))
+            var contacts = new List<ContactEntity>
             {
-                dacPack.Deploy(dp, @"TicketManagement", true, dacOptions);
+                new ContactEntity
+                {
+                    Address = "1",
+                    Description = "1",
+                    Photo = "1",
+                },
+                new ContactEntity
+                {
+                    Address = "2",
+                    Description = "2",
+                    Photo = "2",
+                },
+            };
+
+            foreach (var contact in contacts)
+            {
+                await context.Contact.AddAsync(contact);
+                await context.SaveChangesAsync();
             }
+        }
+
+        public static async Task SetContactPhone(GiprojivmashContext context)
+        {
+            Validator(context);
+            var phones = new List<ContactPhoneEntity>
+            {
+                new ContactPhoneEntity
+                {
+                    ContactId = 1,
+                    Number = "1",
+                    Type = 1,
+                },
+                new ContactPhoneEntity
+                {
+                    ContactId = 1,
+                    Number = "2",
+                    Type = 1,
+                },
+                new ContactPhoneEntity
+                {
+                    ContactId = 2,
+                    Number = "1",
+                    Type = 1,
+                },
+            };
+
+            foreach (var phone in phones)
+            {
+                await context.ContactPhone.AddAsync(phone);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetVacancy(GiprojivmashContext context)
+        {
+            Validator(context);
+            var vacancies = new List<VacancyEntity>
+            {
+                new VacancyEntity
+                {
+                     Position = "1",
+                     Description = "1",
+                     Contact = "1",
+                },
+                new VacancyEntity
+                {
+                     Position = "2",
+                     Description = "2",
+                     Contact = "2",
+                },
+            };
+
+            foreach (var vacancy in vacancies)
+            {
+                await context.Vacancy.AddAsync(vacancy);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetHistory(GiprojivmashContext context)
+        {
+            Validator(context);
+            var histories = new List<HistoryEntity>
+            {
+                new HistoryEntity
+                {
+                     Description = "1",
+                },
+                new HistoryEntity
+                {
+                     Description = "2",
+                },
+            };
+
+            foreach (var history in histories)
+            {
+                await context.History.AddAsync(history);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetHistoryPhoto(GiprojivmashContext context)
+        {
+            Validator(context);
+            var historyPhotos = new List<HistoryPhotoEntity>
+            {
+                new HistoryPhotoEntity
+                {
+                    HistoryId = 1,
+                    PhotoName = "1",
+                },
+                new HistoryPhotoEntity
+                {
+                    HistoryId = 1,
+                    PhotoName = "2",
+                },
+                new HistoryPhotoEntity
+                {
+                    HistoryId = 2,
+                    PhotoName = "1",
+                },
+            };
+
+            foreach (var historyPhoto in historyPhotos)
+            {
+                await context.HistoryPhoto.AddAsync(historyPhoto);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static string GetConnectionString()
+        {
+            return @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Giprojivmash_Site;";
+        }
+
+        public static async Task ClearAllTable(GiprojivmashContext context)
+        {
+            Validator(context);
+            await ClearServiceFirstLayer(context);
+            await ClearServiceSecondLayer(context);
+            await ClearServiceThirdLayer(context);
+            await ClearContact(context);
+            await ClearContactPhone(context);
+            await ClearHistory(context);
+            await ClearHistoryPhoto(context);
+            await ClearVacancy(context);
+        }
+
+        public static async Task ClearServiceFirstLayer(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceFirstLayer]");
+        }
+
+        public static async Task ClearServiceSecondLayer(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceSecondLayer]");
+        }
+
+        public static async Task ClearServiceThirdLayer(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceThirdLayer]");
+        }
+
+        public static async Task ClearContact(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Contact]");
+        }
+
+        public static async Task ClearContactPhone(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ContactPhone]");
+        }
+
+        public static async Task ClearHistory(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[History]");
+        }
+
+        public static async Task ClearHistoryPhoto(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[HistoryPhoto]");
+        }
+
+        public static async Task ClearVacancy(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Vacancy]");
         }
 
         private static void Validator(GiprojivmashContext context)

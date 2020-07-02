@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Diagnostics;
+using AutoMapper;
+using Giprojivmash.BLL.Interfaces;
 using Giprojivmash.WEB.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,9 +11,14 @@ namespace Giprojivmash.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IServiceFirstLayerService _serviceFirstLayerService;
+        private readonly IMapper _mapper;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMapper mapper,
+        IServiceFirstLayerService serviceFirstLayerService)
         {
+            _mapper = mapper;
+            _serviceFirstLayerService = serviceFirstLayerService;
             _logger = logger;
         }
 
@@ -21,7 +29,10 @@ namespace Giprojivmash.WEB.Controllers
 
         public IActionResult Services()
         {
-            return View();
+            var list = _serviceFirstLayerService.GetAll();
+            var model = new ServiceViewModel();
+            model.ServiceFirstLayerList = _mapper.Map<System.Collections.Generic.List<ServiceFirstLayerViewModel>>(list);
+            return View(model);
         }
 
         public IActionResult Privacy()

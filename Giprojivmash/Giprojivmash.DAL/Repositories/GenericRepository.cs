@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
@@ -22,9 +24,9 @@ namespace Giprojivmash.DAL.Repositories
            return await _context.Set<T>().FirstAsync(m=>m.Id == id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public IEnumerable<T> GetAll()
         {
-            return await Task.FromResult(_context.Set<T>());
+            return _context.Set<T>();
         }
 
         public async Task CreateAsync(T entity)
@@ -35,7 +37,8 @@ namespace Giprojivmash.DAL.Repositories
 
         public async Task UpdateAsync(T entity)
         {
-            _context.Set<T>().Update(entity);
+            var entry = await _context.Set<T>().FirstAsync(e => e.Id == entity.Id);
+            _context.Entry(entry).CurrentValues.SetValues(entity);
             await _context.SaveChangesAsync();
         }
 
@@ -43,6 +46,17 @@ namespace Giprojivmash.DAL.Repositories
         {
             var entity = await _context.Set<T>().FirstAsync(m => m.Id == id);
             _context.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public IEnumerable<T> GetEntities(Func<T, bool> predicate)
+        {
+            return _context.Set<T>().Where(predicate);
+        }
+
+        public async Task DeleteRangeAsync(IEnumerable<T> entities)
+        {
+            _context.RemoveRange(entities);
             await _context.SaveChangesAsync();
         }
     }

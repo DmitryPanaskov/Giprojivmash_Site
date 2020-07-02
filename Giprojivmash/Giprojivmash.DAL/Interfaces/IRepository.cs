@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Giprojivmash.DAL.Entities;
 
@@ -9,12 +10,16 @@ namespace Giprojivmash.DAL.Interfaces
     {
         Task<T> GetByIdAsync(int id);
 
-        Task<IEnumerable<T>> GetAllAsync();
+        IEnumerable<T> GetAll();
+
+        IEnumerable<T> GetEntities(Func<T, bool> predicate);
 
         Task CreateAsync(T entity);
 
         Task UpdateAsync(T entity);
 
         Task DeleteAsync(int id);
+
+        Task DeleteRangeAsync(IEnumerable<T> entities);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Giprojivmash.BLL.Interfaces
@@ -7,7 +8,9 @@ namespace Giprojivmash.BLL.Interfaces
     {
         Task<T> GetByIdAsync(int id);
 
-        Task<IEnumerable<T>> GetAllAsync();
+        IEnumerable<T> GetEntities(Func<T, bool> predicate);
+
+        IEnumerable<T> GetAll();
 
         Task CreateAsync(T entity);
 

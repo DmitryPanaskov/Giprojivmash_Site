@@ -6,9 +6,9 @@
 }
 
 @font-face {
-    font-family: 'Proxima Nova Condensed';
-    src: local('Proxima Nova Condensed Light'), url('ProximaNovaCond-Light.woff2') format('woff2'), url('ProximaNovaCond-Light.woff') format('woff'), url('ProximaNovaCond-Light.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Avenir';
+    src: local('Avenir Light'), local('Avenir-Light'), url('Avenir-Light.woff2') format('woff2'), url('Avenir-Light.woff') format('woff'), url('Avenir-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -106,7 +106,7 @@ html {
 body {
     margin: 0;
     font-size: 100%;
-    font-family: 'Proxima Nova Condensed';
+    font-family: Avenir;
 }
 
 body ::selection{
@@ -136,7 +136,7 @@ footer {
     }
 
 .navbar {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
 }
 
     .navbar .a {
@@ -230,7 +230,7 @@ canvas {
 
     .slogan-box-1 p {
         color: #fff;
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 1rem;
     }
 

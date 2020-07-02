@@ -1,4 +1,5 @@
-﻿
+﻿@model Giprojivmash.WEB.Models.ServiceViewModel
+
 @{
     ViewData["Title"] = "Услуги";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,9 +7,12 @@
 
 <div class="container">
     <div class="row">
-        <h5>
-            ОАО «Гипроживмаш» входит в число проектных институтов, специализирующихся на выполнении проектных работ по расширению, реконструкции и техническому перевооружению промышленных предприятий и осуществляет следующие виды деятельности:
-        </h5>
+        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
+        {
+            <h5>
+                @Model.ServiceFirstLayerList.ElementAt(i).Description
+            </h5>
+        }
         @{
             <p class="font-weight-bolder">
                 1 Проектирование и строительство зданий и сооружений I и II уровней ответственности и проведение инженерных изысканий для этих целей.

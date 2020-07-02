@@ -62,5 +62,10 @@
     <Build Include="Tables\ServiceFirstLayer.sql" />
     <Build Include="Tables\ServiceSecondLayer.sql" />
     <Build Include="Tables\ServiceThirdLayer.sql" />
+    <Build Include="Tables\ContactPhone.sql" />
+    <Build Include="Tables\Contact.sql" />
+    <Build Include="Tables\History.sql" />
+    <Build Include="Tables\HistoryPhoto.sql" />
+    <Build Include="Tables\Vacancy.sql" />
   </ItemGroup>
 </Project>

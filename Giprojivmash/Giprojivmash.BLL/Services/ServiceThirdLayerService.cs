@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Giprojivmash.BLL.Interfaces;
 using Giprojivmash.DAL.Entities;
@@ -35,9 +37,14 @@ namespace Giprojivmash.BLL.Services
             await _serviceThirdLayerRepository.DeleteAsync(id);
         }
 
-        public async Task<IEnumerable<ServiceThirdLayerEntity>> GetAllAsync()
+        public IEnumerable<ServiceThirdLayerEntity> GetEntities(Func<ServiceThirdLayerEntity, bool> predicate)
         {
-            return await _serviceThirdLayerRepository.GetAllAsync();
+            return _serviceThirdLayerRepository.GetEntities(predicate).ToList();
+        }
+
+        public IEnumerable<ServiceThirdLayerEntity> GetAll()
+        {
+            return _serviceThirdLayerRepository.GetAll().ToList();
         }
     }
 }
