@@ -24,6 +24,10 @@ namespace Giprojivmash.DAL.Context
 
         public virtual DbSet<HistoryPhotoEntity> HistoryPhoto { get; set; }
 
+        public virtual DbSet<PortfolioEntity> Portfolio { get; set; }
+
+        public virtual DbSet<PortfolioPhotoEntity> PortfolioPhoto { get; set; }
+
         public virtual DbSet<VacancyEntity> Vacancy { get; set; }
     }
 }

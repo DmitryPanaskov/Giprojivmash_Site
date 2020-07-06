@@ -10,6 +10,11 @@ namespace Giprojivmash.BLL.Mapper
             CreateMap<ServiceFirstLayerEntity, ServiceFirstLayerDto>();
             CreateMap<ServiceSecondLayerEntity, ServiceSecondLayerDto>();
             CreateMap<ServiceThirdLayerEntity, ServiceThirdLayerDto>();
+            CreateMap<ContactEntity, ContactDto>();
+            CreateMap<ContactPhoneEntity, ContactPhoneDto>();
+            CreateMap<HistoryDto, HistoryDto>();
+            CreateMap<HistoryPhotoDto, HistoryPhotoDto>();
+            CreateMap<VacancyDto, VacancyDto>();
         }
     }
 }

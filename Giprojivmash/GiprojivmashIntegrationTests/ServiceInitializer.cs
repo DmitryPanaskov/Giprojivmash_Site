@@ -50,6 +50,17 @@ namespace GiprojivmahsIntegrationTests
             return new HistoryPhotoService(new GenericRepository<HistoryPhotoEntity>(context));
         }
 
+        public static IPortfolioService GetPortfolio(GiprojivmashContext context)
+        {
+            return new PortfolioService(new GenericRepository<PortfolioEntity>(context),
+                new GenericRepository<PortfolioPhotoEntity>(context));
+        }
+
+        public static IPortfolioPhotoService GetPortfolioPhoto(GiprojivmashContext context)
+        {
+            return new PortfolioPhotoService(new GenericRepository<PortfolioPhotoEntity>(context));
+        }
+
         public static IVacancyService GetVacancy(GiprojivmashContext context)
         {
             return new VacancyService(new GenericRepository<VacancyEntity>(context));

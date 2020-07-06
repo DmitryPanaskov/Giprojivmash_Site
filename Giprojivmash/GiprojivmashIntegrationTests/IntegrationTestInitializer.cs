@@ -234,6 +234,57 @@ namespace GiprojivmahsIntegrationTests
             }
         }
 
+        public static async Task SetPortfolio(GiprojivmashContext context)
+        {
+            Validator(context);
+            var portfolios = new List<PortfolioEntity>
+            {
+                new PortfolioEntity
+                {
+                     Description = "1",
+                },
+                new PortfolioEntity
+                {
+                     Description = "2",
+                },
+            };
+
+            foreach (var portfolio in portfolios)
+            {
+                await context.Portfolio.AddAsync(portfolio);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetPortfolioPhoto(GiprojivmashContext context)
+        {
+            Validator(context);
+            var portfolioPhotos = new List<PortfolioPhotoEntity>
+            {
+                new PortfolioPhotoEntity
+                {
+                    PortfolioId = 1,
+                    PhotoName = "1",
+                },
+                new PortfolioPhotoEntity
+                {
+                    PortfolioId = 1,
+                    PhotoName = "2",
+                },
+                new PortfolioPhotoEntity
+                {
+                    PortfolioId = 2,
+                    PhotoName = "1",
+                },
+            };
+
+            foreach (var portfolioPhoto in portfolioPhotos)
+            {
+                await context.PortfolioPhoto.AddAsync(portfolioPhoto);
+                await context.SaveChangesAsync();
+            }
+        }
+
         public static string GetConnectionString()
         {
             return @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Giprojivmash_Site;";
@@ -247,6 +298,8 @@ namespace GiprojivmahsIntegrationTests
             await ClearServiceThirdLayer(context);
             await ClearContact(context);
             await ClearContactPhone(context);
+            await ClearPortfolio(context);
+            await ClearPortfolioPhoto(context);
             await ClearHistory(context);
             await ClearHistoryPhoto(context);
             await ClearVacancy(context);
@@ -292,6 +345,18 @@ namespace GiprojivmahsIntegrationTests
         {
             Validator(context);
             await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[HistoryPhoto]");
+        }
+
+        public static async Task ClearPortfolio(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Portfolio]");
+        }
+
+        public static async Task ClearPortfolioPhoto(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[PortfolioPhoto]");
         }
 
         public static async Task ClearVacancy(GiprojivmashContext context)

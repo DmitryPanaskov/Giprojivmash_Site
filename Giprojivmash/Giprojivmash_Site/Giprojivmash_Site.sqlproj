@@ -67,5 +67,7 @@
     <Build Include="Tables\History.sql" />
     <Build Include="Tables\HistoryPhoto.sql" />
     <Build Include="Tables\Vacancy.sql" />
+    <Build Include="Tables\Portfolio.sql" />
+    <Build Include="Tables\PortfolioPhoto.sql" />
   </ItemGroup>
 </Project>
