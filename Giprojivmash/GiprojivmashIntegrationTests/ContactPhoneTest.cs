@@ -23,6 +23,12 @@ namespace GiprojivmahsIntegrationTests
             await IntegrationTestInitializer.SetContactPhone(_context);
         }
 
+        [OneTimeTearDown]
+        public async Task ClearData()
+        {
+            await IntegrationTestInitializer.ClearContactPhone(_context);
+        }
+
         [Test]
         public async Task CreateContactPhone_WhenCreateContactPhone_ShouldReturnWithNewContactPhone()
         {

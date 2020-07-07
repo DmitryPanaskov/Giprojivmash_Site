@@ -35,8 +35,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Giprojivmash.BLL\Giprojivmash.BLL.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
-  </ItemGroup>
 </Project>

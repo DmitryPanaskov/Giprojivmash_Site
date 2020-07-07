@@ -7,6 +7,7 @@ namespace Giprojivmash.BLL.Mapper
     {
         public MappingProfile()
         {
+            CreateMap<BaseEntity, BaseDto>();
             CreateMap<ServiceFirstLayerEntity, ServiceFirstLayerDto>();
             CreateMap<ServiceSecondLayerEntity, ServiceSecondLayerDto>();
             CreateMap<ServiceThirdLayerEntity, ServiceThirdLayerDto>();

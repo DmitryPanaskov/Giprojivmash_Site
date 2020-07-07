@@ -1,4 +1,5 @@
-﻿using Giprojivmash.DAL.Entities;
+﻿using Giprojivmash.BLL.DTO;
+using Giprojivmash.DAL.Entities;
 using Giprojivmash.WEB.Models;
 
 namespace Giprojivmash.WEB.Mapper
@@ -7,9 +8,10 @@ namespace Giprojivmash.WEB.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<ServiceFirstLayerViewModel, ServiceFirstLayerEntity>().ReverseMap();
-            CreateMap<ServiceSecondLayerViewModel, ServiceSecondLayerEntity>().ReverseMap();
-            CreateMap<ServiceThirdLayerViewModel, ServiceThirdLayerEntity>().ReverseMap();
+            CreateMap<BaseDto, BaseViewModel>();
+            CreateMap<ServiceFirstLayerEntity, ServiceFirstLayerViewModel>();
+            CreateMap<ServiceSecondLayerEntity, ServiceSecondLayerViewModel>();
+            CreateMap<ServiceThirdLayerEntity, ServiceThirdLayerViewModel>();
         }
     }
 }

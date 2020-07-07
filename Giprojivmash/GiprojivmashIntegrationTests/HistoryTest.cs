@@ -25,6 +25,13 @@ namespace GiprojivmahsIntegrationTests
             await IntegrationTestInitializer.SetHistoryPhoto(_context);
         }
 
+        [OneTimeTearDown]
+        public async Task ClearData()
+        {
+            await IntegrationTestInitializer.ClearHistory(_context);
+            await IntegrationTestInitializer.ClearHistoryPhoto(_context);
+        }
+
         [Test]
         public async Task CreateHistory_WhenCreateHistory_ShouldReturnWithNewHistory()
         {

@@ -23,6 +23,12 @@ namespace GiprojivmahsIntegrationTests
             await IntegrationTestInitializer.SetVacancy(_context);
         }
 
+        [OneTimeTearDown]
+        public async Task ClearData()
+        {
+            await IntegrationTestInitializer.ClearVacancy(_context);
+        }
+
         [Test]
         public async Task CreateVacancy_WhenCreateVacancy_ShouldReturnWithNewVacancy()
         {

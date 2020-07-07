@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
@@ -12,13 +12,19 @@ namespace Giprojivmash.WEB.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IServiceFirstLayerService _serviceFirstLayerService;
+        private readonly IServiceSecondLayerService _serviceSecondLayerService;
+        private readonly IServiceThirdLayerService _serviceThirdLayerService;
         private readonly IMapper _mapper;
 
         public HomeController(ILogger<HomeController> logger, IMapper mapper,
-        IServiceFirstLayerService serviceFirstLayerService)
+        IServiceFirstLayerService serviceFirstLayerService,
+        IServiceSecondLayerService serviceSecondLayerService,
+        IServiceThirdLayerService serviceThirdLayerService)
         {
             _mapper = mapper;
             _serviceFirstLayerService = serviceFirstLayerService;
+            _serviceSecondLayerService = serviceSecondLayerService;
+            _serviceThirdLayerService = serviceThirdLayerService;
             _logger = logger;
         }
 
@@ -29,9 +35,13 @@ namespace Giprojivmash.WEB.Controllers
 
         public IActionResult Services()
         {
-            var list = _serviceFirstLayerService.GetAll();
             var model = new ServiceViewModel();
-            model.ServiceFirstLayerList = _mapper.Map<System.Collections.Generic.List<ServiceFirstLayerViewModel>>(list);
+            var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
+            var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
+            var serviceThirdLayerList = _serviceThirdLayerService.GetAll();
+            model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
+            model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
+            model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
             return View(model);
         }
 

@@ -25,6 +25,13 @@ namespace GiprojivmahsIntegrationTests
             await IntegrationTestInitializer.SetPortfolioPhoto(_context);
         }
 
+        [OneTimeTearDown]
+        public async Task ClearData()
+        {
+            await IntegrationTestInitializer.ClearPortfolio(_context);
+            await IntegrationTestInitializer.ClearPortfolioPhoto(_context);
+        }
+
         [Test]
         public async Task CreatePortfolio_WhenCreatePortfolio_ShouldReturnWithNewPortfolio()
         {

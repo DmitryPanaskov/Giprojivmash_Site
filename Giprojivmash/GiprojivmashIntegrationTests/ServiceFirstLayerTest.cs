@@ -27,6 +27,14 @@ namespace GiprojivmahsIntegrationTests
             await IntegrationTestInitializer.SetServiceThirdLayer(_context);
         }
 
+        [OneTimeTearDown]
+        public async Task ClearData()
+        {
+            await IntegrationTestInitializer.ClearServiceFirstLayer(_context);
+            await IntegrationTestInitializer.ClearServiceSecondLayer(_context);
+            await IntegrationTestInitializer.ClearServiceThirdLayer(_context);
+        }
+
         [Test]
         public async Task CreateServiceFirstLayer_WhenCreateServiceFirstLayer_ShouldReturnWithNewServiceFirstLayer()
         {

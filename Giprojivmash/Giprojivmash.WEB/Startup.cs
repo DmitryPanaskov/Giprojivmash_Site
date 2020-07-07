@@ -34,15 +34,19 @@ namespace Giprojivmash.WEB
             services.AddDbContext<GiprojivmashContext>(options => options.UseSqlServer(connectionString));
 
             services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
-            services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
-            services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
+            services.AddScoped<IServiceSecondLayerService, ServiceSecondLayerService>();
+            services.AddScoped<IServiceThirdLayerService, ServiceThirdLayerService>();
 
             services.AddScoped<IRepository<ServiceFirstLayerEntity>, GenericRepository<ServiceFirstLayerEntity>>();
             services.AddScoped<IRepository<ServiceSecondLayerEntity>, GenericRepository<ServiceSecondLayerEntity>>();
             services.AddScoped<IRepository<ServiceThirdLayerEntity>, GenericRepository<ServiceThirdLayerEntity>>();
 
-            // Add Web Layer
-            services.AddAutoMapper(typeof(Startup)); // Add AutoMapper
+            var config = new MapperConfiguration(c =>
+            {
+                c.AddProfile<Giprojivmash.BLL.Mapper.MappingProfile>();
+                c.AddProfile<Giprojivmash.WEB.Mapper.MappingProfile>();
+            });
+            services.AddSingleton<IMapper>(s => config.CreateMapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
