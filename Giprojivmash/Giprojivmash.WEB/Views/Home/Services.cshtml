@@ -5,57 +5,142 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>
-    Услуги
-</h1>
 <div class="container">
+    <h1>
+        Услуги
+    </h1>
     <div class="row">
+
         @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
         {
-            <a href="services/proektirovanie/" class="col-lg-4 item aos-init aos-animate" data-aos="fade-left" data-aos-delay="0">
-                <div class="img-thumbnail" style="background-image: url(images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
+            <a href="#" class="col-md-4 a-block">
+                <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
+                    <span class="caption">
+                        <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
+                        <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
+                    </span>
                 </div>
-                <span class="caption">
-                    <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle</span>
-                    <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).Description</span>
-                </span>
             </a>
         }
+        @{/*
+                                        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
+                                        {
+                                            <p class="font-weight-bolder">
+                                                @Model.ServiceFirstLayerList.ElementAt(i).Description
+                                                <a class="btn btn-circle" data-toggle="collapse_@i" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                    <i class="fa fa-angle-double-down"></i>
+                                                </a>
+                                            </p>
+                                            <div class="collapse" id="collapseExample_@i">
+                                                @{
+                                                    var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.ServiceFirstLayerList.ElementAt(i).Id).ToList();
+                                                }
+                                                @for (var j = 0; j < serviceSecondLayerList.Count; j++)
+                                                {
+                                                    <p class="ml-2">
+                                                        @serviceSecondLayerList.ElementAt(j).Description;
+                                                    </p>
+                                                    var serviceThirdLayerList = Model.ServiceThirdLayerList.Where(m => m.ServiceSecondLayerId == serviceSecondLayerList.ElementAt(j).ServiceFirstLayerId).ToList();
+                                                    @for (var k = 0; k < serviceThirdLayerList.Count; k++)
+                                                    {
+                                                        <p class="ml-4">
+                                                            @serviceThirdLayerList.ElementAt(k).Description
+                                                        </p>
+                                                    }
+                                                }
+                                            </div>
+                                        }
 
-
-
-        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
-        {
-            <p class="font-weight-bolder">
-                @Model.ServiceFirstLayerList.ElementAt(i).Description
-                <a class="btn btn-circle" data-toggle="collapse_@i" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="fa fa-angle-double-down"></i>
-                </a>
-            </p>
-            <div class="collapse" id="collapseExample_@i">
-                @{
-                    var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.ServiceFirstLayerList.ElementAt(i).Id).ToList();
-                }
-                @for (var j = 0; j < serviceSecondLayerList.Count; j++)
-                {
-                    <p class="ml-2">
-                        @serviceSecondLayerList.ElementAt(j).Description;
-                    </p>
-                    var serviceThirdLayerList = Model.ServiceThirdLayerList.Where(m => m.ServiceSecondLayerId == serviceSecondLayerList.ElementAt(j).ServiceFirstLayerId).ToList();
-                    @for (var k = 0; k < serviceThirdLayerList.Count; k++)
-                    {
-                        <p class="ml-4">
-                            @serviceThirdLayerList.ElementAt(k).Description
-                        </p>
-                    }
-                }
-            </div>
+                                          */
         }
     </div>
 </div>
 
+<style>
+    .thumbnail {
+        background-size: cover;
+        width: 100%;
+        padding: 35%;
+        -webkit-filter: brightness(80%);
+        filter: brightness(80%);
+        /*
+        -webkit-transition: all .15s;
+        transition: all .15s;
+            */
+
+
+    }
+
+        .thumbnail:hover {
+            -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+        }
+
+            .thumbnail:hover .caption {
+                height: 60%;
+                top: 20%
+            }
+
+            .thumbnail:hover .description {
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                -webkit-transition: all .3s linear;
+                transition: all .3s linear;
+            }
+
+
+
+    .caption {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        position: absolute;
+        background-color: rgba(0, 105, 155, 0.7);
+        width: 70%;
+        height: 50%;
+        top: 25%;
+        left: 15%;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        line-height: 1.4;
+        /*
+        -webkit-transition: all .15s linear;
+        transition: all .15s linear;
+            */
+    }
+
+        .caption .name {
+            width: 100%;
+            color: white;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .caption .description {
+            width: 100%;
+            visibility: hidden;
+            position: absolute;
+            opacity: 0;
+            font-size: 13px;
+        }
+</style>
 
 @section Scripts{
+    <script>
+        AOS.init();
+    </script>
     <script>
         $(".btn-circle").click(function () {
             $(this + "i").addClass("aaa");
@@ -70,5 +155,6 @@
             }
             */
         });
+
     </script>
 }

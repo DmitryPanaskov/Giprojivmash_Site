@@ -1,6 +1,7 @@
+using System.IO;
 using Giprojivmash.DAL.Context;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 namespace Giprojivmash.WEB
@@ -13,11 +14,8 @@ namespace Giprojivmash.WEB
         {
             var host = CreateHostBuilder(args).Build();
 
-            // pre-initialization
-            using (var scope = host.Services.CreateScope())
+            using (var context = new GiprojivmashContext(ConnectionString()))
             {
-                var services = scope.ServiceProvider;
-                var context = services.GetRequiredService<GiprojivmashContext>();
                 GiprojivmashInitializer.InitializerAsync(context);
             }
 
@@ -30,5 +28,14 @@ namespace Giprojivmash.WEB
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static string ConnectionString()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory());
+            builder.AddJsonFile("appsettings.json");
+            var config = builder.Build();
+            return config.GetConnectionString("TicketManagmentConnection");
+        }
     }
 }

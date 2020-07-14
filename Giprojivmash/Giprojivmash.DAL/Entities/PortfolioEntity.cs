@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("Portfolio")]
+    [Table("portfolio")]
     public class PortfolioEntity : BaseEntity
     {
         public string Description { get; set; }

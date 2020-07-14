@@ -3,10 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Giprojivmash.DAL.Context
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
     public class GiprojivmashContext : DbContext
     {
         public GiprojivmashContext(DbContextOptions options)
             : base(options)
+        {
+        }
+
+        public GiprojivmashContext(string connectionString)
+            : base(GetOptions(connectionString))
         {
         }
 
@@ -29,5 +35,10 @@ namespace Giprojivmash.DAL.Context
         public virtual DbSet<PortfolioPhotoEntity> PortfolioPhoto { get; set; }
 
         public virtual DbSet<VacancyEntity> Vacancy { get; set; }
+
+        private static DbContextOptions GetOptions(string connectionString)
+        {
+            return new DbContextOptionsBuilder().UseMySQL(connectionString).Options;
+        }
     }
 }

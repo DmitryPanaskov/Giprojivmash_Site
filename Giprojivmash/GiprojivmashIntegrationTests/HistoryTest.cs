@@ -18,7 +18,7 @@ namespace GiprojivmahsIntegrationTests
         [SetUp]
         public async Task Initializer()
         {
-            _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseSqlServer(IntegrationTestInitializer.GetConnectionString()).Options);
+            _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
             await IntegrationTestInitializer.ClearHistory(_context);
             await IntegrationTestInitializer.SetHistory(_context);
             await IntegrationTestInitializer.ClearHistoryPhoto(_context);

@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("ContactPhone")]
+    [Table("contactphone")]
     public class ContactPhoneEntity : BaseEntity
     {
         public int ContactId { get; set; }

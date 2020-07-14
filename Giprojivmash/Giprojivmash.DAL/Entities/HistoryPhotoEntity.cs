@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("HistoryPhoto")]
+    [Table("historyphoto")]
     public class HistoryPhotoEntity : BaseEntity
     {
         public int HistoryId { get; set; }

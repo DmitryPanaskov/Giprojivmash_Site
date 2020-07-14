@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("PortfolioPhoto")]
+    [Table("portfoliophoto")]
     public class PortfolioPhotoEntity : BaseEntity
     {
         public int PortfolioId { get; set; }

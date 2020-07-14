@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("ServiceSecondLayer")]
+    [Table("servicesecondlayer")]
     public class ServiceSecondLayerEntity : BaseEntity
     {
         public string Description { get; set; }

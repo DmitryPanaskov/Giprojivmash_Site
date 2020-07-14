@@ -287,7 +287,7 @@ namespace GiprojivmahsIntegrationTests
 
         public static string GetConnectionString()
         {
-            return @"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Giprojivmash_Site;";
+            return @"server=localhost;userid=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site";
         }
 
         public static async Task ClearAllTable(GiprojivmashContext context)
@@ -308,61 +308,61 @@ namespace GiprojivmahsIntegrationTests
         public static async Task ClearServiceFirstLayer(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceFirstLayer]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE servicefirstlayer");
         }
 
         public static async Task ClearServiceSecondLayer(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceSecondLayer]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE servicesecondlayer");
         }
 
         public static async Task ClearServiceThirdLayer(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ServiceThirdLayer]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE servicethirdlayer");
         }
 
         public static async Task ClearContact(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Contact]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE contact");
         }
 
         public static async Task ClearContactPhone(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[ContactPhone]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE contactphone");
         }
 
         public static async Task ClearHistory(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[History]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE history");
         }
 
         public static async Task ClearHistoryPhoto(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[HistoryPhoto]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE historyphoto");
         }
 
         public static async Task ClearPortfolio(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Portfolio]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE portfolio");
         }
 
         public static async Task ClearPortfolioPhoto(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[PortfolioPhoto]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE portfoliophoto");
         }
 
         public static async Task ClearVacancy(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE dbo.[Vacancy]");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE vacancy");
         }
 
         private static void Validator(GiprojivmashContext context)

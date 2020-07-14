@@ -1,0 +1,78 @@
+DROP TABLE  IF EXISTS ContactPhone;
+DROP TABLE IF EXISTS Contact;
+
+DROP TABLE  IF EXISTS HistoryPhoto;
+DROP TABLE  IF EXISTS History;
+
+DROP TABLE  IF EXISTS PortfolioPhoto;
+DROP TABLE  IF EXISTS Portfolio;
+
+DROP TABLE  IF EXISTS ServiceThirdLayer;
+DROP TABLE  IF EXISTS ServiceSecondLayer;
+DROP TABLE  IF EXISTS ServiceFirstLayer;
+
+DROP TABLE  IF EXISTS Vacancy;
+
+CREATE TABLE Contact(
+    Id int NOT NULL AUTO_INCREMENT,
+    Photo varchar(50),
+    Description varchar(5000),
+    Address varchar(500),
+    PRIMARY KEY (Id));
+
+CREATE TABLE ContactPhone(
+    Id int NOT NULL AUTO_INCREMENT,
+    ContactId int NOT NULL,
+    Number varchar(50),
+    Type int,
+    PRIMARY KEY (Id));
+
+
+CREATE TABLE History(
+    Id int NOT NULL AUTO_INCREMENT,
+    Description varchar(5000),
+    PRIMARY KEY (Id));
+
+CREATE TABLE HistoryPhoto(
+    Id int NOT NULL AUTO_INCREMENT,
+    HistoryId int NOT NULL,
+    PhotoName varchar(50),
+    PRIMARY KEY (Id));
+
+CREATE TABLE Portfolio(
+    Id int NOT NULL AUTO_INCREMENT,
+    Description varchar(5000),
+    PRIMARY KEY (Id));
+
+CREATE TABLE PortfolioPhoto(
+    Id int NOT NULL AUTO_INCREMENT,
+    PortfolioId int NOT NULL,
+    PhotoName varchar(50),
+    PRIMARY KEY (Id));
+
+CREATE TABLE ServiceFirstLayer(
+    Id int NOT NULL AUTO_INCREMENT,
+    Description varchar(1000),
+    Title varchar(500),
+    PhotoTitle varchar(50),
+    DescriptionShort varchar(500),
+    PRIMARY KEY (Id));
+    
+CREATE TABLE ServiceSecondLayer(
+    Id int NOT NULL AUTO_INCREMENT,
+    ServiceFirstLayerId int NOT NULL,
+    Description varchar(1000),
+    PRIMARY KEY (Id));
+    
+CREATE TABLE ServiceThirdLayer(
+    Id int NOT NULL AUTO_INCREMENT,
+    ServiceSecondLayerId int NOT NULL,
+    Description varchar(1000),
+    PRIMARY KEY (Id));
+
+CREATE TABLE Vacancy(
+    Id int NOT NULL AUTO_INCREMENT,
+    Position varchar(500),
+    Description varchar(1000),
+    Contact varchar(500),
+    PRIMARY KEY (Id));

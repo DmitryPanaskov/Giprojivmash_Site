@@ -2,7 +2,6 @@
     ViewData["Title"] = "Главная";
 }
 
-
 <div class="container-fluid">
     <div class="d-none d-md-block w-100">
         <div id="particles-js">
@@ -53,41 +52,44 @@
     <div class="row">
         <div class="grayscale d-none d-sm-block  col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="https://www.belorusneft.by/">
-                <img class="img-fluid grayscale" src="~/images/partners/belneft.png" />
+                <img class="img-fluid" src="~/images/partners/belneft.png" loading="lazy"/>
             </a>
         </div>
         <div class="grayscale d-none d-sm-block  col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="http://www.gomeldrev.by/">
-                <img class="img-fluid" src="~/images/partners/gomeldrev.png" />
+                <img class="img-fluid" src="~/images/partners/gomeldrev.png" loading="lazy"/>
             </a>
         </div>
         <div class="grayscale d-none d-sm-block  col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="https://www.gomelenergo.by/">
-                <img class="img-fluid" src="~/images/partners/gomelenergo.png" />
+                <img class="img-fluid" src="~/images/partners/gomelenergo.png" loading="lazy"/>
             </a>
         </div>
         <div class="grayscale d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="https://www.gomselmash.by/">
-                <img class="img-fluid" src="~/images/partners/gomselmash.png" />
+                <img class="img-fluid" src="~/images/partners/gomselmash.png" loading="lazy"/>
             </a>
         </div>
         <div class="grayscale d-none d-sm-block  col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="http://belfert.by/">
-                <img class="img-fluid" src="~/images/partners/himzavod.png" />
+                <img class="img-fluid" src="~/images/partners/himzavod.png" loading="lazy"/>
             </a>
         </div>
         <div class="grayscale d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
             <a target="_blank" href="http://kristall.by/">
-                <img class="img-fluid" src="~/images/partners/kristall.png" />
+                <img class="img-fluid" src="~/images/partners/kristall.png" loading="lazy"/>
             </a>
         </div>
     </div>
 </div>
 
 @section Scripts{
-    <script>
-        AOS.init();
-    </script>
+    <script src="~/lib/aosAnimate/aos.js"></script>
+    <script src="~/lib/particles/particles.min.js"></script>
+    <script src="~/lib/animateNumber/jquery.animateNumber.min.js"></script>
     <script src="~/js/animateNumber-config.min.js"></script>
     <script src="~/js/particles-config.min.js"></script>
+    <script>
+        AOS.init({ disable: 'mobile' });
+    </script>
 }

@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("Contact")]
+    [Table("contact")]
     public class ContactEntity : BaseEntity
     {
         public string Photo { get; set; }

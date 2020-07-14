@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("Vacancy")]
+    [Table("vacancy")]
     public class VacancyEntity : BaseEntity
     {
         public string Position { get; set; }

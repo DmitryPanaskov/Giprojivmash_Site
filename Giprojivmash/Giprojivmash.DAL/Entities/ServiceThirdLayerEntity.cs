@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.DAL.Entities
 {
-    [Table("ServiceThirdLayer")]
+    [Table("servicethirdlayer")]
     public class ServiceThirdLayerEntity : BaseEntity
     {
         public string Description { get; set; }

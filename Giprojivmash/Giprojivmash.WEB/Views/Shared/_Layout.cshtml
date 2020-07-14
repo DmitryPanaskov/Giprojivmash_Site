@@ -9,16 +9,16 @@
     <title>@ViewData["Title"] | ОАО "ГИПРОЖИВМАШ"</title>
     <link rel="shortcut icon" href="/images/logo/logo_gipro_blue.png" type="image/png">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/flagicons/css/flag-icon.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
+    <link rel="preload" as="style" href="~/lib/flagicons/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" type='text/css'/>
+    <link rel="preload" as="style" href="~/lib/aosAnimate/aos.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-nav navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
             <div class="container">
-                <div class="navbar-brand">ОАО "ГИПРОЖИВМАШ"</div>
+                <div class="navbar-brand">ОАО ГИПРОЖИВМАШ</div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,9 +59,9 @@
         </nav>
     </header>
     @RenderBody()
-    <div class="preloader row h-100 justify-content-center align-items-center">
-       <img class="img" src="/images/preloader.gif"/>
-    </div>
+        <div class="preloader row h-100 justify-content-center align-items-center">
+            <img class="img" src="/images/preloader.gif" />
+        </div>
     <footer>
         <div class="container">
             <div class="row">
@@ -109,9 +109,6 @@
     </footer>
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/particles/particles.min.js"></script>
-    <script src="~/lib/animateNumber/jquery.animateNumber.min.js"></script>
-    <script src="~/lib/aosAnimate/aos.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>

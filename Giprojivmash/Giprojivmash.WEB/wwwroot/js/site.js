@@ -10,4 +10,3 @@ window.onload = function () {
     }, 300);
 }
 
-
