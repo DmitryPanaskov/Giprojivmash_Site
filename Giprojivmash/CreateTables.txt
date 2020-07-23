@@ -1,78 +1,86 @@
-DROP TABLE  IF EXISTS ContactPhone;
-DROP TABLE IF EXISTS Contact;
+DROP TABLE IF EXISTS contactphone;
+DROP TABLE IF EXISTS contact;
 
-DROP TABLE  IF EXISTS HistoryPhoto;
-DROP TABLE  IF EXISTS History;
+DROP TABLE IF EXISTS historyphoto;
+DROP TABLE IF EXISTS history;
 
-DROP TABLE  IF EXISTS PortfolioPhoto;
-DROP TABLE  IF EXISTS Portfolio;
+DROP TABLE IF EXISTS portfoliophoto;
+DROP TABLE IF EXISTS portfolio;
 
-DROP TABLE  IF EXISTS ServiceThirdLayer;
-DROP TABLE  IF EXISTS ServiceSecondLayer;
-DROP TABLE  IF EXISTS ServiceFirstLayer;
+DROP TABLE IF EXISTS servicethirdlayer;
+DROP TABLE IF EXISTS servicesecondlayer;
+DROP TABLE IF EXISTS servicefirstlayer;
 
-DROP TABLE  IF EXISTS Vacancy;
+DROP TABLE IF EXISTS vacancy;
 
-CREATE TABLE Contact(
+CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
     Photo varchar(50),
     Description varchar(5000),
     Address varchar(500),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE ContactPhone(
+CREATE TABLE contactphone(
     Id int NOT NULL AUTO_INCREMENT,
     ContactId int NOT NULL,
     Number varchar(50),
     Type int,
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-
-CREATE TABLE History(
+CREATE TABLE history(
     Id int NOT NULL AUTO_INCREMENT,
     Description varchar(5000),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE HistoryPhoto(
+CREATE TABLE historyphoto(
     Id int NOT NULL AUTO_INCREMENT,
     HistoryId int NOT NULL,
     PhotoName varchar(50),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE Portfolio(
+CREATE TABLE portfolio(
     Id int NOT NULL AUTO_INCREMENT,
     Description varchar(5000),
     PRIMARY KEY (Id));
 
-CREATE TABLE PortfolioPhoto(
+CREATE TABLE portfoliophoto(
     Id int NOT NULL AUTO_INCREMENT,
     PortfolioId int NOT NULL,
     PhotoName varchar(50),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE ServiceFirstLayer(
+CREATE TABLE servicefirstlayer(
     Id int NOT NULL AUTO_INCREMENT,
     Description varchar(1000),
     Title varchar(500),
     PhotoTitle varchar(50),
     DescriptionShort varchar(500),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
     
-CREATE TABLE ServiceSecondLayer(
+CREATE TABLE servicesecondlayer(
     Id int NOT NULL AUTO_INCREMENT,
     ServiceFirstLayerId int NOT NULL,
     Description varchar(1000),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
     
-CREATE TABLE ServiceThirdLayer(
+CREATE TABLE servicethirdlayer(
     Id int NOT NULL AUTO_INCREMENT,
     ServiceSecondLayerId int NOT NULL,
     Description varchar(1000),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE Vacancy(
+CREATE TABLE vacancy(
     Id int NOT NULL AUTO_INCREMENT,
     Position varchar(500),
     Description varchar(1000),
     Contact varchar(500),
-    PRIMARY KEY (Id));
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

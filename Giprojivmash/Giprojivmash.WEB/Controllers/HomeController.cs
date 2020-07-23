@@ -30,7 +30,7 @@ namespace Giprojivmash.WEB.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(/*"Temp"*/);
         }
 
         public IActionResult Services()
@@ -39,6 +39,7 @@ namespace Giprojivmash.WEB.Controllers
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
             var serviceThirdLayerList = _serviceThirdLayerService.GetAll();
+
             model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
             model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
             model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);

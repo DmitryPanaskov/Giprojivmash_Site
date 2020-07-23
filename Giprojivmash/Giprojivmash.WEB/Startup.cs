@@ -30,8 +30,8 @@ namespace Giprojivmash.WEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            string connectionString = _configuration.GetConnectionString("TicketManagmentConnection");
-            services.AddDbContext<GiprojivmashContext>(options => options.UseSqlServer(connectionString));
+            string connectionString = _configuration.GetConnectionString("GiprojivmashConnection");
+            services.AddDbContext<GiprojivmashContext>(options => options.UseMySql(connectionString));
 
             services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
             services.AddScoped<IServiceSecondLayerService, ServiceSecondLayerService>();

@@ -45,6 +45,9 @@ namespace GiprojivmahsIntegrationTests
             await serviceFirstLayerService.CreateAsync(new ServiceFirstLayerEntity
             {
                 Description = "Created serviceFirstLayerService",
+                DescriptionShort = "3",
+                PhotoTitle = "3",
+                Title = "3",
             });
 
             var list = serviceFirstLayerService.GetAll();
@@ -56,16 +59,25 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 1,
                     Description = "1",
+                    DescriptionShort = "1",
+                    Title = "1",
+                    PhotoTitle = "1",
                 },
                 new ServiceFirstLayerEntity
                 {
                     Id = 2,
                     Description = "2",
+                    DescriptionShort = "2",
+                    PhotoTitle = "2",
+                    Title = "2",
                 },
                 new ServiceFirstLayerEntity
                 {
                     Id = 3,
                     Description = "Created serviceFirstLayerService",
+                    DescriptionShort = "3",
+                    PhotoTitle = "3",
+                    Title = "3",
                 },
             });
         }
@@ -77,7 +89,14 @@ namespace GiprojivmahsIntegrationTests
             var serviceFirstLayerService = ServiceInitializer.GetServiceFirstLayerService(_context);
 
             // Act
-            await serviceFirstLayerService.UpdateAsync(new ServiceFirstLayerEntity { Id = 1, Description = "Updated serviceFirstLayerService" });
+            await serviceFirstLayerService.UpdateAsync(new ServiceFirstLayerEntity
+            {
+                Id = 1,
+                Description = "Updated serviceFirstLayerService",
+                Title = "1",
+                PhotoTitle = "1",
+                DescriptionShort = "1",
+            });
 
             var list = serviceFirstLayerService.GetAll();
 
@@ -88,11 +107,17 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 1,
                     Description = "Updated serviceFirstLayerService",
+                    Title = "1",
+                    PhotoTitle = "1",
+                    DescriptionShort = "1",
                 },
                 new ServiceFirstLayerEntity
                 {
                     Id = 2,
                     Description = "2",
+                    DescriptionShort = "2",
+                    PhotoTitle = "2",
+                    Title = "2",
                 },
             });
         }
@@ -118,6 +143,9 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 2,
                     Description = "2",
+                    DescriptionShort = "2",
+                    PhotoTitle = "2",
+                    Title = "2",
                 },
             });
             listSecond.Should().BeEquivalentTo(new List<ServiceSecondLayerEntity>

@@ -17,10 +17,16 @@ namespace GiprojivmahsIntegrationTests
                 new ServiceFirstLayerEntity
                 {
                      Description = "1",
+                     Title = "1",
+                     PhotoTitle = "1",
+                     DescriptionShort = "1",
                 },
                 new ServiceFirstLayerEntity
                 {
                      Description = "2",
+                     DescriptionShort = "2",
+                     PhotoTitle = "2",
+                     Title = "2",
                 },
             };
 
@@ -287,7 +293,7 @@ namespace GiprojivmahsIntegrationTests
 
         public static string GetConnectionString()
         {
-            return @"server=localhost;userid=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site";
+            return "server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;";
         }
 
         public static async Task ClearAllTable(GiprojivmashContext context)

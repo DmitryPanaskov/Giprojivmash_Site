@@ -10,48 +10,16 @@
         Услуги
     </h1>
     <div class="row">
-
         @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
         {
-            <a href="#" class="col-md-4 a-block">
-                <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
-                    <span class="caption">
-                        <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
-                        <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
-                    </span>
-                </div>
-            </a>
-        }
-        @{/*
-                                        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
-                                        {
-                                            <p class="font-weight-bolder">
-                                                @Model.ServiceFirstLayerList.ElementAt(i).Description
-                                                <a class="btn btn-circle" data-toggle="collapse_@i" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                                    <i class="fa fa-angle-double-down"></i>
-                                                </a>
-                                            </p>
-                                            <div class="collapse" id="collapseExample_@i">
-                                                @{
-                                                    var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.ServiceFirstLayerList.ElementAt(i).Id).ToList();
-                                                }
-                                                @for (var j = 0; j < serviceSecondLayerList.Count; j++)
-                                                {
-                                                    <p class="ml-2">
-                                                        @serviceSecondLayerList.ElementAt(j).Description;
-                                                    </p>
-                                                    var serviceThirdLayerList = Model.ServiceThirdLayerList.Where(m => m.ServiceSecondLayerId == serviceSecondLayerList.ElementAt(j).ServiceFirstLayerId).ToList();
-                                                    @for (var k = 0; k < serviceThirdLayerList.Count; k++)
-                                                    {
-                                                        <p class="ml-4">
-                                                            @serviceThirdLayerList.ElementAt(k).Description
-                                                        </p>
-                                                    }
-                                                }
-                                            </div>
-                                        }
-
-                                          */
+        <a href="#" class="col-md-4 a-block">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
+                <span class="caption">
+                    <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
+                    <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
+                </span>
+            </div>
+        </a>
         }
     </div>
 </div>
@@ -67,8 +35,6 @@
         -webkit-transition: all .15s;
         transition: all .15s;
             */
-
-
     }
 
         .thumbnail:hover {

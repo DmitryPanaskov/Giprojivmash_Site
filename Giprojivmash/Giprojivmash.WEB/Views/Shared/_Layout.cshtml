@@ -6,13 +6,14 @@
     <meta name="robots" content="@ViewData["Robots"]" />
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewData["Title"] | ОАО "ГИПРОЖИВМАШ"</title>
     <link rel="shortcut icon" href="/images/logo/logo_gipro_blue.png" type="image/png">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/lib/grayScale/css/gray.min.css" />
+    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
-    <link rel="preload" as="style" href="~/lib/flagicons/css/flag-icon.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" type='text/css'/>
-    <link rel="preload" as="style" href="~/lib/aosAnimate/aos.css" />
 </head>
 <body>
     <header>
@@ -26,31 +27,43 @@
                 <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">ГЛАВНАЯ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Services">УСЛУГИ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">О НАС</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">ПОРТФОЛИО</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">КОНТАКТЫ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacts">ВАКАНСИИ</a>
+                            <a class="nav-link text-uppercase" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ЯЗЫК
+                            <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Услуги
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-ru"></span> Русский</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> English</a>
-                                <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-by"></span> Беларускi</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-ru"></span> Проектирование</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Обоснование инвестиций</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-gb"></span> Геодезия</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Экология</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Промышленная безопасность</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Системы безопасности</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" asp-area="" asp-controller="Home" asp-action="Contacts">Портфолио</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                О нас
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-gb"></span> О предприятии</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-ru"></span> История</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Наша жизнь</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Сертификаты</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Контакты
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-gb"></span> Руководство</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-ru"></span> Отделы</a>
+                                <a class="dropdown-item text-uppercase" asp-area="" asp-controller="Home" asp-action="Services"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
                             </div>
                         </li>
                     </ul>
@@ -59,9 +72,9 @@
         </nav>
     </header>
     @RenderBody()
-        <div class="preloader row h-100 justify-content-center align-items-center">
-            <img class="img" src="/images/preloader.gif" />
-        </div>
+    <div class="preloader row h-100 justify-content-center align-items-center">
+        <img class="img" src="/images/preloader.gif" />
+    </div>
     <footer>
         <div class="container">
             <div class="row">
@@ -78,15 +91,27 @@
                     </div>
                     <div class="icon-bar">
                         <i class="fa fa-phone"></i>
-                        <div class="content">+375 232 55-55-55</div>
+                        <div class="content">
+                            <a href="tel:+375232532738">
+                                +375 232 53-27-38
+                            </a>
+                        </div>
                     </div>
                     <div class="icon-bar">
                         <i class="fa fa-fax"></i>
-                        <div class="content">+375 232 55-55-55</div>
+                        <div class="content">
+                            <a href="fax:+375232535030">
+                                +375 232 53-50-30
+                            </a>
+                        </div>
                     </div>
                     <div class="icon-bar">
                         <i class="fa fa-envelope"></i>
-                        <div class="content">gipro@gomel.by</div>
+                        <div class="content">
+                            <a href="mailto:post@gipro.gomel.by">
+                                post@gipro.gomel.by
+                            </a>
+                        </div>
                     </div>
                     <div class="icon-bar">
                         <i class="fa fa-calendar"></i>
@@ -107,6 +132,7 @@
             </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
