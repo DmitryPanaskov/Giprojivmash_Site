@@ -25,7 +25,8 @@ namespace GiprojivmahsIntegrationTests
 
         public static IServiceThirdLayerService GetServiceThirdLayerService(GiprojivmashContext context)
         {
-            return new ServiceThirdLayerService(new GenericRepository<ServiceThirdLayerEntity>(context));
+            return new ServiceThirdLayerService(new GenericRepository<ServiceThirdLayerEntity>(context),
+                new GenericRepository<ServiceSecondLayerEntity>(context));
         }
 
         public static IContactService GetContact(GiprojivmashContext context)

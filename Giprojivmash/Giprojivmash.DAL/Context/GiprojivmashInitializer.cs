@@ -23,24 +23,31 @@ namespace Giprojivmash.DAL.Context
                 {
                     new ServiceFirstLayerEntity
                     {
-                        Description = "1 Проектирование и строительство зданий и сооружений I и II уровней ответственности",
+                        Description = "1 Проектирование зданий и сооружений I и II уровней ответственности",
                         PhotoTitle = "design.png",
                         DescriptionShort = "Комплексные решения в проектировании объектов любой сложности",
-                        Title = "Проектирование и строительство",
+                        Title = "Проектирование",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "2 Проведение инженерных изысканий для зданий и сооружений I и II уровней ответственности",
+                        Description = "2 Обоснование инвестиций",
                         PhotoTitle = "engineering.png",
                         DescriptionShort = "Инженерные и консультационные услуги на профессиональном уровне",
-                        Title = "Инжиниринг",
+                        Title = "Обоснование инвестиций",
                     },
                     new ServiceFirstLayerEntity
                     {
                         Description = "3 Работы и услуги, составляющие геодезическую и картографическую деятельность специального назначения",
                         PhotoTitle = "geodesy.png",
                         DescriptionShort = "???????????",
-                        Title = "Геодезия и картография",
+                        Title = "Геодезия",
+                    },
+                    new ServiceFirstLayerEntity
+                    {
+                        Description = "5 Экологий",
+                        PhotoTitle = "fireSafety.png",
+                        DescriptionShort = "?????????????",
+                        Title = "Экологий",
                     },
                     new ServiceFirstLayerEntity
                     {
@@ -51,17 +58,10 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "5 Осуществление деятельности по обеспечению пожарной безопасности.",
-                        PhotoTitle = "fireSafety.png",
-                        DescriptionShort = "?????????????",
-                        Title = "Пожарная безопасность",
-                    },
-                    new ServiceFirstLayerEntity
-                    {
                         Description = "6 Осуществление деятельности по обеспечению безопасности юридических и физических лиц:",
                         PhotoTitle = "safety.png",
-                        DescriptionShort = "Проектирование технических устройств применяемых на опасных производственных объектах",
-                        Title = "Пожарная безопасность",
+                        DescriptionShort = "??????????????????",
+                        Title = "Системы безопасности",
                     },
                 };
 

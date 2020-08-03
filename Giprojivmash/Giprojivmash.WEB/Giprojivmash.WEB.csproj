@@ -36,4 +36,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Giprojivmash.BLL\Giprojivmash.BLL.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Enums\" />
+  </ItemGroup>
 </Project>

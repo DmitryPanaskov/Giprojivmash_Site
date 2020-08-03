@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
 using Giprojivmash.WEB.Models;
@@ -33,6 +34,22 @@ namespace Giprojivmash.WEB.Controllers
             return View(/*"Temp"*/);
         }
 
+        [HttpGet]
+        public IActionResult Design()
+        {
+            var model = new DesignViewModel();
+            var serviceFirstLayer = _serviceFirstLayerService.GetAll().ElementAt(0);
+            var serviceSecondLayerList = _serviceSecondLayerService.GetEntities(m=>m.ServiceFirstLayerId == serviceFirstLayer.Id);
+            var serviceThirdLayerList = _serviceThirdLayerService.GetAllServiceThirdLayerByServiceFirstId(serviceFirstLayer.Id);
+
+            model.ServiceFirstLayer = _mapper.Map<ServiceFirstLayerViewModel>(serviceFirstLayer);
+            model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
+            model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
+            return View(model);
+        }
+
+        /*
+        [HttpGet]
         public IActionResult Services()
         {
             var model = new ServiceViewModel();
@@ -45,7 +62,8 @@ namespace Giprojivmash.WEB.Controllers
             model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
             return View(model);
         }
-
+           */
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         public IActionResult Privacy()
         {
             return View();
