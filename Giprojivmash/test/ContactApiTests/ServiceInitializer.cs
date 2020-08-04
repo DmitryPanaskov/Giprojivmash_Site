@@ -4,7 +4,7 @@ using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
 using Giprojivmash.DAL.Repositories;
 
-namespace GiprojivmahsIntegrationTests
+namespace ContactApiTests
 {
     public static class ServiceInitializer
     {

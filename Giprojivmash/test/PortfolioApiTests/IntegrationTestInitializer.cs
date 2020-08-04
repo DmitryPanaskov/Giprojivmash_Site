@@ -5,7 +5,7 @@ using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace GiprojivmahsIntegrationTests
+namespace PortfolioApiTests
 {
     public static class IntegrationTestInitializer
     {

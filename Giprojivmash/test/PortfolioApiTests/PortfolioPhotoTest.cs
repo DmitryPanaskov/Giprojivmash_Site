@@ -7,10 +7,10 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace GiprojivmahsIntegrationTests
+namespace PortfolioApiTests
 {
     [TestFixture]
-    internal class PortfolioTest : IDisposable
+    internal class PortfolioPhotoTest : IDisposable
     {
         private GiprojivmashContext _context;
         private bool _disposedValue;
@@ -19,8 +19,6 @@ namespace GiprojivmahsIntegrationTests
         public async Task Initializer()
         {
             _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
-            await IntegrationTestInitializer.ClearPortfolio(_context);
-            await IntegrationTestInitializer.SetPortfolio(_context);
             await IntegrationTestInitializer.ClearPortfolioPhoto(_context);
             await IntegrationTestInitializer.SetPortfolioPhoto(_context);
         }
@@ -28,104 +26,118 @@ namespace GiprojivmahsIntegrationTests
         [OneTimeTearDown]
         public async Task ClearData()
         {
-            await IntegrationTestInitializer.ClearPortfolio(_context);
             await IntegrationTestInitializer.ClearPortfolioPhoto(_context);
         }
 
         [Test]
-        public async Task CreatePortfolio_WhenCreatePortfolio_ShouldReturnWithNewPortfolio()
+        public async Task CreatePortfolioPhoto_WhenCreatePortfolioPhoto_ShouldReturnWithNewPortfolioPhoto()
         {
             // Arrange
-            var portfolioService = ServiceInitializer.GetPortfolio(_context);
-
-            // Act
-            await portfolioService.CreateAsync(new PortfolioEntity
-            {
-                Description = "Created",
-            });
-
-            var list = portfolioService.GetAll();
-
-            // Assert
-            list.Should().BeEquivalentTo(new List<PortfolioEntity>
-            {
-                new PortfolioEntity
-                {
-                    Id = 1,
-                    Description = "1",
-                },
-                new PortfolioEntity
-                {
-                    Id = 2,
-                    Description = "2",
-                },
-                new PortfolioEntity
-                {
-                    Id = 3,
-                    Description = "Created",
-                },
-            });
-        }
-
-        [Test]
-        public async Task UpdatePortfolio_WhenUpdatePortfolio_ShouldReturnUpdatedPortfolio()
-        {
-            // Arrange
-            var serviceContact = ServiceInitializer.GetPortfolio(_context);
-
-            // Act
-            await serviceContact.UpdateAsync(new PortfolioEntity
-            {
-                Id = 1,
-                Description = "Updated",
-            });
-
-            var list = serviceContact.GetAll();
-
-            // Assert
-            list.Should().BeEquivalentTo(new List<PortfolioEntity>
-            {
-                new PortfolioEntity
-                {
-                    Id = 1,
-                    Description = "Updated",
-                },
-                new PortfolioEntity
-                {
-                    Id = 2,
-                    Description = "2",
-                },
-            });
-        }
-
-        [Test]
-        public async Task DeletePortfolio_WhenDeletePortfolio_ShouldReturnWithoutDeletedPortfolioAndWithoutPortfolioPhoto()
-        {
-            // Arrange
-            var portfolioService = ServiceInitializer.GetPortfolio(_context);
             var portfolioPhotoService = ServiceInitializer.GetPortfolioPhoto(_context);
 
             // Act
-            await portfolioService.DeleteAsync(1);
-            var portfolioList = portfolioService.GetAll();
-            var portfolioPhotoList = portfolioPhotoService.GetAll();
+            await portfolioPhotoService.CreateAsync(new PortfolioPhotoEntity
+            {
+                PhotoName = "Created",
+                PortfolioId = 1,
+            });
+
+            var list = portfolioPhotoService.GetAll();
 
             // Assert
-            portfolioList.Should().BeEquivalentTo(new List<PortfolioEntity>
+            list.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
             {
-                new PortfolioEntity
+                new PortfolioPhotoEntity
+                {
+                    Id = 1,
+                    PortfolioId = 1,
+                    PhotoName = "1",
+                },
+                new PortfolioPhotoEntity
                 {
                     Id = 2,
-                    Description = "2",
+                    PortfolioId = 1,
+                    PhotoName = "2",
                 },
-            });
-            portfolioPhotoList.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
-            {
                 new PortfolioPhotoEntity
                 {
                     Id = 3,
                     PortfolioId = 2,
                     PhotoName = "1",
+                },
+                new PortfolioPhotoEntity
+                {
+                    Id = 4,
+                    PhotoName = "Created",
+                    PortfolioId = 1,
+                },
+            });
+        }
+
+        [Test]
+        public async Task UpdatePortfolioPhoto_WhenUpdatePortfolioPhoto_ShouldReturnUpdatedPortfolioPhoto()
+        {
+            // Arrange
+            var servicePortfolioPhoto = ServiceInitializer.GetPortfolioPhoto(_context);
+
+            // Act
+            await servicePortfolioPhoto.UpdateAsync(new PortfolioPhotoEntity
+            {
+                Id = 1,
+                PhotoName = "Updated",
+                PortfolioId = 1,
+            });
+
+            var list = servicePortfolioPhoto.GetAll();
+
+            // Assert
+            list.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
+            {
+                new PortfolioPhotoEntity
+                {
+                    Id = 1,
+                    PhotoName = "Updated",
+                    PortfolioId = 1,
+                },
+                new PortfolioPhotoEntity
+                {
+                    Id = 2,
+                    PhotoName = "2",
+                    PortfolioId = 1,
+                },
+                new PortfolioPhotoEntity
+                {
+                    Id = 3,
+                    PhotoName = "1",
+                    PortfolioId = 2,
+                },
+            });
+        }
+
+        [Test]
+        public async Task DeletePortfolioPhoto_WhenDeletePortfolioPhoto_ShouldReturnWithoutDeletedPortfolioPhoto()
+        {
+            // Arrange
+            var portfolioPhotoService = ServiceInitializer.GetPortfolioPhoto(_context);
+
+            // Act
+            await portfolioPhotoService.DeleteAsync(1);
+            var portfolioPhotoList = portfolioPhotoService.GetAll();
+
+            // Assert
+            portfolioPhotoList.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
+            {
+                new PortfolioPhotoEntity
+                {
+                    Id = 2,
+                    PortfolioId = 1,
+                    PhotoName = "2",
+                },
+                new PortfolioPhotoEntity
+                {
+                    Id = 3,
+                    PhotoName = "1",
+                    PortfolioId = 2,
                 },
             });
         }

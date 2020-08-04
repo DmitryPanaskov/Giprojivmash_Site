@@ -7,7 +7,7 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace GiprojivmahsIntegrationTests
+namespace ContactApiTests
 {
     [TestFixture]
     internal class ContactPhoneTest : IDisposable
@@ -18,7 +18,8 @@ namespace GiprojivmahsIntegrationTests
         [SetUp]
         public async Task Initializer()
         {
-            _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
+            _context = new GiprojivmashContext(new DbContextOptionsBuilder()
+                .UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
             await IntegrationTestInitializer.ClearContactPhone(_context);
             await IntegrationTestInitializer.SetContactPhone(_context);
         }
@@ -52,21 +53,21 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 1,
                     ContactId = 1,
-                    Number= "1",
+                    Number = "1",
                     Type = 1,
                 },
                 new ContactPhoneEntity
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number= "2",
+                    Number = "2",
                     Type = 1,
                 },
                 new ContactPhoneEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number= "1",
+                    Number = "1",
                     Type = 1,
                 },
                 new ContactPhoneEntity
@@ -110,14 +111,14 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number= "2",
+                    Number = "2",
                     Type = 1,
                 },
                 new ContactPhoneEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number= "1",
+                    Number = "1",
                     Type = 1,
                 },
             });
@@ -140,14 +141,14 @@ namespace GiprojivmahsIntegrationTests
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number= "2",
+                    Number = "2",
                     Type = 1,
                 },
                 new ContactPhoneEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number= "1",
+                    Number = "1",
                     Type = 1,
                 },
             });

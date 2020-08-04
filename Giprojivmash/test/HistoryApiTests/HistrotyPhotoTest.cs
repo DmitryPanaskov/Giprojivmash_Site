@@ -7,10 +7,10 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace GiprojivmahsIntegrationTests
+namespace HistoryApiTests
 {
     [TestFixture]
-    internal class PortfolioPhotoTest : IDisposable
+    internal class HistrotyPhotoTest : IDisposable
     {
         private GiprojivmashContext _context;
         private bool _disposedValue;
@@ -19,125 +19,126 @@ namespace GiprojivmahsIntegrationTests
         public async Task Initializer()
         {
             _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
-            await IntegrationTestInitializer.ClearPortfolioPhoto(_context);
-            await IntegrationTestInitializer.SetPortfolioPhoto(_context);
+            await IntegrationTestInitializer.ClearHistoryPhoto(_context);
+            await IntegrationTestInitializer.SetHistoryPhoto(_context);
         }
 
         [OneTimeTearDown]
         public async Task ClearData()
         {
-            await IntegrationTestInitializer.ClearPortfolioPhoto(_context);
+            await IntegrationTestInitializer.ClearHistory(_context);
+            await IntegrationTestInitializer.ClearHistoryPhoto(_context);
         }
 
         [Test]
-        public async Task CreatePortfolioPhoto_WhenCreatePortfolioPhoto_ShouldReturnWithNewPortfolioPhoto()
+        public async Task CreateHistoryPhoto_WhenCreateHistoryPhoto_ShouldReturnWithNewHistoryPhoto()
         {
             // Arrange
-            var portfolioPhotoService = ServiceInitializer.GetPortfolioPhoto(_context);
+            var historyPhotoService = ServiceInitializer.GetHistoryPhoto(_context);
 
             // Act
-            await portfolioPhotoService.CreateAsync(new PortfolioPhotoEntity
+            await historyPhotoService.CreateAsync(new HistoryPhotoEntity
             {
                 PhotoName = "Created",
-                PortfolioId = 1,
+                HistoryId = 1,
             });
 
-            var list = portfolioPhotoService.GetAll();
+            var list = historyPhotoService.GetAll();
 
             // Assert
-            list.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
+            list.Should().BeEquivalentTo(new List<HistoryPhotoEntity>
             {
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 1,
-                    PortfolioId = 1,
+                    HistoryId = 1,
                     PhotoName = "1",
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 2,
-                    PortfolioId = 1,
+                    HistoryId = 1,
                     PhotoName = "2",
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 3,
-                    PortfolioId = 2,
+                    HistoryId = 2,
                     PhotoName = "1",
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 4,
                     PhotoName = "Created",
-                    PortfolioId = 1,
+                    HistoryId = 1,
                 },
             });
         }
 
         [Test]
-        public async Task UpdatePortfolioPhoto_WhenUpdatePortfolioPhoto_ShouldReturnUpdatedPortfolioPhoto()
+        public async Task UpdateHistoryPhoto_WhenUpdateHistoryPhoto_ShouldReturnUpdatedHistoryPhoto()
         {
             // Arrange
-            var servicePortfolioPhoto = ServiceInitializer.GetPortfolioPhoto(_context);
+            var serviceHistoryPhoto = ServiceInitializer.GetHistoryPhoto(_context);
 
             // Act
-            await servicePortfolioPhoto.UpdateAsync(new PortfolioPhotoEntity
+            await serviceHistoryPhoto.UpdateAsync(new HistoryPhotoEntity
             {
                 Id = 1,
                 PhotoName = "Updated",
-                PortfolioId = 1,
+                HistoryId = 1,
             });
 
-            var list = servicePortfolioPhoto.GetAll();
+            var list = serviceHistoryPhoto.GetAll();
 
             // Assert
-            list.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
+            list.Should().BeEquivalentTo(new List<HistoryPhotoEntity>
             {
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 1,
                     PhotoName = "Updated",
-                    PortfolioId = 1,
+                    HistoryId = 1,
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 2,
                     PhotoName = "2",
-                    PortfolioId = 1,
+                    HistoryId = 1,
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 3,
                     PhotoName = "1",
-                    PortfolioId = 2,
+                    HistoryId = 2,
                 },
             });
         }
 
         [Test]
-        public async Task DeletePortfolioPhoto_WhenDeletePortfolioPhoto_ShouldReturnWithoutDeletedPortfolioPhoto()
+        public async Task DeleteHistoryPhoto_WhenDeleteHistoryPhoto_ShouldReturnWithoutDeletedHistoryPhoto()
         {
             // Arrange
-            var portfolioPhotoService = ServiceInitializer.GetPortfolioPhoto(_context);
+            var historyPhotoService = ServiceInitializer.GetHistoryPhoto(_context);
 
             // Act
-            await portfolioPhotoService.DeleteAsync(1);
-            var portfolioPhotoList = portfolioPhotoService.GetAll();
+            await historyPhotoService.DeleteAsync(1);
+            var historyPhotoList = historyPhotoService.GetAll();
 
             // Assert
-            portfolioPhotoList.Should().BeEquivalentTo(new List<PortfolioPhotoEntity>
+            historyPhotoList.Should().BeEquivalentTo(new List<HistoryPhotoEntity>
             {
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 2,
-                    PortfolioId = 1,
+                    HistoryId = 1,
                     PhotoName = "2",
                 },
-                new PortfolioPhotoEntity
+                new HistoryPhotoEntity
                 {
                     Id = 3,
                     PhotoName = "1",
-                    PortfolioId = 2,
+                    HistoryId = 2,
                 },
             });
         }
