@@ -31,7 +31,7 @@ namespace Giprojivmash.WEB
         {
             services.AddControllersWithViews();
             string connectionString = _configuration.GetConnectionString("GiprojivmashConnection");
-            services.AddDbContext<GiprojivmashContext>(options => options.UseMySql(connectionString));
+            services.AddDbContext<GiprojivmashContext>(options => options.UseMySQL(connectionString));
 
             services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
             services.AddScoped<IServiceSecondLayerService, ServiceSecondLayerService>();

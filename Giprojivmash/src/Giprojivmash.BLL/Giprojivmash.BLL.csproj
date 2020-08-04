@@ -13,5 +13,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Giprojivmash.DAL\Giprojivmash.DAL.csproj" />
   </ItemGroup>
-
 </Project>

@@ -32,12 +32,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Giprojivmash.BLL\Giprojivmash.BLL.csproj" />
-  </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Models\Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Giprojivmash.BLL\Giprojivmash.BLL.csproj" />
+    <ProjectReference Include="..\Giprojivmash.DAL\Giprojivmash.DAL.csproj" />
   </ItemGroup>
 </Project>
