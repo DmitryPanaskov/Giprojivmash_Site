@@ -7,7 +7,7 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace ServiceApiTests
+namespace GiprojivmashIntegrationTests
 {
     [TestFixture]
     internal class ServiceThirdLayerTest : IDisposable

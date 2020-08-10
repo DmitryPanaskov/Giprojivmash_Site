@@ -7,7 +7,7 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace PortfolioApiTests
+namespace GiprojivmashIntegrationTests
 {
     [TestFixture]
     internal class PortfolioPhotoTest : IDisposable

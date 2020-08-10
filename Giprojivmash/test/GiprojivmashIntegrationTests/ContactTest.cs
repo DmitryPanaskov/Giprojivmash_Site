@@ -7,7 +7,7 @@ using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace ContactApiTests
+namespace GiprojivmashIntegrationTests
 {
     [TestFixture]
     internal class ContactTest : IDisposable

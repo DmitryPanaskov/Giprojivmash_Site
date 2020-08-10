@@ -5,7 +5,7 @@ using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace PortfolioApiTests
+namespace GiprojivmashIntegrationTests
 {
     public static class IntegrationTestInitializer
     {
@@ -294,21 +294,6 @@ namespace PortfolioApiTests
         public static string GetConnectionString()
         {
             return "server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;";
-        }
-
-        public static async Task ClearAllTable(GiprojivmashContext context)
-        {
-            Validator(context);
-            await ClearServiceFirstLayer(context);
-            await ClearServiceSecondLayer(context);
-            await ClearServiceThirdLayer(context);
-            await ClearContact(context);
-            await ClearContactPhone(context);
-            await ClearPortfolio(context);
-            await ClearPortfolioPhoto(context);
-            await ClearHistory(context);
-            await ClearHistoryPhoto(context);
-            await ClearVacancy(context);
         }
 
         public static async Task ClearServiceFirstLayer(GiprojivmashContext context)

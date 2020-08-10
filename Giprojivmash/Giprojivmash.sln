@@ -28,13 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.WEB", "src\Gip
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Giprojivmash_Site", "src\Giprojivmash_Site\Giprojivmash_Site.sqlproj", "{7A301C7A-E167-4BEB-9982-1C27AC60B5B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactApiTests", "test\ContactApiTests\ContactApiTests.csproj", "{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoryApiTests", "test\HistoryApiTests\HistoryApiTests.csproj", "{D66E9759-BF0A-4D9B-9F82-0D887FC81867}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioApiTests", "test\PortfolioApiTests\PortfolioApiTests.csproj", "{ED2E6418-5556-4480-8124-850AA7007792}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceApiTests", "test\ServiceApiTests\ServiceApiTests.csproj", "{0CAEA55E-1313-48D4-8677-F61E05CB3017}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiprojivmashIntegrationTests", "test\GiprojivmashIntegrationTests\GiprojivmashIntegrationTests.csproj", "{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,18 +58,6 @@ Global
 		{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D66E9759-BF0A-4D9B-9F82-0D887FC81867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D66E9759-BF0A-4D9B-9F82-0D887FC81867}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D66E9759-BF0A-4D9B-9F82-0D887FC81867}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D66E9759-BF0A-4D9B-9F82-0D887FC81867}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED2E6418-5556-4480-8124-850AA7007792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED2E6418-5556-4480-8124-850AA7007792}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED2E6418-5556-4480-8124-850AA7007792}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED2E6418-5556-4480-8124-850AA7007792}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CAEA55E-1313-48D4-8677-F61E05CB3017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CAEA55E-1313-48D4-8677-F61E05CB3017}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CAEA55E-1313-48D4-8677-F61E05CB3017}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CAEA55E-1313-48D4-8677-F61E05CB3017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,9 +68,6 @@ Global
 		{3D3B43B3-880C-451D-A449-5767D85EBA73} = {B32953A3-6B30-4FDC-B145-0E489B259094}
 		{7A301C7A-E167-4BEB-9982-1C27AC60B5B9} = {B32953A3-6B30-4FDC-B145-0E489B259094}
 		{453AD2B9-C487-4DC8-B57F-11CDC5FFA394} = {4E45AE7F-5AE6-4EF5-9932-F3AA25A58D8D}
-		{D66E9759-BF0A-4D9B-9F82-0D887FC81867} = {4E45AE7F-5AE6-4EF5-9932-F3AA25A58D8D}
-		{ED2E6418-5556-4480-8124-850AA7007792} = {4E45AE7F-5AE6-4EF5-9932-F3AA25A58D8D}
-		{0CAEA55E-1313-48D4-8677-F61E05CB3017} = {4E45AE7F-5AE6-4EF5-9932-F3AA25A58D8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3DC6C856-BC51-44D0-B752-52E57CCB8EDC}
