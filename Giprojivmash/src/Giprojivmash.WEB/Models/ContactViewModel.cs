@@ -1,9 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Giprojivmash.DAL.Entities
+﻿namespace Giprojivmash.WEB.Models
 {
-    [Table("contact")]
-    public class ContactEntity : BaseEntity
+    public class ContactViewModel : BaseViewModel
     {
         public string FirstName { get; set; }
 

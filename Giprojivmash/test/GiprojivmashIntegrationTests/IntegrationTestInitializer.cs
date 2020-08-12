@@ -112,13 +112,17 @@ namespace GiprojivmashIntegrationTests
             {
                 new ContactEntity
                 {
-                    Address = "1",
+                    FirstName = "1",
+                    LastName = "1",
+                    Patronymic = "1",
                     Description = "1",
                     Photo = "1",
                 },
                 new ContactEntity
                 {
-                    Address = "2",
+                    FirstName = "2",
+                    LastName = "2",
+                    Patronymic = "2",
                     Description = "2",
                     Photo = "2",
                 },
@@ -131,34 +135,37 @@ namespace GiprojivmashIntegrationTests
             }
         }
 
-        public static async Task SetContactPhone(GiprojivmashContext context)
+        public static async Task SetContactData(GiprojivmashContext context)
         {
             Validator(context);
-            var phones = new List<ContactPhoneEntity>
+            var phones = new List<ContactDataEntity>
             {
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     ContactId = 1,
-                    Number = "1",
+                    Data = "1",
+                    SubData = "1",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     ContactId = 1,
-                    Number = "2",
+                    Data = "2",
+                    SubData = "2",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     ContactId = 2,
-                    Number = "1",
+                    Data = "1",
+                    SubData = "1",
                     Type = 1,
                 },
             };
 
             foreach (var phone in phones)
             {
-                await context.ContactPhone.AddAsync(phone);
+                await context.ContactData.AddAsync(phone);
                 await context.SaveChangesAsync();
             }
         }
@@ -320,10 +327,10 @@ namespace GiprojivmashIntegrationTests
             await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE contact");
         }
 
-        public static async Task ClearContactPhone(GiprojivmashContext context)
+        public static async Task ClearContactData(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE contactphone");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE contactdata");
         }
 
         public static async Task ClearHistory(GiprojivmashContext context)

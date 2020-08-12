@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.WEB.Models
 {
-    public class LayoutViewModel
+    public class LayoutViewModel : BaseViewModel
     {
         public IList<string> ServicesMenu { get; internal set; }
 

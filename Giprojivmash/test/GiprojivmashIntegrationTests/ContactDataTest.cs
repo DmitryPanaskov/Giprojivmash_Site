@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace GiprojivmashIntegrationTests
 {
     [TestFixture]
-    internal class ContactPhoneTest : IDisposable
+    internal class ContactDataTest : IDisposable
     {
         private GiprojivmashContext _context;
         private bool _disposedValue;
@@ -20,135 +20,146 @@ namespace GiprojivmashIntegrationTests
         {
             _context = new GiprojivmashContext(new DbContextOptionsBuilder()
                 .UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
-            await IntegrationTestInitializer.ClearContactPhone(_context);
-            await IntegrationTestInitializer.SetContactPhone(_context);
+            await IntegrationTestInitializer.ClearContactData(_context);
+            await IntegrationTestInitializer.SetContactData(_context);
         }
 
         [OneTimeTearDown]
         public async Task ClearData()
         {
-            await IntegrationTestInitializer.ClearContactPhone(_context);
+            await IntegrationTestInitializer.ClearContactData(_context);
         }
 
         [Test]
-        public async Task CreateContactPhone_WhenCreateContactPhone_ShouldReturnWithNewContactPhone()
+        public async Task CreateContactData_WhenCreateContactData_ShouldReturnWithNewContactData()
         {
             // Arrange
-            var contactPhoneService = ServiceInitializer.GetContactPhone(_context);
+            var contactDataService = ServiceInitializer.GetContactData(_context);
 
             // Act
-            await contactPhoneService.CreateAsync(new ContactPhoneEntity
+            await contactDataService.CreateAsync(new ContactDataEntity
             {
                 ContactId = 1,
-                Number = "Created",
+                Data = "Created",
+                SubData = "Created",
                 Type = 1,
             });
 
-            var list = contactPhoneService.GetAll();
+            var list = contactDataService.GetAll();
 
             // Assert
-            list.Should().BeEquivalentTo(new List<ContactPhoneEntity>
+            list.Should().BeEquivalentTo(new List<ContactDataEntity>
             {
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 1,
                     ContactId = 1,
-                    Number = "1",
+                    Data = "Created",
+                    SubData = "Created",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number = "2",
+                    Data = "Created",
+                    SubData = "Created",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number = "1",
+                    Data = "Created",
+                    SubData = "Created",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 4,
                     ContactId = 1,
-                    Number = "Created",
+                    Data = "Created",
+                    SubData = "Created",
                     Type = 1,
                 },
             });
         }
 
         [Test]
-        public async Task UpdateContactPhone_WhenUpdateContactPhone_ShouldReturnUpdatedContact()
+        public async Task UpdateContactData_WhenUpdateContactData_ShouldReturnUpdatedContactData()
         {
             // Arrange
-            var serviceContactPhone = ServiceInitializer.GetContactPhone(_context);
+            var servicecontactData = ServiceInitializer.GetContactData(_context);
 
             // Act
-            await serviceContactPhone.UpdateAsync(new ContactPhoneEntity
+            await servicecontactData.UpdateAsync(new ContactDataEntity
             {
                 Id = 1,
                 ContactId = 1,
-                Number = "Updated",
+                Data = "Updated",
+                SubData = "Updated",
                 Type = 1,
             });
 
-            var list = serviceContactPhone.GetAll();
+            var list = servicecontactData.GetAll();
 
             // Assert
-            list.Should().BeEquivalentTo(new List<ContactPhoneEntity>
+            list.Should().BeEquivalentTo(new List<ContactDataEntity>
             {
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 1,
                     ContactId = 1,
-                    Number = "Updated",
+                    Data = "Updated",
+                    SubData = "Updated",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number = "2",
+                    Data = "2",
+                    SubData = "2",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number = "1",
+                    Data = "1",
+                    SubData = "1",
                     Type = 1,
                 },
             });
         }
 
         [Test]
-        public async Task DeleteContactPhone_WhenDeleteContactPhone_ShouldReturnWithoutDeletedContactPhone()
+        public async Task DeletecontactData_WhenDeletecontactData_ShouldReturnWithoutDeletedcontactData()
         {
             // Arrange
-            var contactPhoneService = ServiceInitializer.GetContactPhone(_context);
+            var contactDataService = ServiceInitializer.GetContactData(_context);
 
             // Act
-            await contactPhoneService.DeleteAsync(1);
-            var contactPhoneList = contactPhoneService.GetAll();
+            await contactDataService.DeleteAsync(1);
+            var contactDataList = contactDataService.GetAll();
 
             // Assert
-            contactPhoneList.Should().BeEquivalentTo(new List<ContactPhoneEntity>
+            contactDataList.Should().BeEquivalentTo(new List<ContactDataEntity>
             {
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 2,
                     ContactId = 1,
-                    Number = "2",
+                    Data = "2",
+                    SubData = "2",
                     Type = 1,
                 },
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number = "1",
+                    Data = "1",
+                    SubData = "1",
                     Type = 1,
                 },
             });

@@ -41,6 +41,9 @@ namespace Giprojivmash.WEB
             services.AddScoped<IRepository<ServiceSecondLayerEntity>, GenericRepository<ServiceSecondLayerEntity>>();
             services.AddScoped<IRepository<ServiceThirdLayerEntity>, GenericRepository<ServiceThirdLayerEntity>>();
 
+            services.AddScoped<IRepository<ContactEntity>, GenericRepository<ContactEntity>>();
+            services.AddScoped<IRepository<ContactDataEntity>, GenericRepository<ContactDataEntity>>();
+
             var config = new MapperConfiguration(c =>
             {
                 c.AddProfile<Giprojivmash.BLL.Mapper.MappingProfile>();
@@ -69,7 +72,6 @@ namespace Giprojivmash.WEB
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

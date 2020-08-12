@@ -8,37 +8,37 @@ using Giprojivmash.DAL.Interfaces;
 
 namespace Giprojivmash.BLL.Services
 {
-    public class ContactPhoneService : IContactPhoneService
+    public class ContactDataService : IContactDataService
     {
-        private readonly IRepository<ContactPhoneEntity> _phoneRepository;
+        private readonly IRepository<ContactDataEntity> _phoneRepository;
 
-        public ContactPhoneService(
-            IRepository<ContactPhoneEntity> phoneRepository)
+        public ContactDataService(
+            IRepository<ContactDataEntity> phoneRepository)
         {
             _phoneRepository = phoneRepository;
         }
 
-        public async Task<ContactPhoneEntity> GetByIdAsync(int id)
+        public async Task<ContactDataEntity> GetByIdAsync(int id)
         {
            return await _phoneRepository.GetByIdAsync(id);
         }
 
-        public IEnumerable<ContactPhoneEntity> GetEntities(Func<ContactPhoneEntity, bool> predicate)
+        public IEnumerable<ContactDataEntity> GetEntities(Func<ContactDataEntity, bool> predicate)
         {
             return _phoneRepository.GetEntities(predicate).ToList();
         }
 
-        public IEnumerable<ContactPhoneEntity> GetAll()
+        public IEnumerable<ContactDataEntity> GetAll()
         {
             return _phoneRepository.GetAll().ToList();
         }
 
-        public async Task CreateAsync(ContactPhoneEntity entity)
+        public async Task CreateAsync(ContactDataEntity entity)
         {
             await _phoneRepository.CreateAsync(entity);
         }
 
-        public async Task UpdateAsync(ContactPhoneEntity entity)
+        public async Task UpdateAsync(ContactDataEntity entity)
         {
             await _phoneRepository.UpdateAsync(entity);
         }

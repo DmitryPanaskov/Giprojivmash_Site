@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS contactphone;
+DROP TABLE IF EXISTS contactdata;
 DROP TABLE IF EXISTS contact;
 
 DROP TABLE IF EXISTS historyphoto;
@@ -16,15 +16,18 @@ DROP TABLE IF EXISTS vacancy;
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
     Photo varchar(50),
-    Description varchar(5000),
-    Address varchar(500),
+    Description varchar(500),
+    FirstName varchar(500),
+    LastName varchar(500),
+    Patronymic varchar(500),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE contactphone(
+CREATE TABLE contactdata(
     Id int NOT NULL AUTO_INCREMENT,
     ContactId int NOT NULL,
-    Number varchar(50),
+    Data varchar(50),
+    SubData varchar(50),
     Type int,
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

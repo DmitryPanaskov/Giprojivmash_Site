@@ -11,11 +11,11 @@ namespace Giprojivmash.BLL.Services
     public class ContactService : IContactService
     {
         private readonly IRepository<ContactEntity> _contactRepository;
-        private readonly IRepository<ContactPhoneEntity> _contactPhoneRepository;
+        private readonly IRepository<ContactDataEntity> _contactPhoneRepository;
 
         public ContactService(
             IRepository<ContactEntity> contactRepository,
-            IRepository<ContactPhoneEntity> contactPhoneRepository)
+            IRepository<ContactDataEntity> contactPhoneRepository)
         {
             _contactRepository = contactRepository;
             _contactPhoneRepository = contactPhoneRepository;

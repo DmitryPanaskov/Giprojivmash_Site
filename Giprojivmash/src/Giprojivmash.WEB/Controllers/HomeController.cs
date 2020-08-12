@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
 using Giprojivmash.WEB.Models;
@@ -17,6 +16,7 @@ namespace Giprojivmash.WEB.Controllers
         private readonly IServiceThirdLayerService _serviceThirdLayerService;
         private readonly IMapper _mapper;
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         public HomeController(ILogger<HomeController> logger, IMapper mapper,
         IServiceFirstLayerService serviceFirstLayerService,
         IServiceSecondLayerService serviceSecondLayerService,
@@ -29,6 +29,8 @@ namespace Giprojivmash.WEB.Controllers
             _logger = logger;
         }
 
+        public LayoutViewModel LayoutViewModel { get; set; }
+
         public IActionResult Index()
         {
             return View(/*"Temp"*/);
@@ -37,19 +39,19 @@ namespace Giprojivmash.WEB.Controllers
         [HttpGet]
         public IActionResult Design()
         {
-            var model = new DesignViewModel();
-            var serviceFirstLayer = _serviceFirstLayerService.GetAll().ElementAt(0);
-            var serviceSecondLayerList = _serviceSecondLayerService.GetEntities(m=>m.ServiceFirstLayerId == serviceFirstLayer.Id);
-            var serviceThirdLayerList = _serviceThirdLayerService.GetAllServiceThirdLayerByServiceFirstId(serviceFirstLayer.Id);
+            var model = new ServiceViewModel();
+            var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
+            var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
+            var serviceThirdLayerList = _serviceThirdLayerService.GetAll();
 
-            model.ServiceFirstLayer = _mapper.Map<ServiceFirstLayerViewModel>(serviceFirstLayer);
+            model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
             model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
             model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
             return View(model);
         }
 
-        /*
         [HttpGet]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S4144:Methods should not have identical implementations", Justification = "<>")]
         public IActionResult Services()
         {
             var model = new ServiceViewModel();
@@ -62,7 +64,7 @@ namespace Giprojivmash.WEB.Controllers
             model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
             return View(model);
         }
-           */
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         public IActionResult Privacy()
         {

@@ -1,6 +1,6 @@
-﻿@model Giprojivmash.WEB.Models.DesignViewModel
+﻿@model Giprojivmash.WEB.Models.ServiceViewModel
 @{
-    ViewData["Title"] = "Контакты";
+    ViewData["Title"] = "Проектировнаие";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
@@ -10,11 +10,14 @@
 
         </div>
         <div class="col-8">
-            <h1>@Model.ServiceFirstLayer.Title</h1>
+            <h1>@Model.ServiceFirstLayerList.ElementAt(0).Title</h1>
             <p>
-                @Model.ServiceFirstLayer.Description
+                @Model.ServiceFirstLayerList.ElementAt(0).Description
             </p>
-            @for (var i = 0; i < Model.ServiceSecondLayerList.Count; i++)
+            @{ 
+                var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.ServiceFirstLayerList.ElementAt(0).Id).ToList();
+            }
+            @for (var i = 0; i < serviceSecondLayerList.Count; i++)
             {
                 var currentSecondService = Model.ServiceSecondLayerList.ElementAt(i); 
                 <p>

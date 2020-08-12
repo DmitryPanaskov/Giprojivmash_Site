@@ -2,8 +2,8 @@
 {
     public class ServiceThirdLayerDto : BaseDto
     {
-        public int ServiceSecondLayerId { get; set; }
-
         public string Description { get; set; }
+
+        public int ServiceSecondLayerId { get; set; }
     }
 }

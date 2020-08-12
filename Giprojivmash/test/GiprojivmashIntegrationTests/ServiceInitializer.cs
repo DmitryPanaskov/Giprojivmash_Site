@@ -32,12 +32,12 @@ namespace GiprojivmashIntegrationTests
         public static IContactService GetContact(GiprojivmashContext context)
         {
             return new ContactService(new GenericRepository<ContactEntity>(context),
-                new GenericRepository<ContactPhoneEntity>(context));
+                new GenericRepository<ContactDataEntity>(context));
         }
 
-        public static IContactPhoneService GetContactPhone(GiprojivmashContext context)
+        public static IContactDataService GetContactData(GiprojivmashContext context)
         {
-            return new ContactPhoneService(new GenericRepository<ContactPhoneEntity>(context));
+            return new ContactDataService(new GenericRepository<ContactDataEntity>(context));
         }
 
         public static IHistoryService GetHistory(GiprojivmashContext context)

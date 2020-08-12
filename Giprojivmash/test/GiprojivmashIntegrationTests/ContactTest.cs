@@ -21,15 +21,15 @@ namespace GiprojivmashIntegrationTests
             _context = new GiprojivmashContext(new DbContextOptionsBuilder().UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
             await IntegrationTestInitializer.ClearContact(_context);
             await IntegrationTestInitializer.SetContact(_context);
-            await IntegrationTestInitializer.ClearContactPhone(_context);
-            await IntegrationTestInitializer.SetContactPhone(_context);
+            await IntegrationTestInitializer.ClearContactData(_context);
+            await IntegrationTestInitializer.SetContactData(_context);
         }
 
         [OneTimeTearDown]
         public async Task ClearData()
         {
             await IntegrationTestInitializer.ClearContact(_context);
-            await IntegrationTestInitializer.ClearContactPhone(_context);
+            await IntegrationTestInitializer.ClearContactData(_context);
         }
 
         [Test]
@@ -41,7 +41,9 @@ namespace GiprojivmashIntegrationTests
             // Act
             await contactService.CreateAsync(new ContactEntity
             {
-                Address = "Created",
+                FirstName = "Created",
+                LastName = "Created",
+                Patronymic = "Created",
                 Description = "Created",
                 Photo = "Created",
             });
@@ -55,20 +57,26 @@ namespace GiprojivmashIntegrationTests
                 {
                     Id = 1,
                     Description = "1",
-                    Address = "1",
+                    FirstName = "1",
+                    LastName = "1",
+                    Patronymic = "1",
                     Photo = "1",
                 },
                 new ContactEntity
                 {
                     Id = 2,
                     Description = "2",
-                    Address = "2",
+                    FirstName = "2",
+                    LastName = "2",
+                    Patronymic = "2",
                     Photo = "2",
                 },
                 new ContactEntity
                 {
                     Id = 3,
-                    Address = "Created",
+                    FirstName = "Created",
+                    LastName = "Created",
+                    Patronymic = "Created",
                     Description = "Created",
                     Photo = "Created",
                 },
@@ -86,7 +94,9 @@ namespace GiprojivmashIntegrationTests
             {
                 Id = 1,
                 Description = "Updated",
-                Address = "Updated",
+                FirstName = "Updated",
+                LastName = "Updated",
+                Patronymic = "Updated",
                 Photo = "Updated",
             });
 
@@ -98,7 +108,9 @@ namespace GiprojivmashIntegrationTests
                 new ContactEntity
                 {
                     Id = 1,
-                    Address = "Updated",
+                    FirstName = "Updated",
+                    LastName = "Updated",
+                    Patronymic = "Updated",
                     Description = "Updated",
                     Photo = "Updated",
                 },
@@ -106,18 +118,20 @@ namespace GiprojivmashIntegrationTests
                 {
                     Id = 2,
                     Description = "2",
-                    Address = "2",
+                    FirstName = "2",
+                    LastName = "2",
+                    Patronymic = "2",
                     Photo = "2",
                 },
             });
         }
 
         [Test]
-        public async Task DeleteContact_WhenDeleteContact_ShouldReturnWithoutDeletedContactAndWithoutContactPhone()
+        public async Task DeleteContact_WhenDeleteContact_ShouldReturnWithoutDeletedContactAndWithoutContactData()
         {
             // Arrange
             var contactService = ServiceInitializer.GetContact(_context);
-            var contactPhoneService = ServiceInitializer.GetContactPhone(_context);
+            var contactPhoneService = ServiceInitializer.GetContactData(_context);
 
             // Act
             await contactService.DeleteAsync(1);
@@ -131,17 +145,20 @@ namespace GiprojivmashIntegrationTests
                 {
                     Id = 2,
                     Description = "2",
-                    Address = "2",
+                    FirstName = "2",
+                    LastName = "2",
+                    Patronymic = "2",
                     Photo = "2",
                 },
             });
-            contactPhoneList.Should().BeEquivalentTo(new List<ContactPhoneEntity>
+            contactPhoneList.Should().BeEquivalentTo(new List<ContactDataEntity>
             {
-                new ContactPhoneEntity
+                new ContactDataEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Number = "1",
+                    Data = "1",
+                    SubData = "1",
                     Type = 1,
                 },
             });

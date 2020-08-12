@@ -1,10 +1,12 @@
 ﻿namespace Giprojivmash.BLL.DTO
 {
-    public class ContactPhoneDto : BaseDto
+    public class ContactDataDto : BaseDto
     {
         public int ContactId { get; set; }
 
-        public string Number { get; set; }
+        public string Data { get; set; }
+
+        public string SubData { get; set; }
 
         public int Type { get; set; }
     }

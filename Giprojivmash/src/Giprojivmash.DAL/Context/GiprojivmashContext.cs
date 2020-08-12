@@ -24,7 +24,7 @@ namespace Giprojivmash.DAL.Context
 
         public virtual DbSet<ContactEntity> Contact { get; set; }
 
-        public virtual DbSet<ContactPhoneEntity> ContactPhone { get; set; }
+        public virtual DbSet<ContactDataEntity> ContactData { get; set; }
 
         public virtual DbSet<HistoryEntity> History { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.WEB.Models
 {
-    public class ServiceViewModel : BaseViewModel
+    public class ServiceViewModel : LayoutViewModel
     {
         public IList<ServiceFirstLayerViewModel> ServiceFirstLayerList { get; internal set; }
 
