@@ -46,7 +46,6 @@ namespace Giprojivmash.WEB
 
             var config = new MapperConfiguration(c =>
             {
-                c.AddProfile<Giprojivmash.BLL.Mapper.MappingProfile>();
                 c.AddProfile<Giprojivmash.WEB.Mapper.MappingProfile>();
             });
             services.AddSingleton<IMapper>(s => config.CreateMapper());
