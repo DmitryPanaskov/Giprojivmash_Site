@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Giprojivmash.DAL.Entities;
+using Giprojivmash.WEB.Models.Enums;
 
 namespace Giprojivmash.DAL.Context
 {
@@ -13,6 +14,8 @@ namespace Giprojivmash.DAL.Context
             InitializerServiceFirstLayer(context);
             InitializerServiceSecondLayer(context);
             InitializerServiceThirdLayer(context);
+            InitializerContact(context);
+            InitializerContactData(context);
         }
 
         private static void InitializerServiceFirstLayer(GiprojivmashContext context)
@@ -23,42 +26,42 @@ namespace Giprojivmash.DAL.Context
                 {
                     new ServiceFirstLayerEntity
                     {
-                        Description = "1 Проектирование зданий и сооружений I и II уровней ответственности",
+                        Description = "Проектирование зданий и сооружений I и II уровней ответственности",
                         PhotoTitle = "design.png",
                         DescriptionShort = "Комплексные решения в проектировании объектов любой сложности",
                         Title = "Проектирование",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "2 Обоснование инвестиций",
+                        Description = "Обоснование инвестиций",
                         PhotoTitle = "engineering.png",
                         DescriptionShort = "Инженерные и консультационные услуги на профессиональном уровне",
                         Title = "Обоснование инвестиций",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "3 Работы и услуги, составляющие геодезическую и картографическую деятельность специального назначения",
+                        Description = "Геодезия",
                         PhotoTitle = "geodesy.png",
                         DescriptionShort = "???????????",
                         Title = "Геодезия",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "5 Экологий",
-                        PhotoTitle = "fireSafety.png",
+                        Description = "Экология",
+                        PhotoTitle = "ecology.png",
                         DescriptionShort = "?????????????",
-                        Title = "Экологий",
+                        Title = "Экология",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "4 Осуществление деятельности в области промышленной безопасности:",
+                        Description = "Промышленная безопасность",
                         PhotoTitle = "industrialSafety.png",
                         DescriptionShort = "Проектирование технических устройств применяемых на опасных производственных объектах",
                         Title = "Промышленная безопасность",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "6 Осуществление деятельности по обеспечению безопасности юридических и физических лиц:",
+                        Description = "Системы безопасности",
                         PhotoTitle = "safety.png",
                         DescriptionShort = "??????????????????",
                         Title = "Системы безопасности",
@@ -196,6 +199,70 @@ namespace Giprojivmash.DAL.Context
                 foreach (var item in serviceThirdLayerEntities)
                 {
                     context.Set<ServiceThirdLayerEntity>().Add(item);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        private static void InitializerContact(GiprojivmashContext context)
+        {
+            if (!context.Contact.Any())
+            {
+                var contactEntities = new List<ContactEntity>
+                {
+                    new ContactEntity
+                    {
+                        FirstName = "Гипроживмаш",
+                    },
+                };
+
+                foreach (var item in contactEntities)
+                {
+                    context.Set<ContactEntity>().Add(item);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        private static void InitializerContactData(GiprojivmashContext context)
+        {
+            if (!context.Contact.Any())
+            {
+                var contactEntities = new List<ContactDataEntity>
+                {
+                    new ContactDataEntity
+                    {
+                         ContactId = 1,
+                         Data = "+375 232 53-27-38",
+                         SubData = "+375232532738",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 1,
+                         Data = "+375 232 53-50-30",
+                         SubData = "+375232535030",
+                         Type = ContactDataType.Fax,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 1,
+                         Data = "post@gipro.gomel.by",
+                         SubData = "post@gipro.gomel.by",
+                         Type = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 1,
+                         Data = "post@gipro.gomel.by",
+                         SubData = "post@gipro.gomel.by",
+                         Type = ContactDataType.VK,
+                    },
+                };
+
+                foreach (var item in contactEntities)
+                {
+                    context.Set<ContactDataEntity>().Add(item);
                     context.SaveChanges();
                 }
             }

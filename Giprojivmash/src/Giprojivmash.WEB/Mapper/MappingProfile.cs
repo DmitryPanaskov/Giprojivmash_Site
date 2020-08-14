@@ -1,5 +1,6 @@
 ﻿using Giprojivmash.DAL.Entities;
 using Giprojivmash.WEB.Models;
+using Giprojivmash.WEB.Models.Service;
 
 namespace Giprojivmash.WEB.Mapper
 {

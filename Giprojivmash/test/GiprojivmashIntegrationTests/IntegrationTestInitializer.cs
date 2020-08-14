@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
+using Giprojivmash.WEB.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace GiprojivmashIntegrationTests
@@ -145,21 +146,21 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "1",
                     SubData = "1",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
             };
 

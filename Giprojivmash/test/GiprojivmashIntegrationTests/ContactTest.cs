@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
+using Giprojivmash.WEB.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
@@ -159,7 +160,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
             });
         }

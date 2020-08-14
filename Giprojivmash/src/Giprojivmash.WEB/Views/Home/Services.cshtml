@@ -1,28 +1,10 @@
-﻿@model Giprojivmash.WEB.Models.ServiceViewModel
+﻿@model Giprojivmash.WEB.Models.Service.ServiceViewModel
 
 @{
     ViewData["Title"] = "Услуги";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <h1>
-        Услуги
-    </h1>
-    <div class="row">
-        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
-        {
-        <a href="#" class="col-md-4 a-block">
-            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
-                <span class="caption">
-                    <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
-                    <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
-                </span>
-            </div>
-        </a>
-        }
-    </div>
-</div>
 
 <style>
     .thumbnail {
