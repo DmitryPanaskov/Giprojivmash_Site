@@ -1,0 +1,56 @@
+﻿@model Giprojivmash.WEB.Models.Service.ServiceViewModel
+@{
+    ViewData["Title"] = Model.CurrentServiceFirstLayer.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
+                {
+                    if (Model.ServiceFirstLayerList.ElementAt(i).Title == Model.CurrentServiceFirstLayer.Title)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.ActionNameList.ElementAt(i)" asp-controller="Service" aria-selected="false">@Model.ServiceFirstLayerList.ElementAt(i).Title</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.ActionNameList.ElementAt(i)" asp-controller="Service" aria-selected="false">@Model.ServiceFirstLayerList.ElementAt(i).Title</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8">
+            <h1>@Model.CurrentServiceFirstLayer.Title</h1>
+            <p>
+                @Model.CurrentServiceFirstLayer.Description
+            </p>
+            @{
+                var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.CurrentServiceFirstLayer.Id).ToList();
+            }
+            @for (var i = 0; i < serviceSecondLayerList.Count; i++)
+            {
+                var currentSecondService = Model.ServiceSecondLayerList.ElementAt(i);
+                <p class="pl-3">
+                    @currentSecondService.Description
+                </p>
+                var serviceThirdLAyerList = Model.ServiceThirdLayerList.Where(m => m.ServiceSecondLayerId == currentSecondService.Id).ToList();
+                @for (var j = 0; j < serviceThirdLAyerList.Count; j++)
+                {
+                    <p class="pl-5">
+                        @serviceThirdLAyerList.ElementAt(j).Description
+                    </p>
+                }
+            }
+            <p>
+            </p>
+        </div>
+    </div>
+</div>
+
+

@@ -1,4 +1,4 @@
-﻿namespace Giprojivmash.WEB.Models
+﻿namespace Giprojivmash.WEB.Models.Service
 {
     public class ServiceThirdLayerViewModel : BaseViewModel
     {

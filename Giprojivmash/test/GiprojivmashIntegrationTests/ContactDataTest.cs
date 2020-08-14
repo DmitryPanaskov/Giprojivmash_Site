@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
+using Giprojivmash.WEB.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
@@ -42,7 +43,7 @@ namespace GiprojivmashIntegrationTests
                 ContactId = 1,
                 Data = "Created",
                 SubData = "Created",
-                Type = 1,
+                Type = ContactDataType.WorkTelephone,
             });
 
             var list = contactDataService.GetAll();
@@ -56,7 +57,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Created",
                     SubData = "Created",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -64,7 +65,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Created",
                     SubData = "Created",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -72,7 +73,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "Created",
                     SubData = "Created",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -80,7 +81,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Created",
                     SubData = "Created",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
             });
         }
@@ -98,7 +99,7 @@ namespace GiprojivmashIntegrationTests
                 ContactId = 1,
                 Data = "Updated",
                 SubData = "Updated",
-                Type = 1,
+                Type = ContactDataType.WorkTelephone,
             });
 
             var list = servicecontactData.GetAll();
@@ -112,7 +113,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Updated",
                     SubData = "Updated",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -120,7 +121,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -128,7 +129,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
             });
         }
@@ -152,7 +153,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -160,7 +161,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = 1,
+                    Type = ContactDataType.WorkTelephone,
                 },
             });
         }

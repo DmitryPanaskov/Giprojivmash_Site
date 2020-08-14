@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Giprojivmash.WEB.Models.Enums;
 
 namespace Giprojivmash.DAL.Entities
 {
@@ -11,6 +12,6 @@ namespace Giprojivmash.DAL.Entities
 
         public string SubData { get; set; }
 
-        public int Type { get; set; }
+        public ContactDataType Type { get; set; }
     }
 }

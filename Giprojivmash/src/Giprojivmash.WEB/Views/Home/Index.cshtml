@@ -1,6 +1,7 @@
-﻿@model IndexViewModel
+﻿@model Giprojivmash.WEB.Models.Home.IndexViewModel
 @{
     ViewData["Title"] = "Главная";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container-fluid">
@@ -23,7 +24,7 @@
         </div>
     </div>
     <div class="row mt-3">
-        <div class="d-none d-md-flex align-self-center p-5 col-md-4" data-aos="fade-right">
+        <div class="d-md-flex align-self-center p-5 col-md-4" data-aos="fade-right">
             <img src="~/images/logo/logo_gipro_blue_bim.png" class="img img-fluid" alt="Гипроживмаш BIM" />
         </div>
         <div class="col-md-8" data-aos="fade-left">
@@ -43,6 +44,19 @@
             </p>
 
         </div>
+    </div>
+    <div class="row">
+        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
+        {
+            <a href="#" class="col-md-4 a-block">
+                <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
+                    <span class="caption">
+                        <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
+                        <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
+                    </span>
+                </div>
+            </a>
+        }
     </div>
     <div class="row mt-3 mb-3">
         <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
@@ -77,6 +91,85 @@
         </div>
     </div>
 </div>
+
+<style>
+    .thumbnail {
+        background-size: cover;
+        width: 100%;
+        padding: 35%;
+        -webkit-filter: brightness(80%);
+        filter: brightness(80%);
+        /*
+        -webkit-transition: all .15s;
+        transition: all .15s;
+            */
+    }
+
+        .thumbnail:hover {
+            -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+        }
+
+            .thumbnail:hover .caption {
+                height: 60%;
+                top: 20%
+            }
+
+            .thumbnail:hover .description {
+                position: relative;
+                opacity: 1;
+                visibility: visible;
+                -webkit-transition: all .3s linear;
+                transition: all .3s linear;
+            }
+
+
+
+    .caption {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        position: absolute;
+        background-color: rgba(0, 105, 155, 0.7);
+        width: 70%;
+        height: 50%;
+        top: 25%;
+        left: 15%;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        line-height: 1.4;
+        /*
+        -webkit-transition: all .15s linear;
+        transition: all .15s linear;
+            */
+    }
+
+        .caption .name {
+            width: 100%;
+            color: white;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .caption .description {
+            width: 100%;
+            visibility: hidden;
+            position: absolute;
+            opacity: 0;
+            font-size: 13px;
+        }
+</style>
 
 @section Scripts{
     <script src="~/lib/particles/particles.min.js"></script>
