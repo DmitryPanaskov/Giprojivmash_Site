@@ -36,6 +36,7 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult Design()
         {
             var model = InitializeServiceViewModel(ServiceType.Design);
+            ViewData["Title"] = "Оказание услуг по проектированию в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
@@ -44,22 +45,25 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult InvestmentJustification()
         {
             var model = InitializeServiceViewModel(ServiceType.InvestmentJustification);
+            ViewData["Title"] = "Оказание услуг по разработке обоснования инвестиций в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/geodeziya")]
+        [Route("/uslugi/inzhenerno-geodezicheskie-izyskaniya")]
         public IActionResult Geodesy()
         {
             var model = InitializeServiceViewModel(ServiceType.Geodesy);
+            ViewData["Title"] = "Оказание услуг по проведению инженерно-геодезических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/ekologiya")]
+        [Route("/uslugi/inzhenerno-ekologicheskie-izyskaniya")]
         public IActionResult Ecology()
         {
             var model = InitializeServiceViewModel(ServiceType.Ecology);
+            ViewData["Title"] = "Оказание услуг по проведению инженерно-экологических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
@@ -68,6 +72,7 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult IndustrialSafety()
         {
             var model = InitializeServiceViewModel(ServiceType.IndustrialSafety);
+            ViewData["Title"] = "Оказание услуг в области промышленной безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
@@ -76,12 +81,13 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult SystemSafefty()
         {
             var model = InitializeServiceViewModel(ServiceType.SystemSafefty);
+            ViewData["Title"] = "Оказание услуг по проектированию систем пожарабезопасности, системы охраны и безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             return View("Service", model);
         }
 
-        private ServiceViewModel InitializeServiceViewModel(ServiceType service)
+        private ServicePageViewModel InitializeServiceViewModel(ServiceType service)
         {
-            var model = new ServiceViewModel();
+            var model = new ServicePageViewModel();
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
             var serviceThirdLayerList = _serviceThirdLayerService.GetAll();

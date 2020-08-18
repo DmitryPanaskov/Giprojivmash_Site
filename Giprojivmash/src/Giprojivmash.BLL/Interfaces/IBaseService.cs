@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IBaseInterface<T>
+    public interface IBaseService<T>
     {
         Task<T> GetByIdAsync(int id);
 

@@ -1,4 +1,4 @@
-﻿namespace Giprojivmash.WEB.Models
+﻿namespace Giprojivmash.WEB.Models.Contact
 {
     public class ContactViewModel : BaseViewModel
     {

@@ -1,4 +1,4 @@
-14.08.2020 14:44:53
+18.08.2020 9:47:21
 MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'giprojivmash_site.contact' doesn't exist
    at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
    at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
@@ -16,8 +16,8 @@ MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'giprojivmash_site.con
    at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
    at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
    at System.Linq.Queryable.Any[TSource](IQueryable`1 source)
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerContact(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 209
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 17
-   at Giprojivmash.WEB.Program.Main(String[] args) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerContact(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 209
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 17
+   at Giprojivmash.WEB.Program.Main(String[] args) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
 ConnectionString: server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;
 --------------------------------------------------------------

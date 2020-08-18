@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IHistoryPhotoService : IBaseInterface<HistoryPhotoEntity>
+    public interface IHistoryPhotoService : IBaseService<HistoryPhotoEntity>
     {
     }
 }

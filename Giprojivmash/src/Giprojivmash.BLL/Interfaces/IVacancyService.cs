@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IVacancyService : IBaseInterface<VacancyEntity>
+    public interface IVacancyService : IBaseService<VacancyEntity>
     {
     }
 }

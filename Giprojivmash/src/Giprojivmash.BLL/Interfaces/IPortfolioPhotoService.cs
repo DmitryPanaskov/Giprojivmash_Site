@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IPortfolioPhotoService : IBaseInterface<PortfolioPhotoEntity>
+    public interface IPortfolioPhotoService : IBaseService<PortfolioPhotoEntity>
     {
     }
 }

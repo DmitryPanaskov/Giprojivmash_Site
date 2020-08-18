@@ -40,17 +40,17 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "Геодезия",
+                        Description = "Инженерно-геодезические изыскания",
                         PhotoTitle = "geodesy.png",
-                        DescriptionShort = "???????????",
-                        Title = "Геодезия",
+                        DescriptionShort = "Инженерно-геодезические изыскания с использованием высокоточное оборудование и современное програмное обеспечение",
+                        Title = "Инженерно-геодезические изыскания",
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "Экология",
+                        Description = "Инженерно-экологические изыскания",
                         PhotoTitle = "ecology.png",
-                        DescriptionShort = "?????????????",
-                        Title = "Экология",
+                        DescriptionShort = "Инженерно-экологические изыскания с использованием современного оборудование и современное програмное обеспечение",
+                        Title = "Инженерно-экологические изыскания",
                     },
                     new ServiceFirstLayerEntity
                     {
@@ -61,9 +61,9 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
-                        Description = "Системы безопасности",
+                        Description = "Проектирование систем пожаробезопасности и систем охраны",
                         PhotoTitle = "safety.png",
-                        DescriptionShort = "??????????????????",
+                        DescriptionShort = "Проектирование систем пожаробезопасности и систем охраны",
                         Title = "Системы безопасности",
                     },
                 };
@@ -85,7 +85,12 @@ namespace Giprojivmash.DAL.Context
                     new ServiceSecondLayerEntity
                     {
                         ServiceFirstLayerId = 1,
-                        Description = "1.2 Разработка разделов проектной документации",
+                        Description = "1.1 Разработка проектной документации для строительства следующих видов зданий и сооружений I и II уровней ответственности:",
+                    },
+                    new ServiceSecondLayerEntity
+                    {
+                        ServiceFirstLayerId = 1,
+                        Description = "1.2 Разработка разделов проектной документации:",
                     },
                     new ServiceSecondLayerEntity
                     {
@@ -212,7 +217,64 @@ namespace Giprojivmash.DAL.Context
                 {
                     new ContactEntity
                     {
+                        // id = 1
                         FirstName = "Гипроживмаш",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 2
+                        Position = "Директор",
+                        FirstName = "Дмитрий",
+                        LastName = "Шило",
+                        Patronymic = "Иванович",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 3
+                        Position = "Главный инженер",
+                        FirstName = "Екатерина",
+                        LastName = "Шаповалова",
+                        Patronymic = "Игоревна",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 4
+                        Position = "Заместитель главного инженера",
+                        FirstName = "Юрий",
+                        LastName = "Дубов",
+                        Patronymic = "Александрович",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 5
+                        Position = "ГИП",
+                        FirstName = "Грибанов",
+                        LastName = "Евгений",
+                        Patronymic = "Юрьевич",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 6
+                        Position = "ГИП",
+                        FirstName = "Ковалев",
+                        LastName = "Сергей",
+                        Patronymic = "Валерьевич",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 7
+                        Position = "ГИП",
+                        FirstName = "Марочкин",
+                        LastName = "Анатолий",
+                        Patronymic = "Вячеславович",
+                    },
+                    new ContactEntity
+                    {
+                        // id = 8
+                        Position = "ГИП",
+                        FirstName = "Петренко",
+                        LastName = "Ирина",
+                        Patronymic = "Михайловна",
                     },
                 };
 
@@ -224,6 +286,7 @@ namespace Giprojivmash.DAL.Context
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<>")]
         private static void InitializerContactData(GiprojivmashContext context)
         {
             if (!context.Contact.Any())
@@ -257,6 +320,55 @@ namespace Giprojivmash.DAL.Context
                          Data = "post@gipro.gomel.by",
                          SubData = "post@gipro.gomel.by",
                          Type = ContactDataType.VK,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 2,
+                         Data = "+375 232 53-27-38",
+                         SubData = "+375232532738",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 3,
+                         Data = "+375 232 53-27-05",
+                         SubData = "+375232532705",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 4,
+                         Data = "+375 232 53-27-38",
+                         SubData = "+375232532738",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 5,
+                         Data = "+375 232 53-27-32",
+                         SubData = "+375232532732",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 6,
+                         Data = "+375 232 53-61-09",
+                         SubData = "+375232536109",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 7,
+                         Data = "+375 232 53-27-39",
+                         SubData = "+375232532739",
+                         Type = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 8,
+                         Data = "+375 232 53-61-07",
+                         SubData = "+375232536107",
+                         Type = ContactDataType.WorkTelephone,
                     },
                 };
 
