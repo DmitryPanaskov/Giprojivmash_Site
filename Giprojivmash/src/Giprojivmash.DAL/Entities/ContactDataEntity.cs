@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
 
 namespace Giprojivmash.DAL.Entities
 {

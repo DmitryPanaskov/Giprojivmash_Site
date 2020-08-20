@@ -10,38 +10,6 @@ namespace Giprojivmash.WEB.Models.Service
 
         public IList<ServiceThirdLayer> ServiceThirdLayerList { get; internal set; }
 
-        public List<SidebarLineViewModel> Sidebar { get; } = new List<SidebarLineViewModel>
-        {
-            new SidebarLineViewModel
-            {
-                SidebarAction = "Design",
-                SidebarName = "Проектирование",
-            },
-            new SidebarLineViewModel
-            {
-                SidebarAction = "InvestmentJustification",
-                SidebarName = "Обоснование инвестиций",
-            },
-            new SidebarLineViewModel
-            {
-                SidebarAction = "Geodesy",
-                SidebarName = "Инженерно-геодезические изыскания",
-            },
-            new SidebarLineViewModel
-            {
-                SidebarAction = "Ecology",
-                SidebarName = "Инженерно-экологические изыскания",
-            },
-            new SidebarLineViewModel
-            {
-                SidebarAction = "IndustrialSafety",
-                SidebarName = "Промышленная безопасность",
-            },
-            new SidebarLineViewModel
-            {
-                SidebarAction = "SystemSafefty",
-                SidebarName = "Системы безопасности",
-            },
-        };
+        public IList<SidebarLineViewModel> Sidebar { get;  internal set; }
     }
 }

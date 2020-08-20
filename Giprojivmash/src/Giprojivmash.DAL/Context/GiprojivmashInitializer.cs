@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Giprojivmash.DAL.Entities;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
 
 namespace Giprojivmash.DAL.Context
 {

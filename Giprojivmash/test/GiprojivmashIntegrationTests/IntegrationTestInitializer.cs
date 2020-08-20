@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace GiprojivmashIntegrationTests

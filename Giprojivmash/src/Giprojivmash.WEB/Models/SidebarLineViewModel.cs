@@ -1,4 +1,4 @@
-﻿namespace Giprojivmash.WEB.Models.Service
+﻿namespace Giprojivmash.WEB.Models
 {
     public class SidebarLineViewModel
     {

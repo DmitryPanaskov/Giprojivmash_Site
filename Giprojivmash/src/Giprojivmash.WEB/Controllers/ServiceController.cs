@@ -2,7 +2,8 @@
 using System.Linq;
 using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
+using Giprojivmash.WEB.Models;
 using Giprojivmash.WEB.Models.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

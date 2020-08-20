@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Giprojivmash.DataModels.Enums;
 
 namespace Giprojivmash.DAL.Entities
 {
@@ -16,5 +17,7 @@ namespace Giprojivmash.DAL.Entities
         public string Photo { get; set; }
 
         public string Description { get; set; }
+
+        public PositionType PositionType { get; set; }
     }
 }
