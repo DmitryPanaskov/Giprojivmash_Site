@@ -11,7 +11,7 @@ namespace Giprojivmash.WEB.Mapper
             CreateMap<BaseEntity, BaseViewModel>();
             CreateMap<ServiceFirstLayerEntity, ServiceFirstLayerViewModel>();
             CreateMap<ServiceSecondLayerEntity, ServiceSecondLayerViewModel>();
-            CreateMap<ServiceThirdLayerEntity, ServiceThirdLayerViewModel>();
+            CreateMap<ServiceThirdLayerEntity, ServiceThirdLayer>();
         }
     }
 }

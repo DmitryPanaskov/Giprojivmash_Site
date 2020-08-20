@@ -1,6 +1,6 @@
 ﻿namespace Giprojivmash.WEB.Models.Service
 {
-    public class ServiceThirdLayerViewModel : BaseViewModel
+    public class ServiceThirdLayer : BaseViewModel
     {
         public int ServiceSecondLayerId { get; set; }
 

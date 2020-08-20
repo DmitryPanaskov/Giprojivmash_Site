@@ -16,6 +16,8 @@ namespace Giprojivmash.DAL.Context
         {
         }
 
+        public virtual DbSet<PageEntity> Page { get; set; }
+
         public virtual DbSet<ServiceFirstLayerEntity> ServiceFirstLayers { get; set; }
 
         public virtual DbSet<ServiceSecondLayerEntity> ServiceSecondLayers { get; set; }

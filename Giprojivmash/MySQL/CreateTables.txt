@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS page;
+
 DROP TABLE IF EXISTS contactdata;
 DROP TABLE IF EXISTS contact;
 
@@ -12,6 +14,14 @@ DROP TABLE IF EXISTS servicesecondlayer;
 DROP TABLE IF EXISTS servicefirstlayer;
 
 DROP TABLE IF EXISTS vacancy;
+
+CREATE TABLE page(
+    Id int NOT NULL AUTO_INCREMENT,
+    PageName varchar(50),
+    Title varchar(500),
+    Keyword varchar(500),
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,

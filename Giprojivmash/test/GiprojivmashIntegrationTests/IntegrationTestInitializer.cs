@@ -10,6 +10,38 @@ namespace GiprojivmashIntegrationTests
 {
     public static class IntegrationTestInitializer
     {
+        public static async Task SetPageTest(GiprojivmashContext context)
+        {
+            Validator(context);
+            var pages = new List<PageEntity>
+            {
+                new PageEntity
+                {
+                    PageKeyword = "1",
+                    PageName = "1",
+                    PageTitle = "1",
+                },
+                new PageEntity
+                {
+                    PageKeyword = "2",
+                    PageName = "2",
+                    PageTitle = "2",
+                },
+                new PageEntity
+                {
+                    PageKeyword = "3",
+                    PageName = "3",
+                    PageTitle = "3",
+                },
+            };
+
+            foreach (var page in pages)
+            {
+                await context.Page.AddAsync(page);
+                await context.SaveChangesAsync();
+            }
+        }
+
         public static async Task SetServiceFirstLayer(GiprojivmashContext context)
         {
             Validator(context);
@@ -302,6 +334,12 @@ namespace GiprojivmashIntegrationTests
         public static string GetConnectionString()
         {
             return "server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;";
+        }
+
+        public static async Task ClearPage(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE page");
         }
 
         public static async Task ClearServiceFirstLayer(GiprojivmashContext context)

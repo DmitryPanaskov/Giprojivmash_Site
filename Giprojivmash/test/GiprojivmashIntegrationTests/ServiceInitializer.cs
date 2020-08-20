@@ -8,6 +8,12 @@ namespace GiprojivmashIntegrationTests
 {
     public static class ServiceInitializer
     {
+        public static IPageService GetPageService(GiprojivmashContext context)
+        {
+            return new PageService(
+                new GenericRepository<PageEntity>(context));
+        }
+
         public static IServiceFirstLayerService GetServiceFirstLayerService(GiprojivmashContext context)
         {
             return new ServiceFirstLayerService(

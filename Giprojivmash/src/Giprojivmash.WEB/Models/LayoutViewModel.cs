@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Giprojivmash.WEB.Models
+﻿namespace Giprojivmash.WEB.Models
 {
-    public class LayoutViewModel : BaseViewModel
+    public class LayoutViewModel : PageViewModel
     {
-        public IList<string> ServicesMenu { get; internal set; }
-
         public string Telephone { get; set; }
 
         public string SubTelephone { get; set; }
