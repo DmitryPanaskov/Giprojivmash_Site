@@ -1,0 +1,82 @@
+﻿@model Giprojivmash.WEB.Models.Contact.ContactPageViewModel
+@using Giprojivmash.DataModels.Enums
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="Service" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="Service" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8 col-sm-12">
+            <h1>@Model.PageName</h1>
+            @for (var i = 0; i < Model.ContactList.Count; i++)
+            {
+
+                var person = Model.ContactList.ElementAt(i);
+                var oficialName = person.FirstName + " " + person.Patronymic;
+
+                <div class="row">
+                    <div class="d-none d-sm-block col-sm-4">
+                        <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/dir_test.png" />
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <h2>@person.Position</h2>
+                        <h3>@person.LastName</h3>
+                        <h3>@oficialName</h3>
+                        @{
+                            var dataPerson = Model.ContactDataList.Where(m => m.ContactId == person.Id).ToList();
+                            var contactDataTypeName = "";
+                            var contactDataTypeNameSubName = "";
+
+                        }
+                        @for (var j = 0; j < dataPerson.Count; j++)
+                        {
+                            @switch (dataPerson.ElementAt(j).ContactDataType)
+                            {
+                                case ContactDataType.WorkTelephone:
+                                    contactDataTypeName = "тел.:";
+                                    contactDataTypeNameSubName = "tel:";
+                                    break;
+                                case ContactDataType.MobileTelephone:
+                                    contactDataTypeName = "моб.тел.:";
+                                    contactDataTypeNameSubName = "tel:";
+                                    break;
+                                case ContactDataType.Fax:
+                                    contactDataTypeName = "факс:";
+                                    contactDataTypeNameSubName = "fax:";
+                                    break;
+                                case ContactDataType.Email:
+                                    contactDataTypeName = "email:";
+                                    contactDataTypeNameSubName = "email:";
+                                    break;
+                            }
+                            var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
+                            <h4>@contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a></h4>
+                        }
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+</div>
+

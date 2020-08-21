@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.WEB.Models.Service
 {
-    public class ServiceViewModel : LayoutViewModel
+    public class ServicePageViewModel : LayoutViewModel
     {
         public ServiceFirstLayerViewModel CurrentServiceFirstLayer { get; internal set; }
 

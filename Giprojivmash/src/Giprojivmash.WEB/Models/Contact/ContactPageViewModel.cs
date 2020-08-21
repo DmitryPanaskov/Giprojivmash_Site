@@ -2,14 +2,12 @@
 
 namespace Giprojivmash.WEB.Models.Contact
 {
-    public class ContactPageViewModel
+    public class ContactPageViewModel : LayoutViewModel
     {
-        public ContactViewModel ContactViewModel { get; set; }
+        public IList<ContactViewModel> ContactList { get; internal set; }
 
-        public ContactDataViewModel ContactDataViewModel { get; set; }
+        public IList<ContactDataViewModel> ContactDataList { get; internal set; }
 
-        public IList<string> ContactMenuList { get; internal set; }
-
-        public IList<string> ActionNameList { get; internal set; }
+        public IList<SidebarLineViewModel> Sidebar { get; internal set; }
     }
 }

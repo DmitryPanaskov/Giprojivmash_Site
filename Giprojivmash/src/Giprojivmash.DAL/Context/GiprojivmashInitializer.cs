@@ -298,77 +298,77 @@ namespace Giprojivmash.DAL.Context
                          ContactId = 1,
                          Data = "+375 232 53-27-38",
                          SubData = "+375232532738",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 1,
                          Data = "+375 232 53-50-30",
                          SubData = "+375232535030",
-                         Type = ContactDataType.Fax,
+                         ContactDataType = ContactDataType.Fax,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 1,
                          Data = "post@gipro.gomel.by",
                          SubData = "post@gipro.gomel.by",
-                         Type = ContactDataType.Email,
+                         ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 1,
                          Data = "post@gipro.gomel.by",
                          SubData = "post@gipro.gomel.by",
-                         Type = ContactDataType.VK,
+                         ContactDataType = ContactDataType.VK,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 2,
                          Data = "+375 232 53-27-38",
                          SubData = "+375232532738",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 3,
                          Data = "+375 232 53-27-05",
                          SubData = "+375232532705",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 4,
                          Data = "+375 232 53-27-38",
                          SubData = "+375232532738",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 5,
                          Data = "+375 232 53-27-32",
                          SubData = "+375232532732",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 6,
                          Data = "+375 232 53-61-09",
                          SubData = "+375232536109",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 7,
                          Data = "+375 232 53-27-39",
                          SubData = "+375232532739",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
                          ContactId = 8,
                          Data = "+375 232 53-61-07",
                          SubData = "+375232536107",
-                         Type = ContactDataType.WorkTelephone,
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                 };
 

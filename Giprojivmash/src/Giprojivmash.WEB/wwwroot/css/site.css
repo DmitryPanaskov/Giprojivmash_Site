@@ -262,10 +262,10 @@ canvas {
 .slogan-box {
     position: absolute;
     justify-content: space-evenly;
-    top: 15%;
     right: 10%;
     background-color: #4599be;
     opacity: .5;
+    transform: translateY(-180%);
 }
 
     .slogan-box p {

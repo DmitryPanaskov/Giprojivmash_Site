@@ -1,5 +1,8 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
+using Giprojivmash.WEB.Models;
+using Giprojivmash.WEB.Models.Contact;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -25,10 +28,52 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/kontakty/rukovdstvo")]
-        public IActionResult Managers()
+        [Route("/kontakty/rukovodstvo")]
+        public IActionResult Manager()
         {
-            return View();
+            var model = new ContactPageViewModel();
+            model.PageName = "Контакты";
+            model.Sidebar = InitSidebar();
+            return View(model);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<>")]
+        private List<SidebarLineViewModel> InitSidebar()
+        {
+            var sidebar = new List<SidebarLineViewModel>
+            {
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Design",
+                    SidebarName = "Проектирование",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "InvestmentJustification",
+                    SidebarName = "Обоснование инвестиций",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Geodesy",
+                    SidebarName = "Инженерно-геодезические изыскания",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Ecology",
+                    SidebarName = "Инженерно-экологические изыскания",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "IndustrialSafety",
+                    SidebarName = "Промышленная безопасность",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "SystemSafefty",
+                    SidebarName = "Системы безопасности",
+                },
+            };
+            return sidebar;
         }
     }
 }

@@ -92,9 +92,9 @@ namespace Giprojivmash.WEB.Controllers
             return View("Service", model);
         }
 
-        private ServiceViewModel InitializeServiceViewModel(ServiceType service)
+        private ServicePageViewModel InitializeServiceViewModel(ServiceType service)
         {
-            var model = new ServiceViewModel();
+            var model = new ServicePageViewModel();
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
             var serviceThirdLayerList = _serviceThirdLayerService.GetAll();

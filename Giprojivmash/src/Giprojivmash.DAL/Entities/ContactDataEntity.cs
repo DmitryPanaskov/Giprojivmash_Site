@@ -12,6 +12,6 @@ namespace Giprojivmash.DAL.Entities
 
         public string SubData { get; set; }
 
-        public ContactDataType Type { get; set; }
+        public ContactDataType ContactDataType { get; set; }
     }
 }
