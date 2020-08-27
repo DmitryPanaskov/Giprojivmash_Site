@@ -37,7 +37,7 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var page in pages)
             {
-                await context.Page.AddAsync(page);
+                await context.Pages.AddAsync(page);
                 await context.SaveChangesAsync();
             }
         }
@@ -150,6 +150,8 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "1",
                     Description = "1",
                     Photo = "1",
+                    Position = "1",
+                    PositionType = PositionType.Manager,
                 },
                 new ContactEntity
                 {
@@ -158,12 +160,14 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "2",
                     Description = "2",
                     Photo = "2",
+                    Position = "2",
+                    PositionType = PositionType.ChiefProjectEngineer,
                 },
             };
 
             foreach (var contact in contacts)
             {
-                await context.Contact.AddAsync(contact);
+                await context.Contacts.AddAsync(contact);
                 await context.SaveChangesAsync();
             }
         }
@@ -178,27 +182,27 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "1",
                     SubData = "1",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
             };
 
             foreach (var phone in phones)
             {
-                await context.ContactData.AddAsync(phone);
+                await context.ContactDatas.AddAsync(phone);
                 await context.SaveChangesAsync();
             }
         }
@@ -224,7 +228,7 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var vacancy in vacancies)
             {
-                await context.Vacancy.AddAsync(vacancy);
+                await context.Vacancies.AddAsync(vacancy);
                 await context.SaveChangesAsync();
             }
         }
@@ -246,7 +250,7 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var history in histories)
             {
-                await context.History.AddAsync(history);
+                await context.Histories.AddAsync(history);
                 await context.SaveChangesAsync();
             }
         }
@@ -275,7 +279,7 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var historyPhoto in historyPhotos)
             {
-                await context.HistoryPhoto.AddAsync(historyPhoto);
+                await context.HistoryPhotos.AddAsync(historyPhoto);
                 await context.SaveChangesAsync();
             }
         }
@@ -297,7 +301,7 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var portfolio in portfolios)
             {
-                await context.Portfolio.AddAsync(portfolio);
+                await context.Portfolios.AddAsync(portfolio);
                 await context.SaveChangesAsync();
             }
         }
@@ -326,7 +330,29 @@ namespace GiprojivmashIntegrationTests
 
             foreach (var portfolioPhoto in portfolioPhotos)
             {
-                await context.PortfolioPhoto.AddAsync(portfolioPhoto);
+                await context.PortfolioPhotos.AddAsync(portfolioPhoto);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public static async Task SetDepartment(GiprojivmashContext context)
+        {
+            Validator(context);
+            var departments = new List<DepartmentEntity>
+            {
+                new DepartmentEntity
+                {
+                    Name = "1",
+                },
+                new DepartmentEntity
+                {
+                    Name = "2",
+                },
+            };
+
+            foreach (var department in departments)
+            {
+                await context.Departments.AddAsync(department);
                 await context.SaveChangesAsync();
             }
         }
@@ -400,6 +426,12 @@ namespace GiprojivmashIntegrationTests
         {
             Validator(context);
             await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE vacancy");
+        }
+
+        public static async Task ClearDepartment(GiprojivmashContext context)
+        {
+            Validator(context);
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE department");
         }
 
         private static void Validator(GiprojivmashContext context)

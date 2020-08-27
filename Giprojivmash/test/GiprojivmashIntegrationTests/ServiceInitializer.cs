@@ -43,7 +43,8 @@ namespace GiprojivmashIntegrationTests
 
         public static IContactDataService GetContactData(GiprojivmashContext context)
         {
-            return new ContactDataService(new GenericRepository<ContactDataEntity>(context));
+            return new ContactDataService(new GenericRepository<ContactDataEntity>(context),
+                new GenericRepository<ContactEntity>(context));
         }
 
         public static IHistoryService GetHistory(GiprojivmashContext context)
@@ -71,6 +72,11 @@ namespace GiprojivmashIntegrationTests
         public static IVacancyService GetVacancy(GiprojivmashContext context)
         {
             return new VacancyService(new GenericRepository<VacancyEntity>(context));
+        }
+
+        public static IDepartmentService GetDepartment(GiprojivmashContext context)
+        {
+            return new DepartmentService(new GenericRepository<DepartmentEntity>(context));
         }
     }
 }

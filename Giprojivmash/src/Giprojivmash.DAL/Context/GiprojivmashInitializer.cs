@@ -16,6 +16,7 @@ namespace Giprojivmash.DAL.Context
             InitializerServiceThirdLayer(context);
             InitializerContact(context);
             InitializerContactData(context);
+            InitializerDepartment(context);
         }
 
         private static void InitializerServiceFirstLayer(GiprojivmashContext context)
@@ -209,16 +210,19 @@ namespace Giprojivmash.DAL.Context
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<>")]
         private static void InitializerContact(GiprojivmashContext context)
         {
-            if (!context.Contact.Any())
+            if (!context.Contacts.Any())
             {
                 var contactEntities = new List<ContactEntity>
                 {
                     new ContactEntity
                     {
                         // id = 1
-                        FirstName = "Гипроживмаш",
+                        FirstName = "ОАО Гипроживмаш",
+                        Position = "Приемная",
+                        PositionType = PositionType.General,
                     },
                     new ContactEntity
                     {
@@ -227,6 +231,8 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Дмитрий",
                         LastName = "Шило",
                         Patronymic = "Иванович",
+                        PositionType = PositionType.Manager,
+                        Photo = "director.png",
                     },
                     new ContactEntity
                     {
@@ -235,6 +241,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Екатерина",
                         LastName = "Шаповалова",
                         Patronymic = "Игоревна",
+                        PositionType = PositionType.Manager,
                     },
                     new ContactEntity
                     {
@@ -243,6 +250,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Юрий",
                         LastName = "Дубов",
                         Patronymic = "Александрович",
+                        PositionType = PositionType.Manager,
                     },
                     new ContactEntity
                     {
@@ -251,6 +259,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Грибанов",
                         LastName = "Евгений",
                         Patronymic = "Юрьевич",
+                        PositionType = PositionType.ChiefProjectEngineer,
                     },
                     new ContactEntity
                     {
@@ -259,6 +268,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Ковалев",
                         LastName = "Сергей",
                         Patronymic = "Валерьевич",
+                        PositionType = PositionType.ChiefProjectEngineer,
                     },
                     new ContactEntity
                     {
@@ -267,6 +277,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Марочкин",
                         LastName = "Анатолий",
                         Patronymic = "Вячеславович",
+                        PositionType = PositionType.ChiefProjectEngineer,
                     },
                     new ContactEntity
                     {
@@ -275,6 +286,133 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Петренко",
                         LastName = "Ирина",
                         Patronymic = "Михайловна",
+                        PositionType = PositionType.ChiefProjectEngineer,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 9
+                        Position = "Бухгалтерия",
+                        FirstName = "Елена",
+                        LastName = "Черноокая",
+                        Patronymic = "Герасимовна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 10
+                        Position = "Юрисконсульт",
+                        FirstName = "Ольга",
+                        LastName = "Игнатова",
+                        Patronymic = "Васильевна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 11
+                        Position = "Отдел кадров",
+                        FirstName = "Жанна",
+                        LastName = "Кричевская",
+                        Patronymic = "Анатольевна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 12
+                        Position = "Планово-производственный отдел",
+                        FirstName = "Ольга",
+                        LastName = "Игнатова",
+                        Patronymic = "Васильевна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 13
+                        Position = "Отдел генплана",
+                        FirstName = "Нина",
+                        LastName = "Щербатенко",
+                        Patronymic = "Павловна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 14
+                        Position = "Архитектурно-планировочный отдел",
+                        FirstName = "Александра",
+                        LastName = "Горбатовская",
+                        Patronymic = "Владимировна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 15
+                        Position = "Строительный отдел",
+                        FirstName = "Владимир",
+                        LastName = "Шкундалев",
+                        Patronymic = "Петрович",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 16
+                        Position = "Сметно-экономический отдел",
+                        FirstName = "Наталья",
+                        LastName = "Цилько",
+                        Patronymic = "Павловна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 17
+                        Position = "Отдел электроснабжения и электроосвещения",
+                        FirstName = "Андрей",
+                        LastName = "Сиротко",
+                        Patronymic = "Евгеньевич",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 18
+                        Position = "Отдел автоматизации и слаботочных систем",
+                        FirstName = "Петр",
+                        LastName = "Комар",
+                        Patronymic = "Анатольевич",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 20
+                        Position = "Отдел водоснабжения и канализации",
+                        FirstName = "Лариса",
+                        LastName = "Мураль",
+                        Patronymic = "Михайловна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 19
+                        Position = "Отдел теплоснабжения, газоснабжения и вентиляции",
+                        FirstName = "Андрей",
+                        LastName = "Судаков",
+                        Patronymic = "Григорьевич",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 20
+                        Position = "Технологический отдел",
+                        FirstName = "Светлана",
+                        LastName = "Россол",
+                        Patronymic = "Григорьевна",
+                        PositionType = PositionType.HeadOfDepartment,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 21
+                        Position = "Отдел качества и выпуска проектной продукции",
+                        FirstName = "Александр",
+                        LastName = "Гончаров",
+                        Patronymic = "Владимирович",
+                        PositionType = PositionType.HeadOfDepartment,
                     },
                 };
 
@@ -289,7 +427,7 @@ namespace Giprojivmash.DAL.Context
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<>")]
         private static void InitializerContactData(GiprojivmashContext context)
         {
-            if (!context.Contact.Any())
+            if (!context.ContactDatas.Any())
             {
                 var contactEntities = new List<ContactDataEntity>
                 {
@@ -337,10 +475,31 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
+                         ContactId = 2,
+                         Data = "DmitryShilo@gipro.gomel.by",
+                         SubData = "DmitryShilo@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                      ContactId = 3,
+                      Data = "EkaterinaShapovalova@gipro.gomel.by",
+                      SubData = "EkaterinaShapovalova@gipro.gomel.by",
+                      ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
                          ContactId = 4,
                          Data = "+375 232 53-27-38",
                          SubData = "+375232532738",
                          ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 4,
+                         Data = "YuriDubov@gipro.gomel.by",
+                         SubData = "YuriDubov@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
                     {
@@ -375,6 +534,97 @@ namespace Giprojivmash.DAL.Context
                 foreach (var item in contactEntities)
                 {
                     context.Set<ContactDataEntity>().Add(item);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        private static void InitializerDepartment(GiprojivmashContext context)
+        {
+            if (!context.Departments.Any())
+            {
+                var departmentEntities = new List<DepartmentEntity>
+                {
+                    new DepartmentEntity
+                    {
+                        // id = 1
+                        Name = "Общие",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 2
+                        Name = "Руководство",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 3
+                      Name = "Главные инженеры проекта",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 4
+                      Name = "Отдел кадров",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 5
+                      Name = "Бухгалтерия",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 6
+                      Name = "Планово-производственный отдел",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 7
+                      Name = "Отдел генплана",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 8
+                      Name = "Архитектурно-планировочный отдел",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 9
+                      Name = "Строительынй отдел",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 10
+                      Name = "Отдел электроснабжения и электроосвещения",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 11
+                      Name = "Отдел автоматизации и слаботочных систем",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 12
+                      Name = "Отдел водоснабжения и канализации",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 13
+                      Name = "Отдел тепноснабжения, газоснабжения и вентиляции",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 14
+                      Name = "Технологический отдел",
+                    },
+                    new DepartmentEntity
+                    {
+                        // id = 15
+                      Name = "Отдел качества и выпуска проектной документации",
+                    },
+                };
+
+                foreach (var item in departmentEntities)
+                {
+                    context.Set<DepartmentEntity>().Add(item);
                     context.SaveChanges();
                 }
             }

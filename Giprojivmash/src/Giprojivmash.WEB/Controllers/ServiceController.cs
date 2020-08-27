@@ -33,7 +33,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/proektirovanie")]
+        [Route("/услуги/проектирование")]
         public IActionResult Design()
         {
             var model = InitializeServiceViewModel(ServiceType.Design);
@@ -43,7 +43,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/obosnovanie-investiciy")]
+        [Route("/услуги/обоснование-инвестиций")]
         public IActionResult InvestmentJustification()
         {
             var model = InitializeServiceViewModel(ServiceType.InvestmentJustification);
@@ -53,7 +53,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/inzhenerno-geodezicheskie-izyskaniya")]
+        [Route("/услуги/инженерно-геодезические-изыскания")]
         public IActionResult Geodesy()
         {
             var model = InitializeServiceViewModel(ServiceType.Geodesy);
@@ -63,7 +63,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/inzhenerno-ekologicheskie-izyskaniya")]
+        [Route("/услуги/инженерно-экологические-изыскания")]
         public IActionResult Ecology()
         {
             var model = InitializeServiceViewModel(ServiceType.Ecology);
@@ -73,7 +73,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/promyshlennaya-bezopasnost")]
+        [Route("/услуги/промышленная-безопасность")]
         public IActionResult IndustrialSafety()
         {
             var model = InitializeServiceViewModel(ServiceType.IndustrialSafety);
@@ -83,7 +83,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/sistemy-bezopasnosti")]
+        [Route("/услуги/системы-безопасности")]
         public IActionResult SystemSafefty()
         {
             var model = InitializeServiceViewModel(ServiceType.SystemSafefty);

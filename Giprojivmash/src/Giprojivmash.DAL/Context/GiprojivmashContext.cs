@@ -16,7 +16,7 @@ namespace Giprojivmash.DAL.Context
         {
         }
 
-        public virtual DbSet<PageEntity> Page { get; set; }
+        public virtual DbSet<PageEntity> Pages { get; set; }
 
         public virtual DbSet<ServiceFirstLayerEntity> ServiceFirstLayers { get; set; }
 
@@ -24,19 +24,21 @@ namespace Giprojivmash.DAL.Context
 
         public virtual DbSet<ServiceThirdLayerEntity> ServiceThirdLayers { get; set; }
 
-        public virtual DbSet<ContactEntity> Contact { get; set; }
+        public virtual DbSet<ContactEntity> Contacts { get; set; }
 
-        public virtual DbSet<ContactDataEntity> ContactData { get; set; }
+        public virtual DbSet<ContactDataEntity> ContactDatas { get; set; }
 
-        public virtual DbSet<HistoryEntity> History { get; set; }
+        public virtual DbSet<HistoryEntity> Histories { get; set; }
 
-        public virtual DbSet<HistoryPhotoEntity> HistoryPhoto { get; set; }
+        public virtual DbSet<HistoryPhotoEntity> HistoryPhotos { get; set; }
 
-        public virtual DbSet<PortfolioEntity> Portfolio { get; set; }
+        public virtual DbSet<PortfolioEntity> Portfolios { get; set; }
 
-        public virtual DbSet<PortfolioPhotoEntity> PortfolioPhoto { get; set; }
+        public virtual DbSet<PortfolioPhotoEntity> PortfolioPhotos { get; set; }
 
-        public virtual DbSet<VacancyEntity> Vacancy { get; set; }
+        public virtual DbSet<VacancyEntity> Vacancies { get; set; }
+
+        public virtual DbSet<DepartmentEntity> Departments { get; set; }
 
         private static DbContextOptions GetOptions(string connectionString)
         {

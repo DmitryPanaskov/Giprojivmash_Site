@@ -1,4 +1,4 @@
-21.08.2020 15:23:27
+24.08.2020 9:01:44
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
  ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Position' in 'field list'
    at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
