@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IServiceSecondLayerService : IBaseInterface<ServiceSecondLayerEntity>
+    public interface IServiceSecondLayerService : IBaseService<ServiceSecondLayerEntity>
     {
     }
 }

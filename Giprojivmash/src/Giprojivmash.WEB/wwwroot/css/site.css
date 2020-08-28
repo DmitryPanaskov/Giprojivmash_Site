@@ -262,10 +262,10 @@ canvas {
 .slogan-box {
     position: absolute;
     justify-content: space-evenly;
-    top: 15%;
     right: 10%;
     background-color: #4599be;
     opacity: .5;
+    transform: translateY(-180%);
 }
 
     .slogan-box p {
@@ -279,8 +279,8 @@ canvas {
     /*background-image: url(/images/bg.png);*/
     background-size: cover;
     width: 100%;
-    height: 300px;
-    box-shadow: inset 0px 0px 20px 0px rgba(0, 10, 27, 0.5);
+    height: 400px;
+    box-shadow: inset 0 0 20px 0 #00699b80;
 }
 
 .stat-numeric {

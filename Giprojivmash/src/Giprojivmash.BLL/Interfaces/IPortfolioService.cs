@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IPortfolioService : IBaseInterface<PortfolioEntity>
+    public interface IPortfolioService : IBaseService<PortfolioEntity>
     {
     }
 }

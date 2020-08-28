@@ -1,4 +1,4 @@
-﻿namespace Giprojivmash.WEB.Models.Enums
+﻿namespace Giprojivmash.DataModels.Enums
 {
     public enum ServiceType
     {

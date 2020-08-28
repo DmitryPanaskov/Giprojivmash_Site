@@ -1,4 +1,6 @@
-﻿namespace Giprojivmash.WEB.Models
+﻿using Giprojivmash.DataModels.Enums;
+
+namespace Giprojivmash.WEB.Models.Contact
 {
     public class ContactViewModel : BaseViewModel
     {
@@ -11,5 +13,9 @@
         public string Photo { get; set; }
 
         public string Description { get; set; }
+
+        public string Position { get; internal set; }
+
+        public PositionType PositionType { get; set; }
     }
 }

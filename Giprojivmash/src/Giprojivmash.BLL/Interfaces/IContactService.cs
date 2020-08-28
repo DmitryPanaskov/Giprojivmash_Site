@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.BLL.Interfaces
 {
-    public interface IContactService : IBaseInterface<ContactEntity>
+    public interface IContactService : IBaseService<ContactEntity>
     {
     }
 }

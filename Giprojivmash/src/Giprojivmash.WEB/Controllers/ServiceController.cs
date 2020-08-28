@@ -2,7 +2,8 @@
 using System.Linq;
 using AutoMapper;
 using Giprojivmash.BLL.Interfaces;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
+using Giprojivmash.WEB.Models;
 using Giprojivmash.WEB.Models.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -32,67 +33,117 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/uslugi/proektirovanie")]
+        [Route("/услуги/проектирование")]
         public IActionResult Design()
         {
             var model = InitializeServiceViewModel(ServiceType.Design);
+            model.PageTitle = "Оказание услуг по проектированию в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "Проектирование";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/obosnovanie-investiciy")]
+        [Route("/услуги/обоснование-инвестиций")]
         public IActionResult InvestmentJustification()
         {
             var model = InitializeServiceViewModel(ServiceType.InvestmentJustification);
+            model.PageTitle = "Оказание услуг по разработке обоснования инвестиций в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "обоснование инвестиций";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/geodeziya")]
+        [Route("/услуги/инженерно-геодезические-изыскания")]
         public IActionResult Geodesy()
         {
             var model = InitializeServiceViewModel(ServiceType.Geodesy);
+            model.PageTitle = "Оказание услуг по проведению инженерно-геодезических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "Инженерно-геодезические изыскания";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/ekologiya")]
+        [Route("/услуги/инженерно-экологические-изыскания")]
         public IActionResult Ecology()
         {
             var model = InitializeServiceViewModel(ServiceType.Ecology);
+            model.PageTitle = "Оказание услуг по проведению инженерно-экологических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "Инженерно-экологические изыскания";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/promyshlennaya-bezopasnost")]
+        [Route("/услуги/промышленная-безопасность")]
         public IActionResult IndustrialSafety()
         {
             var model = InitializeServiceViewModel(ServiceType.IndustrialSafety);
+            model.PageTitle = "Оказание услуг в области промышленной безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "Промышленная безопасность";
             return View("Service", model);
         }
 
         [HttpGet]
-        [Route("/uslugi/sistemy-bezopasnosti")]
+        [Route("/услуги/системы-безопасности")]
         public IActionResult SystemSafefty()
         {
             var model = InitializeServiceViewModel(ServiceType.SystemSafefty);
+            model.PageTitle = "Оказание услуг по проектированию систем пожарабезопасности, системы охраны и безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageName = "Системы безопасности";
             return View("Service", model);
         }
 
-        private ServiceViewModel InitializeServiceViewModel(ServiceType service)
+        private ServicePageViewModel InitializeServiceViewModel(ServiceType service)
         {
-            var model = new ServiceViewModel();
+            var model = new ServicePageViewModel();
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
             var serviceThirdLayerList = _serviceThirdLayerService.GetAll();
             var currentFirstService = serviceFirstLayerList.ElementAt((int)service);
 
             model.CurrentServiceFirstLayer = _mapper.Map<ServiceFirstLayerViewModel>(currentFirstService);
-            model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
             model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
-            model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayerViewModel>>(serviceThirdLayerList);
-            model.ActionNameList = new List<string> { "Design", "InvestmentJustification", "Geodesy", "Ecology", "IndustrialSafety", "SystemSafefty" };
+            model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayer>>(serviceThirdLayerList);
+            model.Sidebar = InitSidebar();
             return model;
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<>")]
+        private List<SidebarLineViewModel> InitSidebar()
+        {
+            var sidebar = new List<SidebarLineViewModel>
+            {
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Design",
+                    SidebarName = "Проектирование",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "InvestmentJustification",
+                    SidebarName = "Обоснование инвестиций",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Geodesy",
+                    SidebarName = "Инженерно-геодезические изыскания",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Ecology",
+                    SidebarName = "Инженерно-экологические изыскания",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "IndustrialSafety",
+                    SidebarName = "Промышленная безопасность",
+                },
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "SystemSafefty",
+                    SidebarName = "Системы безопасности",
+                },
+            };
+            return sidebar;
         }
     }
 }

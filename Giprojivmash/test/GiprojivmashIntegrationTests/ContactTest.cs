@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
@@ -44,9 +44,11 @@ namespace GiprojivmashIntegrationTests
             {
                 FirstName = "Created",
                 LastName = "Created",
+                Position = "Created",
                 Patronymic = "Created",
                 Description = "Created",
                 Photo = "Created",
+                PositionType = PositionType.Manager,
             });
 
             var list = contactService.GetAll();
@@ -62,6 +64,8 @@ namespace GiprojivmashIntegrationTests
                     LastName = "1",
                     Patronymic = "1",
                     Photo = "1",
+                    Position = "1",
+                    PositionType = PositionType.Manager,
                 },
                 new ContactEntity
                 {
@@ -71,6 +75,8 @@ namespace GiprojivmashIntegrationTests
                     LastName = "2",
                     Patronymic = "2",
                     Photo = "2",
+                    Position = "2",
+                    PositionType = PositionType.ChiefProjectEngineer,
                 },
                 new ContactEntity
                 {
@@ -80,6 +86,8 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "Created",
                     Description = "Created",
                     Photo = "Created",
+                    Position = "Created",
+                    PositionType = PositionType.Manager,
                 },
             });
         }
@@ -99,6 +107,8 @@ namespace GiprojivmashIntegrationTests
                 LastName = "Updated",
                 Patronymic = "Updated",
                 Photo = "Updated",
+                Position = "Updated",
+                PositionType = PositionType.Manager,
             });
 
             var list = serviceContact.GetAll();
@@ -114,6 +124,8 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "Updated",
                     Description = "Updated",
                     Photo = "Updated",
+                    Position = "Updated",
+                    PositionType = PositionType.Manager,
                 },
                 new ContactEntity
                 {
@@ -123,6 +135,8 @@ namespace GiprojivmashIntegrationTests
                     LastName = "2",
                     Patronymic = "2",
                     Photo = "2",
+                    Position = "2",
+                    PositionType = PositionType.ChiefProjectEngineer,
                 },
             });
         }
@@ -149,7 +163,9 @@ namespace GiprojivmashIntegrationTests
                     FirstName = "2",
                     LastName = "2",
                     Patronymic = "2",
+                    Position = "2",
                     Photo = "2",
+                    PositionType = PositionType.ChiefProjectEngineer,
                 },
             });
             contactPhoneList.Should().BeEquivalentTo(new List<ContactDataEntity>
@@ -160,7 +176,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
             });
         }

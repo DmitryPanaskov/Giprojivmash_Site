@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
-using Giprojivmash.WEB.Models.Enums;
+using Giprojivmash.DataModels.Enums;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
@@ -22,7 +22,9 @@ namespace GiprojivmashIntegrationTests
             _context = new GiprojivmashContext(new DbContextOptionsBuilder()
                 .UseMySQL(IntegrationTestInitializer.GetConnectionString()).Options);
             await IntegrationTestInitializer.ClearContactData(_context);
+            await IntegrationTestInitializer.ClearContact(_context);
             await IntegrationTestInitializer.SetContactData(_context);
+            await IntegrationTestInitializer.SetContact(_context);
         }
 
         [OneTimeTearDown]
@@ -43,7 +45,7 @@ namespace GiprojivmashIntegrationTests
                 ContactId = 1,
                 Data = "Created",
                 SubData = "Created",
-                Type = ContactDataType.WorkTelephone,
+                ContactDataType = ContactDataType.WorkTelephone,
             });
 
             var list = contactDataService.GetAll();
@@ -55,25 +57,25 @@ namespace GiprojivmashIntegrationTests
                 {
                     Id = 1,
                     ContactId = 1,
-                    Data = "Created",
-                    SubData = "Created",
-                    Type = ContactDataType.WorkTelephone,
+                    Data = "1",
+                    SubData = "1",
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     Id = 2,
                     ContactId = 1,
-                    Data = "Created",
-                    SubData = "Created",
-                    Type = ContactDataType.WorkTelephone,
+                    Data = "2",
+                    SubData = "2",
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
                     Id = 3,
                     ContactId = 2,
-                    Data = "Created",
-                    SubData = "Created",
-                    Type = ContactDataType.WorkTelephone,
+                    Data = "1",
+                    SubData = "1",
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -81,7 +83,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Created",
                     SubData = "Created",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
             });
         }
@@ -99,7 +101,7 @@ namespace GiprojivmashIntegrationTests
                 ContactId = 1,
                 Data = "Updated",
                 SubData = "Updated",
-                Type = ContactDataType.WorkTelephone,
+                ContactDataType = ContactDataType.WorkTelephone,
             });
 
             var list = servicecontactData.GetAll();
@@ -113,7 +115,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "Updated",
                     SubData = "Updated",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -121,7 +123,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -129,7 +131,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
             });
         }
@@ -153,7 +155,7 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 1,
                     Data = "2",
                     SubData = "2",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
                 new ContactDataEntity
                 {
@@ -161,7 +163,38 @@ namespace GiprojivmashIntegrationTests
                     ContactId = 2,
                     Data = "1",
                     SubData = "1",
-                    Type = ContactDataType.WorkTelephone,
+                    ContactDataType = ContactDataType.WorkTelephone,
+                },
+            });
+        }
+
+        [Test]
+        public void GetContactDataByPositionType_WhenGetContactDataByPositionType_ShouldReturnContactDataByPositionType()
+        {
+            // Arrange
+            var contactDataService = ServiceInitializer.GetContactData(_context);
+
+            // Act
+            var list = contactDataService.GetContactDataListByPositionType(PositionType.Manager);
+
+            // Assert
+            list.Should().BeEquivalentTo(new List<ContactDataEntity>
+            {
+                new ContactDataEntity
+                {
+                    Id = 1,
+                    ContactId = 1,
+                    Data = "1",
+                    SubData = "1",
+                    ContactDataType = ContactDataType.WorkTelephone,
+                },
+                new ContactDataEntity
+                {
+                    Id = 2,
+                    ContactId = 1,
+                    Data = "2",
+                    SubData = "2",
+                    ContactDataType = ContactDataType.WorkTelephone,
                 },
             });
         }

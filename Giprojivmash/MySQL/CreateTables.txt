@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS page;
+
 DROP TABLE IF EXISTS contactdata;
 DROP TABLE IF EXISTS contact;
 
@@ -13,13 +15,25 @@ DROP TABLE IF EXISTS servicefirstlayer;
 
 DROP TABLE IF EXISTS vacancy;
 
+DROP TABLE IF EXISTS department;
+
+CREATE TABLE page(
+    Id int NOT NULL AUTO_INCREMENT,
+    PageName varchar(50),
+    Title varchar(500),
+    Keyword varchar(500),
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
+    Position varchar(50),
     Photo varchar(50),
     Description varchar(500),
     FirstName varchar(500),
     LastName varchar(500),
     Patronymic varchar(500),
+    PositionType int,
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -28,7 +42,7 @@ CREATE TABLE contactdata(
     ContactId int NOT NULL,
     Data varchar(50),
     SubData varchar(50),
-    Type int,
+    ContactDataType int,
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -85,5 +99,11 @@ CREATE TABLE vacancy(
     Position varchar(500),
     Description varchar(1000),
     Contact varchar(500),
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE department(
+    Id int NOT NULL AUTO_INCREMENT,
+    Name varchar(50),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

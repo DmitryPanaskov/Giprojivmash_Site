@@ -1,0 +1,108 @@
+﻿@model Giprojivmash.WEB.Models.Contact.GeneralContactPageViewModel
+@using Giprojivmash.DataModels.Enums
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="Contact" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="Contact" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8 col-sm-12">
+            <h1>@Model.PageName</h1>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                    <h2 class="position">@Model.Contact.Position</h2>
+                    @{
+                        var dataPerson = Model.ContactDataList.Where(m => m.ContactId == Model.Contact.Id).ToList();
+                        var contactDataTypeName = "";
+                        var contactDataTypeNameSubName = "";
+                    }
+                    @for (var j = 0; j < dataPerson.Count; j++)
+                    {
+                        switch (dataPerson.ElementAt(j).ContactDataType)
+                        {
+                            case ContactDataType.WorkTelephone:
+                                contactDataTypeName = "тел.:";
+                                contactDataTypeNameSubName = "tel:";
+                                break;
+                            case ContactDataType.MobileTelephone:
+                                contactDataTypeName = "моб.тел.:";
+                                contactDataTypeNameSubName = "tel:";
+                                break;
+                            case ContactDataType.Fax:
+                                contactDataTypeName = "факс:";
+                                contactDataTypeNameSubName = "fax:";
+                                break;
+                            case ContactDataType.Email:
+                                contactDataTypeName = "email:";
+                                contactDataTypeNameSubName = "mailto:";
+                                break;
+                        }
+                        var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
+                        <h5 class="contactData">
+                            @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
+                        </h5>
+                    }
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <h2 class="position">Время работы</h2>
+                    <h5>
+                        Пн.-пт.: 8.00 - 17.00,
+                    </h5>
+                    <h5>
+                        Выходной: Сб., Вс.,
+                    </h5>
+                    <h5>
+                        Выходной: Сб., Вс.,
+                    </h5>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="map">
+                    <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A68e2183f309d5c583bf7022af1055701ca7607ed3af1f94841b831988651a9cf&amp;source=constructor" height="400" frameborder="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .position {
+        padding: 0 0 1rem 0;
+    }
+
+    .contactData a {
+        padding: 0 0.5rem;
+    }
+
+    .map {
+        box-shadow: 0px 0px 20px 2px #00699b80;
+        width: 100%;
+    }
+
+    .map-frame {
+        width: inherit;
+    }
+</style>

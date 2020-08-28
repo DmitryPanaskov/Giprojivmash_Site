@@ -1,5 +1,6 @@
 ﻿using Giprojivmash.DAL.Entities;
 using Giprojivmash.WEB.Models;
+using Giprojivmash.WEB.Models.Contact;
 using Giprojivmash.WEB.Models.Service;
 
 namespace Giprojivmash.WEB.Mapper
@@ -11,7 +12,9 @@ namespace Giprojivmash.WEB.Mapper
             CreateMap<BaseEntity, BaseViewModel>();
             CreateMap<ServiceFirstLayerEntity, ServiceFirstLayerViewModel>();
             CreateMap<ServiceSecondLayerEntity, ServiceSecondLayerViewModel>();
-            CreateMap<ServiceThirdLayerEntity, ServiceThirdLayerViewModel>();
+            CreateMap<ServiceThirdLayerEntity, ServiceThirdLayer>();
+            CreateMap<ContactEntity, ContactViewModel>();
+            CreateMap<ContactDataEntity, ContactDataViewModel>();
         }
     }
 }
