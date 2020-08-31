@@ -95,7 +95,7 @@ namespace Giprojivmash.WEB.Controllers
                 new SidebarLineViewModel
                 {
                     SidebarAction = "ChiefProjectEngineer",
-                    SidebarName = "Главные инженеры проекта",
+                    SidebarName = "Главные инженеры проектов",
                 },
                 new SidebarLineViewModel
                 {

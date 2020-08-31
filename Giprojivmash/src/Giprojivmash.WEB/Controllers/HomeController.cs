@@ -39,7 +39,7 @@ namespace Giprojivmash.WEB.Controllers
             var model = new IndexViewModel();
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
-            return View(model/*"Temp"*/);
+            return View(model);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]

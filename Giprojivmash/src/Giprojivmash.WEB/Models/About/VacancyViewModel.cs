@@ -1,9 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Giprojivmash.DAL.Entities
+﻿namespace Giprojivmash.WEB.Models.About
 {
-    [Table("vacancy")]
-    public class VacancyEntity : BaseEntity
+    public class VacancyViewModel : BaseViewModel
     {
         public string Position { get; set; }
 

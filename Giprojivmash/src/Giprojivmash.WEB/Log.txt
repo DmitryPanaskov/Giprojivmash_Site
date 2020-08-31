@@ -1,6 +1,6 @@
-24.08.2020 9:01:44
+31.08.2020 17:08:11
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
- ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'Position' in 'field list'
+ ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'NumberPhone' in 'field list'
    at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
    at MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
    at MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
@@ -21,8 +21,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerContact(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 284
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 17
-   at Giprojivmash.WEB.Program.Main(String[] args) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerVacancy(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 762
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 20
+   at Giprojivmash.WEB.Program.Main(String[] args) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
 ConnectionString: server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;
 --------------------------------------------------------------

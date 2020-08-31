@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -17,19 +16,40 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
-            <div class="container">
-                <div class="navbar-brand">ОАО ГИПРОЖИВМАШ</div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                    </ul>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
+                <div class="container">
+                    <div class="navbar-brand">ОАО ГИПРОЖИВМАШ</div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    О нас
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-uppercase" asp-action="Shareholder" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Акционерам</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Контакты
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-uppercase" asp-action="General" asp-controller="Contact"><span class="flag-icon flag-icon-ru"></span> Общие</a>
+                                    <a class="dropdown-item text-uppercase" asp-action="Manager" asp-controller="Contact"><span class="flag-icon flag-icon-ru"></span> Руководство</a>
+                                    <a class="dropdown-item text-uppercase" asp-action="ChiefProjectEngineer" asp-controller="Contact"><span class="flag-icon flag-icon-gb"></span> Гипы</a>
+                                    <a class="dropdown-item text-uppercase" asp-action="Department" asp-controller="Contact"><span class="flag-icon flag-icon-ru"></span> Отделы</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
     </header>
     <div class="container-fluid">
         <div class="row">
@@ -53,7 +73,7 @@
         }
 
         .timer {
-            margin-bottom: 220px;
+             margin-bottom: 220px;
         }
     </style>
     <div class="preloader row h-100 justify-content-center align-items-center">
@@ -74,21 +94,33 @@
                         </div>
                     </div>
                     <div class="icon-bar">
-                        <i class="fa fa-phone"></i>
-                        <div class="content">+375 232 53-27-38</div>
-                    </div>
-                    <div class="icon-bar">
-                        <i class="fa fa-fax"></i>
-                        <div class="content">+375 232 53-50-30</div>
-                    </div>
-                    <div class="icon-bar">
-                        <i class="fa fa-envelope"></i>
-                        <div class="content">post@gipro.gomel.by</div>
-                    </div>
-                    <div class="icon-bar">
                         <i class="fa fa-calendar"></i>
                         <div class="content">
                             Пн.-пт.: 8.00 - 17.00, Выходной: Сб., Вс., Обед: 12.30 - 13.00
+                        </div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fa fa-phone"></i>
+                        <div class="content">
+                            <a href="tel:+375232532738">
+                                +375 232 53-27-38
+                            </a>
+                        </div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fa fa-fax"></i>
+                        <div class="content">
+                            <a href="fax:+375232535030">
+                                +375 232 53-50-30
+                            </a>
+                        </div>
+                    </div>
+                    <div class="icon-bar">
+                        <i class="fa fa-envelope"></i>
+                        <div class="content">
+                            <a href="mailto:post@gipro.gomel.by">
+                                post@gipro.gomel.by
+                            </a>
                         </div>
                     </div>
                     <div class="icon-bar">

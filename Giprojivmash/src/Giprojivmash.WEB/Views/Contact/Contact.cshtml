@@ -28,28 +28,28 @@
         </div>
         <div class="col-lg-8 col-sm-12">
             <h1>@Model.PageName</h1>
-            @{ 
+            @{
                 var contacts = Model.ContactList.ToList();
             }
-            @for (var i = 0; i <contacts.Count; i++)
+            @for (var i = 0; i < contacts.Count; i++)
             {
                 var person = contacts.ElementAt(i);
                 var officialName = person.FirstName + " " + person.Patronymic;
 
                 <div class="row">
-                    <div class="d-none d-sm-block col-sm-4">
+                    <div class="d-none d-sm-block col-md-4">
                         @{
                             if (person.Photo != null)
                             {
-                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/@person.Photo"/>
+                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/@person.Photo" />
                             }
                             else
                             {
-                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/imgNotAvailable.png"/>
+                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/imgNotAvailable.png" />
                             }
                         }
                     </div>
-                    <div class="col-lg-8 col-sm-12">
+                    <div class="col-md-8 col-sm-12">
                         <h2 class="position">@person.Position</h2>
                         <h4 class="font-weight-bold">@person.LastName</h4>
                         <h4>@officialName</h4>
@@ -76,17 +76,24 @@
                                     break;
                                 case ContactDataType.Email:
                                     contactDataTypeName = "email:";
-                                    contactDataTypeNameSubName = "email:";
+                                    contactDataTypeNameSubName = "mailto:";
+                                    break;
+                                default:
+                                    contactDataTypeName = "";
+                                    contactDataTypeNameSubName = "";
                                     break;
                             }
                             var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
-                            <h5 class="contactData">
-                                @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
-                            </h5>
+                            if (contactDataTypeName != string.Empty)
+                            {
+                                <h5 class="contactData">
+                                    @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
+                                </h5>
+                            }
                         }
                     </div>
                 </div>
-                <br/>
+                <br />
             }
         </div>
     </div>
@@ -100,6 +107,4 @@
     .contactData a {
         padding: 0 0.5rem;
     }
-
-
 </style>

@@ -3,7 +3,7 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
 }
 
 <div class="container">
@@ -57,11 +57,18 @@
                                 contactDataTypeName = "email:";
                                 contactDataTypeNameSubName = "mailto:";
                                 break;
+                            default:
+                                contactDataTypeName = "";
+                                contactDataTypeNameSubName = "";
+                                break;
                         }
                         var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
-                        <h5 class="contactData">
-                            @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
-                        </h5>
+                        if (contactDataTypeName != string.Empty)
+                        {
+                            <h5 class="contactData">
+                                @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
+                            </h5>
+                        }
                     }
                 </div>
                 <div class="col-lg-6 col-sm-12">
@@ -79,9 +86,11 @@
             </div>
             <hr />
             <div class="row">
-                <div class="map">
-                    <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A68e2183f309d5c583bf7022af1055701ca7607ed3af1f94841b831988651a9cf&amp;source=constructor" height="400" frameborder="0">
-                    </iframe>
+                <div class="col-sm-12">
+                    <div class="map">
+                        <iframe class="map-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3A68e2183f309d5c583bf7022af1055701ca7607ed3af1f94841b831988651a9cf&amp;source=constructor" height="400" frameborder="0">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>

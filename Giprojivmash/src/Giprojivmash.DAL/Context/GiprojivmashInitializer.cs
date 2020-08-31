@@ -17,8 +17,10 @@ namespace Giprojivmash.DAL.Context
             InitializerContact(context);
             InitializerContactData(context);
             InitializerDepartment(context);
+            InitializerVacancy(context);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         private static void InitializerServiceFirstLayer(GiprojivmashContext context)
         {
             if (!context.ServiceFirstLayers.Any())
@@ -27,6 +29,7 @@ namespace Giprojivmash.DAL.Context
                 {
                     new ServiceFirstLayerEntity
                     {
+                        // id = 1;
                         Description = "Проектирование зданий и сооружений I и II уровней ответственности",
                         PhotoTitle = "design.png",
                         DescriptionShort = "Комплексные решения в проектировании объектов любой сложности",
@@ -34,6 +37,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
+                        // id = 2;
                         Description = "Обоснование инвестиций",
                         PhotoTitle = "engineering.png",
                         DescriptionShort = "Инженерные и консультационные услуги на профессиональном уровне",
@@ -41,20 +45,23 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
+                        // id = 3;
                         Description = "Инженерно-геодезические изыскания",
                         PhotoTitle = "geodesy.png",
-                        DescriptionShort = "Инженерно-геодезические изыскания с использованием высокоточное оборудование и современное програмное обеспечение",
+                        DescriptionShort = "Проводим работыя с использованием высокоточное оборудование и современное програмное обеспечение",
                         Title = "Инженерно-геодезические изыскания",
                     },
                     new ServiceFirstLayerEntity
                     {
+                         // id = 4;
                         Description = "Инженерно-экологические изыскания",
                         PhotoTitle = "ecology.png",
-                        DescriptionShort = "Инженерно-экологические изыскания с использованием современного оборудование и современное програмное обеспечение",
+                        DescriptionShort = "Проводим работы с использованием современного оборудование и современное програмное обеспечение",
                         Title = "Инженерно-экологические изыскания",
                     },
                     new ServiceFirstLayerEntity
                     {
+                         // id = 5;
                         Description = "Промышленная безопасность",
                         PhotoTitle = "industrialSafety.png",
                         DescriptionShort = "Проектирование технических устройств применяемых на опасных производственных объектах",
@@ -62,6 +69,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceFirstLayerEntity
                     {
+                         // id = 6;
                         Description = "Проектирование систем пожаробезопасности и систем охраны",
                         PhotoTitle = "safety.png",
                         DescriptionShort = "Проектирование систем пожаробезопасности и систем охраны",
@@ -77,6 +85,7 @@ namespace Giprojivmash.DAL.Context
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         private static void InitializerServiceSecondLayer(GiprojivmashContext context)
         {
             if (!context.ServiceSecondLayers.Any())
@@ -85,52 +94,40 @@ namespace Giprojivmash.DAL.Context
                 {
                     new ServiceSecondLayerEntity
                     {
+                        // id = 1;
                         ServiceFirstLayerId = 1,
                         Description = "1.1 Разработка проектной документации для строительства следующих видов зданий и сооружений I и II уровней ответственности:",
                     },
                     new ServiceSecondLayerEntity
                     {
+                        // id =2;
                         ServiceFirstLayerId = 1,
                         Description = "1.2 Разработка разделов проектной документации:",
                     },
                     new ServiceSecondLayerEntity
                     {
+                         // id = 3;
                         ServiceFirstLayerId = 1,
                         Description = "1.3 Управление проектированием с привлечением субподрядных организаций (функции генерального проектировщика).",
                     },
                     new ServiceSecondLayerEntity
                     {
-                        ServiceFirstLayerId = 2,
-                        Description = "2.1 Геодезические и картографические работы, выполняемые при инженерно-геодезических," +
-                        " геологических изысканиях, землеустроительных работах, изысканиях трасс линейных сооружений, иных изысканиях и специальных работах.",
+                         // id = 4;
                     },
                     new ServiceSecondLayerEntity
                     {
-                        ServiceFirstLayerId = 3,
-                        Description = "3.1 Проектирование (конструирование) технических устройств, применяемых на опасных производственных объектах," +
-                        " на которых используется оборудование, работающее под давлением (трубопроводы пара и горячей воды III категории).",
+                         // id = 5;
                     },
                     new ServiceSecondLayerEntity
                     {
-                        ServiceFirstLayerId = 3,
-                        Description = "3.2 Проектирование объектов газораспределительной системы и газопотребления;",
+                         // id = 6;
                     },
                     new ServiceSecondLayerEntity
                     {
-                        ServiceFirstLayerId = 3,
-                        Description = "3.3 Проектирование (разработка технологического раздела) котельных;",
+                         // id = 7;
                     },
                     new ServiceSecondLayerEntity
                     {
-                        ServiceFirstLayerId = 3,
-                        Description = "3.4 Проектирование радиационных объектов (рентгеновские кабинеты медицинского назначения," +
-                        " помещения для гамма-установок, рентгенодиагностические лаборатории).",
-                    },
-                    new ServiceSecondLayerEntity
-                    {
-                        ServiceFirstLayerId = 5,
-                        Description = "5.1 Охрана юридическим лицом принадлежащих ему объектов (имущества);" +
-                        " проектирование средств и систем охраны (за исключением средств индивидуального пользования).",
                     },
                 };
 
@@ -265,8 +262,8 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 6
                         Position = "ГИП",
-                        FirstName = "Ковалев",
-                        LastName = "Сергей",
+                        LastName = "Ковалев",
+                        FirstName = "Сергей",
                         Patronymic = "Валерьевич",
                         PositionType = PositionType.ChiefProjectEngineer,
                     },
@@ -274,8 +271,8 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 7
                         Position = "ГИП",
-                        FirstName = "Марочкин",
-                        LastName = "Анатолий",
+                        LastName = "Марочкин",
+                        FirstName = "Анатолий",
                         Patronymic = "Вячеславович",
                         PositionType = PositionType.ChiefProjectEngineer,
                     },
@@ -283,8 +280,8 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 8
                         Position = "ГИП",
-                        FirstName = "Петренко",
-                        LastName = "Ирина",
+                        LastName = "Петренко",
+                        FirstName = "Ирина",
                         Patronymic = "Михайловна",
                         PositionType = PositionType.ChiefProjectEngineer,
                     },
@@ -318,15 +315,6 @@ namespace Giprojivmash.DAL.Context
                     new ContactEntity
                     {
                         // id = 12
-                        Position = "Планово-производственный отдел",
-                        FirstName = "Ольга",
-                        LastName = "Игнатова",
-                        Patronymic = "Васильевна",
-                        PositionType = PositionType.HeadOfDepartment,
-                    },
-                    new ContactEntity
-                    {
-                        // id = 13
                         Position = "Отдел генплана",
                         FirstName = "Нина",
                         LastName = "Щербатенко",
@@ -335,7 +323,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 14
+                        // id = 13
                         Position = "Архитектурно-планировочный отдел",
                         FirstName = "Александра",
                         LastName = "Горбатовская",
@@ -344,7 +332,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 15
+                        // id = 14
                         Position = "Строительный отдел",
                         FirstName = "Владимир",
                         LastName = "Шкундалев",
@@ -353,7 +341,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 16
+                        // id = 15
                         Position = "Сметно-экономический отдел",
                         FirstName = "Наталья",
                         LastName = "Цилько",
@@ -362,7 +350,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 17
+                        // id = 16
                         Position = "Отдел электроснабжения и электроосвещения",
                         FirstName = "Андрей",
                         LastName = "Сиротко",
@@ -371,7 +359,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 18
+                        // id = 17
                         Position = "Отдел автоматизации и слаботочных систем",
                         FirstName = "Петр",
                         LastName = "Комар",
@@ -380,7 +368,7 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactEntity
                     {
-                        // id = 20
+                        // id = 18
                         Position = "Отдел водоснабжения и канализации",
                         FirstName = "Лариса",
                         LastName = "Мураль",
@@ -468,17 +456,17 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
-                         ContactId = 3,
-                         Data = "+375 232 53-27-05",
-                         SubData = "+375232532705",
-                         ContactDataType = ContactDataType.WorkTelephone,
-                    },
-                    new ContactDataEntity
-                    {
                          ContactId = 2,
                          Data = "DmitryShilo@gipro.gomel.by",
                          SubData = "DmitryShilo@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 3,
+                         Data = "+375 232 53-27-05",
+                         SubData = "+375232532705",
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
                     {
@@ -510,10 +498,24 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
+                         ContactId = 5,
+                         Data = "EvgenyGribanov@gipro.gomel.by",
+                         SubData = "EvgenyGribanov@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
                          ContactId = 6,
                          Data = "+375 232 53-61-09",
                          SubData = "+375232536109",
                          ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 6,
+                         Data = "SergeyKovalev@gipro.gomel.by",
+                         SubData = "SergeyKovalev@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
                     {
@@ -524,16 +526,239 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
+                         ContactId = 7,
+                         Data = "AnatolyMarachkin@gipro.gomel.by",
+                         SubData = "AnatolyMarachkin@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
                          ContactId = 8,
                          Data = "+375 232 53-61-07",
                          SubData = "+375232536107",
                          ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 8,
+                         Data = "IrinaPetrenko@gipro.gomel.by",
+                         SubData = "IrinaPetrenko@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 9,
+                         Data = "+375 232 53-27-08",
+                         SubData = "+375232532708",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 9,
+                         Data = "ElenaChernookaya@gipro.gomel.by",
+                         SubData = "ElenaChernookaya@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 10,
+                         Data = "+375 232 53-61-06",
+                         SubData = "+375232536106",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 10,
+                         Data = "OlgaIgnatova@gipro.gomel.by",
+                         SubData = "OlgaIgnatova@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 11,
+                         Data = "+375 232 53-27-04",
+                         SubData = "+375232536106",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 11,
+                         Data = "post@gipro.gomel.by",
+                         SubData = "post@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 12,
+                         Data = "+375 232 53-27-19",
+                         SubData = "+375232532719",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 12,
+                         Data = "NinaShcherbatenko@gipro.gomel.by",
+                         SubData = "NinaShcherbatenko@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 13,
+                         Data = "+375 232 53-27-18",
+                         SubData = "+375232532718",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 13,
+                         Data = "AlexandraGorbatovskaya@gipro.gomel.by",
+                         SubData = "AlexandraGorbatovskaya@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 14,
+                         Data = "+375 232 21-30-54",
+                         SubData = "+375232213054",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 14,
+                         Data = "ShkundavlevVladimir@gipro.gomel.by",
+                         SubData = "ShkundavlevVladimir@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 15,
+                         Data = "+375 232 53-27-11",
+                         SubData = "+375232532711",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 15,
+                         Data = "NataliaTsilko@gipro.gomel.by",
+                         SubData = "NataliaTsilko@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 16,
+                         Data = "+375 232 53-27-41",
+                         SubData = "+375232532711",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 16,
+                         Data = "AndreySirotko@gipro.gomel.by",
+                         SubData = "AndreySirotko@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 17,
+                         Data = "+375 232 53-27-18",
+                         SubData = "+375232532711",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 17,
+                         Data = "komarPetr@gipro.gomel.by",
+                         SubData = "komarPetr@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 18,
+                         Data = "+375 232 53-27-09",
+                         SubData = "+375232532709",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 18,
+                         Data = "larisaЬural@gipro.gomel.by",
+                         SubData = "larisaЬural@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 19,
+                         Data = "+375 232 53-27-13",
+                         SubData = "+375232532713",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 19,
+                         Data = "AnderyuSudakov@gipro.gomel.by",
+                         SubData = "AnderyuSudakov@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 20,
+                         Data = "+375 232 53-27-19",
+                         SubData = "+375232532719",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 20,
+                         Data = "SvetlanaRossol@gipro.gomel.by",
+                         SubData = "SvetlanaRossol@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 21,
+                         Data = "+375 232 21-30-50",
+                         SubData = "+375232213050",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 21,
+                         Data = "AlexanderGoncharov@gipro.gomel.by",
+                         SubData = "AlexanderGoncharov@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
                     },
                 };
 
                 foreach (var item in contactEntities)
                 {
                     context.Set<ContactDataEntity>().Add(item);
+                    context.SaveChanges();
+                }
+            }
+        }
+
+        private static void InitializerVacancy(GiprojivmashContext context)
+        {
+            if (!context.Vacancies.Any())
+            {
+                var vacancyEntities = new List<VacancyEntity>
+                {
+                    new VacancyEntity
+                    {
+                           Position = "Начальник отдела.",
+                           Description = "На постоянную работу требуется начальник отдела. Требования: " +
+                           "- Водительское удостворение категории B" +
+                           "- Высшее образование," +
+                           "- Знание английского языка " +
+                           "Заработная плата по результатам собеседования.",
+                           NumberPhone = "+375 (232) 53-27-04",
+                           SubNumberPhone = "+375232532704",
+                    },
+                };
+
+                foreach (var item in vacancyEntities)
+                {
+                    context.Set<VacancyEntity>().Add(item);
                     context.SaveChanges();
                 }
             }

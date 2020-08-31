@@ -1,0 +1,180 @@
+﻿@model Giprojivmash.WEB.Models.About.AboutPageViewModel
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <h5>
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+                Проектный институ создан в 1971 году.
+            </h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wrap">
+                        <div class="cube">
+                            <div class="front gip">
+                            </div>
+                            <div class="back gip">
+                            </div>
+                            <div class="top gip">
+                            </div>
+                            <div class="bottom gip">
+                            </div>
+                            <div class="left gip">
+                            </div>
+                            <div class="right gip">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    Институт оказывает следуюие услуги:
+                    <a href="#">Услуга услгуа услгуа</a>
+                    <a href="#">Услуга услгуа услгуа</a>
+                    <a href="#">Услуга услгуа услгуа</a>
+                    <a href="#">Услуга услгуа услгуа</a>
+                    <a href="#">Услуга услгуа услгуа</a>
+                    <a href="#">Услуга услгуа услгуа</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .wrap {
+        margin-top: 150px;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+    }
+
+    .cube {
+        margin: auto;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        transform-style: preserve-3d;
+    }
+
+        .cube > div {
+            position: absolute;
+            box-sizing: border-box;
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+            opacity: 0.9;
+            background-color: #000;
+            border: solid 1px #204c73;
+            color: #ffffff;
+        }
+
+    .front {
+        transform: translateZ(100px);
+    }
+
+    .back {
+        transform: translateZ(-100px) rotateY(180deg);
+    }
+
+    .right {
+        transform: rotateY(-270deg) translateX(100px);
+        transform-origin: top right;
+    }
+
+    .left {
+        transform: rotateY(270deg) translateX(-100px);
+        transform-origin: center left;
+    }
+
+    .top {
+        transform: rotateX(-270deg) translateY(-100px);
+        transform-origin: top center;
+    }
+
+    .bottom {
+        transform: rotateX(270deg) translateY(100px);
+        transform-origin: bottom center;
+    }
+
+    @@keyframes rotate {
+        from {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+
+        to {
+            transform: rotateX(-90deg) rotateY(360deg);
+        }
+    }
+
+    .cube {
+        animation: rotate 60s infinite linear;
+    }
+
+    .wrap:hover .front {
+        transform: translateZ(200px);
+    }
+
+    .wrap:hover .back {
+        transform: translateZ(-200px) rotateY(180deg);
+    }
+
+    .wrap:hover .right {
+        transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+    }
+
+    .wrap:hover .left {
+        transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+    }
+
+    .wrap:hover .top {
+        transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+    }
+
+    .wrap:hover .bottom {
+        transform: rotateX(270deg) translateZ(100px) translateY(100px);
+    }
+
+    .cube > div {
+        transition: transform 1s ease-in;
+    }
+
+    .gip {
+        background-image: url("https://sun9-42.userapi.com/s3oD_jC52CB34K3Fr3xzodhr_8DPwKCAvdrypg/UW4-bC695_A.jpg");
+        background-size: cover;
+    }
+</style>
+
+

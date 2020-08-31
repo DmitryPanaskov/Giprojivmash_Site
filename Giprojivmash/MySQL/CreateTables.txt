@@ -98,7 +98,8 @@ CREATE TABLE vacancy(
     Id int NOT NULL AUTO_INCREMENT,
     Position varchar(500),
     Description varchar(1000),
-    Contact varchar(500),
+    NubmerPhone varchar(50),
+    SubNubmerPhone varchar(50),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

@@ -4,93 +4,123 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container-fluid">
-    <div class="d-none d-md-block w-100">
-        <div id="particles-js">
+@{/*
+        <div class="container-fluid">
+            <div class="d-none d-md-block w-100">
+                <div id="particles-js">
+                </div>
+                <div class="slogan-box d-flex">
+                    <p>
+                        ВОПЛОЩАЕМ ВАШИ ИДЕИ В РЕАЛЬНОСТЬ
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="slogan-box d-flex">
-            <p>
-                ВОПЛОЩАЕМ ВАШИ ИДЕИ В РЕАЛЬНОСТЬ
-            </p>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row mt-3">
-        <div class="col-md-12">
-            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ </h3>
-            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_rb">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РЕСПУБЛИКИ БЕЛАРУСЬ </h3>
-            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_sng">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РОССИИ, УКРАИНЫ, КАЗАХСТАНА, ЛИТВЫ </h3>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="d-md-flex align-self-center p-5 col-md-4" data-aos="fade-right">
-            <img src="~/images/logo/logo_gipro_blue_bim.png" class="img img-fluid" alt="Гипроживмаш BIM" />
-        </div>
-        <div class="col-md-8" data-aos="fade-left">
-            <p class="text-justify">
-                ОАО «Гипроживмаш» - это в первую очередь специалисты,
-                имеющие опыт и современный взгляд на решение любых проблем.
-                Мы творчески подходим к решению любых задач, доводим до совершенства любую деталь.
-                Для нас нет невыполнимых задач, мы беремся за проекты любой сложности и всегда стараемся выполнить все качественно и в срок.
-            </p>
-            <p>
-                ОАО «Гипроживмаш» осуществляет работы по проектированию и строительству зданий и сооружений,
-                геодезенические и картографические работы, осуществляет работы в области промышленной и пожарной безопасности,
-                осуществляет деятельность по обеспечению безопасности юридических и физических лиц.
-            </p>
-            <p>
-                ОАО «Гипроживмаш» имеет сертификат соответствия Системы менеджмента качества проектирования требованиям СТБ ISO 9001
-            </p>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ </h3>
+                    <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_rb">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РЕСПУБЛИКИ БЕЛАРУСЬ </h3>
+                    <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_sng">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РОССИИ, УКРАИНЫ, КАЗАХСТАНА, ЛИТВЫ </h3>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="d-md-flex align-self-center p-5 col-md-4" data-aos="fade-right">
+                    <img src="~/images/logo/logo_gipro_blue_bim.png" class="img img-fluid" alt="Гипроживмаш BIM" />
+                </div>
+                <div class="col-md-8" data-aos="fade-left">
+                    <p class="text-justify">
+                        ОАО «Гипроживмаш» - это в первую очередь специалисты,
+                        имеющие опыт и современный взгляд на решение любых проблем.
+                        Мы творчески подходим к решению любых задач, доводим до совершенства любую деталь.
+                        Для нас нет невыполнимых задач, мы беремся за проекты любой сложности и всегда стараемся выполнить все качественно и в срок.
+                    </p>
+                    <p>
+                        ОАО «Гипроживмаш» осуществляет работы по проектированию и строительству зданий и сооружений,
+                        геодезенические и картографические работы, осуществляет работы в области промышленной и пожарной безопасности,
+                        осуществляет деятельность по обеспечению безопасности юридических и физических лиц.
+                    </p>
+                    <p>
+                        ОАО «Гипроживмаш» имеет сертификат соответствия Системы менеджмента качества проектирования требованиям СТБ ISO 9001
+                    </p>
 
+                </div>
+            </div>
+            <div class="row">
+                @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
+                {
+                    <a href="#" class="col-md-4 a-block">
+                        <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
+                            <span class="caption">
+                                <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
+                                <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
+                            </span>
+                        </div>
+                    </a>
+                }
+            </div>
+            <div class="row mt-3 mb-3">
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="https://www.belorusneft.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/belneft.png" />
+                    </a>
+                </div>
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="http://www.gomeldrev.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomeldrev.png" />
+                    </a>
+                </div>
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="https://www.gomelenergo.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomelenergo.png" />
+                    </a>
+                </div>
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="https://www.gomselmash.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomselmash.png" />
+                    </a>
+                </div>
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="http://belfert.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/himzavod.png" />
+                    </a>
+                </div>
+                <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
+                    <a target="_blank" class="link-btn" href="http://kristall.by/">
+                        <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/kristall.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+          */
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 info w-100">
+            <h1 class="text-center">САЙТ В РАЗРАБОТКЕ</h1>
         </div>
     </div>
     <div class="row">
-        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
-        {
-            <a href="#" class="col-md-4 a-block">
-                <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
-                    <span class="caption">
-                        <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
-                        <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
-                    </span>
-                </div>
-            </a>
-        }
-    </div>
-    <div class="row mt-3 mb-3">
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="https://www.belorusneft.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/belneft.png" />
-            </a>
+        <div class="d-none d-sm-block timer w-100">
+            <script src="//megatimer.ru/get/24a6d2fc91092eae592a83755e5a473d.js"></script>
         </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="http://www.gomeldrev.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomeldrev.png" />
-            </a>
-        </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="https://www.gomelenergo.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomelenergo.png" />
-            </a>
-        </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="https://www.gomselmash.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/gomselmash.png" />
-            </a>
-        </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="http://belfert.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/himzavod.png" />
-            </a>
-        </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
-            <a target="_blank" class="link-btn" href="http://kristall.by/">
-                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/kristall.png" />
-            </a>
+        <div class="d-block d-sm-none timer w-100">
+            <script src="//megatimer.ru/get/8fd3c064a1e47b1f4962277b6649d903.js"></script>
         </div>
     </div>
 </div>
+
+<style>
+    .info {
+        margin-top: 220px;
+        margin-bottom: 50px;
+    }
+
+    .timer {
+        margin-bottom: 220px;
+    }
+</style>
 
 <style>
     .thumbnail {

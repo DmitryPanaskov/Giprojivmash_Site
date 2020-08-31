@@ -36,4 +36,7 @@
     <ProjectReference Include="..\Giprojivmash.BLL\Giprojivmash.BLL.csproj" />
     <ProjectReference Include="..\Giprojivmash.DAL\Giprojivmash.DAL.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Portfolio\" />
+  </ItemGroup>
 </Project>

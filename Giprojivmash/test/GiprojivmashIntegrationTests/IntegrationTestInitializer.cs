@@ -216,13 +216,13 @@ namespace GiprojivmashIntegrationTests
                 {
                      Position = "1",
                      Description = "1",
-                     Contact = "1",
+                     NumberPhone = "1",
                 },
                 new VacancyEntity
                 {
                      Position = "2",
                      Description = "2",
-                     Contact = "2",
+                     NumberPhone = "2",
                 },
             };
 

@@ -48,7 +48,7 @@ namespace Giprojivmash.WEB.Controllers
         {
             var model = InitializeServiceViewModel(ServiceType.InvestmentJustification);
             model.PageTitle = "Оказание услуг по разработке обоснования инвестиций в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
-            model.PageName = "обоснование инвестиций";
+            model.PageName = "Обоснование инвестиций";
             return View("Service", model);
         }
 
