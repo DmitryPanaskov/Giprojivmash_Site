@@ -49,6 +49,7 @@ namespace Giprojivmash.WEB.Controllers
             var model = InitializeContactPageViewModel(PositionType.Manager);
             model.PageName = "Руководство";
             model.Sidebar = InitSidebar();
+            model.PageTitle = "Контакты руководства (администрация, ауп)";
             return View("Contact", model);
         }
 
@@ -59,6 +60,7 @@ namespace Giprojivmash.WEB.Controllers
             var model = InitializeContactPageViewModel(PositionType.ChiefProjectEngineer);
             model.PageName = "Главные инженеры проектов";
             model.Sidebar = InitSidebar();
+            model.PageTitle = "Контакты гипов (главных инженеров проекта)";
             return View("Contact", model);
         }
 
@@ -69,7 +71,10 @@ namespace Giprojivmash.WEB.Controllers
             var model = InitializeContactPageViewModel(PositionType.HeadOfDepartment);
             model.PositionType = PositionType.HeadOfDepartment;
             model.PageName = "Отделы";
-            model.PageTitle = "Телефон бухгалтерии и главного бухгалтера, отдела кадров, планово-производственного отдела, планово-экономического отдела, юриста, отдела качества," +
+            model.PageKeyword = "бухгалтер, отдел кадров, плановый отдел, юрист, генплан, архитектор, строительный, сметный," +
+                " электроснабжение, водоснабжение, канализация, газоснабжение, вентиляция, контакты";
+            model.PageTitle = "Телефон бухгалтерии (главного бухгалтера), отдела кадров, планово-производственного отдела, " +
+                "планово-экономического отдела, юриста, отдела качества," +
                 " генерального плана, архитектурного-планировочного, строительного, сметно-экономического,  электроснабжения," +
                 "слаботочных систем, водоснабжение , канализация, теплоснабжение, газоснабжение, вентиляция, генплана, отдела";
             model.Sidebar = InitSidebar();

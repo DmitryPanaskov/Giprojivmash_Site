@@ -63,10 +63,10 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @{
                                     /*
-                                    <a class="dropdown-item text-uppercase" asp-action="About" asp-controller="About"><span class="flag-icon flag-icon-gb"></span> О нас</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="History" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> История</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="Certificate" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Сертификаты</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="Vacancy" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
+                                <a class="dropdown-item text-uppercase" asp-action="About" asp-controller="About"><span class="flag-icon flag-icon-gb"></span> О нас</a>
+                                <a class="dropdown-item text-uppercase" asp-action="History" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> История</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Certificate" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Сертификаты</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Vacancy" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
                                     */
                                 }
                                 <a class="dropdown-item text-uppercase" asp-action="Shareholder" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Акционерам</a>
@@ -97,20 +97,27 @@
         <div class="container">
             <div class="row">
                 <div class="d-none d-sm-block col-sm-2">
-                    <img class="img-fluid" src="~/images/logo/logo_gipro_white.png" alt="Гипроживмаш" />
+                    <a class="a-block mt-5" href="https://gipro.gomel.by/">
+                        <img class="img-fluid" src="~/images/logo/logo_gipro_white.png" alt="Гипроживмаш" />
+                    </a>
                 </div>
-                <div class="col-sm-8 col-12">
+                <div class="col-sm-4 col-12">
                     <h3 class="text-center">СВЯЖИТЕСЬ С НАМИ</h3>
+                    <hr class="border-white w-50" />
                     <div class="icon-bar">
                         <i class="fa fa-map-marker"></i>
                         <div class="content">
-                            ул. Малайчука 12, 6 этаж, г. Гомель, 246000, Республика Беларусь
+                            ул. Малайчука 12, 6 этаж,
+                            г. Гомель, 246032,
+                            Республика Беларусь
                         </div>
                     </div>
                     <div class="icon-bar">
                         <i class="fa fa-calendar"></i>
                         <div class="content">
-                            Пн.-пт.: 8.00 - 17.00, Выходной: Сб., Вс., Обед: 12.30 - 13.00
+                            Пн.-пт.: 8.00 - 17.00,
+                            Обед: 12.30 - 13.00
+                            Выходной: Сб., Вс.,
                         </div>
                     </div>
                     <div class="icon-bar">
@@ -144,8 +151,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-4 col-12">
+                    <h3 class="text-center">БЫСТРЫЕ ССЫЛКИ</h3>
+                    <hr class="border-white w-50" />
+                    <div class="content text-center">
+                        <a asp-action="Shareholder" asp-controller="About">Акционерам</a><br>
+                        <a asp-action="Manager" asp-controller="Contact">Руководство</a><br>
+                    </div>
+                </div>
                 <div class="d-none d-sm-block col-sm-2">
-                    <img class="img-fluid" src="~/images/logo/logo_stroy.png" alt="Гомельстройкомплекс" />
+                    <a class="a-block mt-5" target="_blank" href="https://gomelconstruction.by/services/proektirovanie/">
+                        <img class="img-fluid" src="~/images/logo/logo_stroy.png" alt="Гомельстройкомплекс" />
+                    </a>
                 </div>
             </div>
         </div>

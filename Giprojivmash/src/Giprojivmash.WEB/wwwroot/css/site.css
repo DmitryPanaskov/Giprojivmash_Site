@@ -11,7 +11,19 @@ body {
     body ::selection {
         color: white;
         background-color: #f8b617;
+        line-height: 1rem;
     }
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #204c734d;
+}
+
+.text-indent {
+    text-indent: 30px;
+}
 
 .navbar .a {
     text-transform: uppercase;
@@ -67,6 +79,7 @@ a .navbar-brand {
     background-color: #204c73;
     border-radius: 0px;
     border: none;
+    margin: 0 0 0 0;
 }
 
 .dropdown-item {
@@ -87,7 +100,6 @@ a .navbar-brand {
 }
 
 /**********/
-
 .nav-vertical-menu {
     position: relative;
     display: -ms-flexbox;
@@ -126,6 +138,10 @@ a .navbar-brand {
         position: relative;
     }
 
+        .nav-vertical-menu a:after {
+            content: none;
+        }
+
 .current {
     background-color: rgba(248,182,23,1);
 }
@@ -136,7 +152,7 @@ a {
     color: #f8b617;
     text-decoration: none;
     display: inline-block;
-    padding: 15px 20px;
+    /*padding: 15px 20px;*/
     position: relative;
 }
 
@@ -322,43 +338,7 @@ canvas {
     width: 100%;
 }
 
-.nav-vertical-menu {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    background-color: rgba(0,105,155,1);
-    text-align: center;
-    width: 100%;
-    line-height: 1rem;
-}
 
-    .nav-vertical-menu li {
-        color: #fff;
-        width: 100%;
-        list-style: none;
-    }
-
-        .nav-vertical-menu li :hover {
-            color: #fff;
-            background-color: rgba(248,182,23,1);
-            width: 100%;
-        }
-
-    .nav-vertical-menu a {
-        color: white;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-block;
-        padding: 1rem;
-        position: relative;
-    }
 
 .current {
     background-color: rgba(248,182,23,1);
@@ -368,10 +348,11 @@ canvas {
 @media (min-width: 576px) {
     .navbar-expand-sm
     .navbar-nav
+    /*
     .dropdown-menu {
         padding-top: 1.5rem;
     }
-
+        */
     .icon-bar {
         padding-left: 20%;
     }

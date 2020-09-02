@@ -28,6 +28,7 @@
         </div>
         <div class="col-lg-8 col-sm-12">
             <h1>@Model.PageName</h1>
+            <hr />
             @{
                 var contacts = Model.ContactList.ToList();
             }
@@ -37,7 +38,7 @@
                 var officialName = person.FirstName + " " + person.Patronymic;
 
                 <div class="row">
-                    <div class="d-none d-sm-block col-md-4">
+                    <div class="d-none d-sm-block col-md-3">
                         @{
                             if (person.Photo != null)
                             {
@@ -49,48 +50,49 @@
                             }
                         }
                     </div>
-                    <div class="col-md-8 col-sm-12">
-                        <h2 class="position">@person.Position</h2>
-                        <h4 class="font-weight-bold">@person.LastName</h4>
-                        <h4>@officialName</h4>
-                        @{
-                            var dataPerson = Model.ContactDataList.Where(m => m.ContactId == person.Id).ToList();
-                            var contactDataTypeName = "";
-                            var contactDataTypeNameSubName = "";
-                        }
-                        @for (var j = 0; j < dataPerson.Count; j++)
-                        {
-                            switch (dataPerson.ElementAt(j).ContactDataType)
-                            {
-                                case ContactDataType.WorkTelephone:
-                                    contactDataTypeName = "тел.:";
-                                    contactDataTypeNameSubName = "tel:";
-                                    break;
-                                case ContactDataType.MobileTelephone:
-                                    contactDataTypeName = "моб.тел.:";
-                                    contactDataTypeNameSubName = "tel:";
-                                    break;
-                                case ContactDataType.Fax:
-                                    contactDataTypeName = "факс:";
-                                    contactDataTypeNameSubName = "fax:";
-                                    break;
-                                case ContactDataType.Email:
-                                    contactDataTypeName = "email:";
-                                    contactDataTypeNameSubName = "mailto:";
-                                    break;
-                                default:
-                                    contactDataTypeName = "";
-                                    contactDataTypeNameSubName = "";
-                                    break;
+                    <div class="col-md-9 col-sm-12">
+                        <h4 class="position">@person.Position</h4>
+                        <p class="contactData">
+                            <b>@person.LastName</b><br />
+                            @officialName<br />
+
+                            @{
+                                var dataPerson = Model.ContactDataList.Where(m => m.ContactId == person.Id).ToList();
+                                var contactDataTypeName = "";
+                                var contactDataTypeNameSubName = "";
                             }
-                            var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
-                            if (contactDataTypeName != string.Empty)
+                            @for (var j = 0; j < dataPerson.Count; j++)
                             {
-                                <h5 class="contactData">
-                                    @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
-                                </h5>
+                                switch (dataPerson.ElementAt(j).ContactDataType)
+                                {
+                                    case ContactDataType.WorkTelephone:
+                                        contactDataTypeName = "тел.:";
+                                        contactDataTypeNameSubName = "tel:";
+                                        break;
+                                    case ContactDataType.MobileTelephone:
+                                        contactDataTypeName = "моб.тел.:";
+                                        contactDataTypeNameSubName = "tel:";
+                                        break;
+                                    case ContactDataType.Fax:
+                                        contactDataTypeName = "факс:";
+                                        contactDataTypeNameSubName = "fax:";
+                                        break;
+                                    case ContactDataType.Email:
+                                        contactDataTypeName = "email:";
+                                        contactDataTypeNameSubName = "mailto:";
+                                        break;
+                                    default:
+                                        contactDataTypeName = "";
+                                        contactDataTypeNameSubName = "";
+                                        break;
+                                }
+                                var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
+                                if (contactDataTypeName != string.Empty)
+                                {
+                                    @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a><br />
+                                }
                             }
-                        }
+                        </p>
                     </div>
                 </div>
                 <br />

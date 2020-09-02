@@ -29,59 +29,62 @@
         </div>
         <div class="col-lg-8 col-sm-12">
             <h1>@Model.PageName</h1>
+            <hr />
             <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <h2 class="position">@Model.Contact.Position</h2>
+                <div class="col-lg-4 col-sm-12">
+                    <h4 class="position">@Model.Contact.Position</h4>
                     @{
                         var dataPerson = Model.ContactDataList.Where(m => m.ContactId == Model.Contact.Id).ToList();
                         var contactDataTypeName = "";
                         var contactDataTypeNameSubName = "";
                     }
-                    @for (var j = 0; j < dataPerson.Count; j++)
-                    {
-                        switch (dataPerson.ElementAt(j).ContactDataType)
+                    <p class="contactData">
+                        @for (var j = 0; j < dataPerson.Count; j++)
                         {
-                            case ContactDataType.WorkTelephone:
-                                contactDataTypeName = "тел.:";
-                                contactDataTypeNameSubName = "tel:";
-                                break;
-                            case ContactDataType.MobileTelephone:
-                                contactDataTypeName = "моб.тел.:";
-                                contactDataTypeNameSubName = "tel:";
-                                break;
-                            case ContactDataType.Fax:
-                                contactDataTypeName = "факс:";
-                                contactDataTypeNameSubName = "fax:";
-                                break;
-                            case ContactDataType.Email:
-                                contactDataTypeName = "email:";
-                                contactDataTypeNameSubName = "mailto:";
-                                break;
-                            default:
-                                contactDataTypeName = "";
-                                contactDataTypeNameSubName = "";
-                                break;
+                            switch (dataPerson.ElementAt(j).ContactDataType)
+                            {
+                                case ContactDataType.WorkTelephone:
+                                    contactDataTypeName = "тел.:";
+                                    contactDataTypeNameSubName = "tel:";
+                                    break;
+                                case ContactDataType.MobileTelephone:
+                                    contactDataTypeName = "моб.тел.:";
+                                    contactDataTypeNameSubName = "tel:";
+                                    break;
+                                case ContactDataType.Fax:
+                                    contactDataTypeName = "факс:";
+                                    contactDataTypeNameSubName = "fax:";
+                                    break;
+                                case ContactDataType.Email:
+                                    contactDataTypeName = "email:";
+                                    contactDataTypeNameSubName = "mailto:";
+                                    break;
+                                default:
+                                    contactDataTypeName = "";
+                                    contactDataTypeNameSubName = "";
+                                    break;
+                            }
+                            var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
+                            if (contactDataTypeName != string.Empty)
+                            {
+                                @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a><br />
+                            }
                         }
-                        var subData = contactDataTypeNameSubName + dataPerson.ElementAt(j).SubData;
-                        if (contactDataTypeName != string.Empty)
-                        {
-                            <h5 class="contactData">
-                                @contactDataTypeName<a href="@subData">@dataPerson.ElementAt(j).Data</a>
-                            </h5>
-                        }
-                    }
+                    </p>
                 </div>
-                <div class="col-lg-6 col-sm-12">
-                    <h2 class="position">Время работы</h2>
-                    <h5>
-                        Пн.-пт.: 8.00 - 17.00,
-                    </h5>
-                    <h5>
+                <div class="col-lg-4 col-sm-12">
+                    <h4 class="position">Время работы</h4>
+                    <p>
+                        Пн.-пт.: 8.30 - 17.00,
+                        <br />
+                        Обед: 12.30 - 13.00,
+                        <br />
                         Выходной: Сб., Вс.,
-                    </h5>
-                    <h5>
-                        Выходной: Сб., Вс.,
-                    </h5>
+                    </p>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <h4 class="position">Почтовый адрес</h4>
+                    <p>ул. Малайчука 12, 6 этаж, <br /> г. Гомель, 246032, <br /> Республика Беларусь</p>
                 </div>
             </div>
             <hr />

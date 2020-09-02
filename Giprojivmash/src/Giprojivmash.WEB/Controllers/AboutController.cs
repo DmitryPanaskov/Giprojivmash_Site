@@ -77,7 +77,7 @@ namespace Giprojivmash.WEB.Controllers
                     SidebarAction = "Certificate",
                     SidebarName = "Сертификаты",
                 },
-                      */
+                */
                 new SidebarLineViewModel
                 {
                     SidebarAction = "Shareholder",

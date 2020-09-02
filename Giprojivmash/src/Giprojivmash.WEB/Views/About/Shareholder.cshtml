@@ -9,46 +9,43 @@
             <ul class="nav-vertical-menu">
                 @for (var i = 0; i < Model.Sidebar.Count; i++)
                 {
-                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
                     {
-                        <li class="nav-link-vertival-menu current">
-                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                        </li>
+                <li class="nav-link-vertival-menu current">
+                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                </li>
                     }
                     else
                     {
-                        <li class="nav-link-vertival-menu">
-                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                        </li>
+                <li class="nav-link-vertival-menu">
+                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                </li>
                     }
                 }
             </ul>
         </div>
         <div class="col-lg-8 col-sm-12">
             <h1>@Model.PageName</h1>
-            <h4 class="text-center">
-                УВАЖАЕМЫЕ АКЦИОНЕРЫ ОАО «Гипроживмаш»!
-            </h4>
-            <h4 class="text-center"">
+            <hr />
+            <p class="text-center">
+                <b>
+                    УВАЖАЕМЫЕ АКЦИОНЕРЫ ОАО «Гипроживмаш»!
+                </b>
+            </p>
+            <p class="text-center">
                 <b>18 сентября 2020</b> года в 15-00
                 по адресу: г. Гомель, ул. Малайчука, 12, 6-ой этаж
-            </h4>
-            <h4 class="text-center">состоится внеочередное общее собрание акционеров.</h4>
-            <h4>ПОВЕСТКА ДНЯ СОБРАНИЯ:</h4>
-            <h4><i>1. О реорганизации ОАО «Гипроживмаш» путем присоединения к нему ОАО «Гомельский вычислительный центр строителей».</i></h4>
-            <h4><i>2. Об утверждении договора присоединения ОАО «Гомельский вычислительный центр строителей» к ОАО «Гипроживмаш».</i></h4>
-            <h4>Реестр владельцев акций формируется по состоянию на 10.09.2020 года.</h4>
-            <h4>Порядок ознакомления с информацией по повестке дня очередного общего собрания: в период времени с 11.09.2020 по 18.09.2020 в рабочие дни с 8-30 по 17-00 в приемной Общества по адресу г. Гомель, ул. Малайчука, 12, 6-ой этаж.</h4>
-            <h4>Начало регистрации лиц, имеющих право на участие в очередном общем собрании акционеров 18.09.2020 в 14-30. Для регистрации при себе иметь акционеру общества – паспорт, представителю акционера – паспорт и доверенность.</h4>
-            <h4 class="float-right">
+            </p>
+            <p class="text-center">состоится внеочередное общее собрание акционеров.</p>
+            <p>ПОВЕСТКА ДНЯ СОБРАНИЯ:</p>
+            <p class="text-indent text-justify"><i>1. О реорганизации ОАО «Гипроживмаш» путем присоединения к нему ОАО «Гомельский вычислительный центр строителей».</i></p>
+            <p class="text-indent text-justify"><i>2. Об утверждении договора присоединения ОАО «Гомельский вычислительный центр строителей» к ОАО «Гипроживмаш».</i></p>
+            <p class="text-indent text-justify">Реестр владельцев акций формируется по состоянию на 10.09.2020 года.</p>
+            <p class="text-indent text-justify">Порядок ознакомления с информацией по повестке дня очередного общего собрания: в период времени с 11.09.2020 по 18.09.2020 в рабочие дни с 8-30 по 17-00 в приемной Общества по адресу г. Гомель, ул. Малайчука, 12, 6-ой этаж.</p>
+            <p class="text-indent text-justify">Начало регистрации лиц, имеющих право на участие в очередном общем собрании акционеров 18.09.2020 в 14-30. Для регистрации при себе иметь акционеру общества – паспорт, представителю акционера – паспорт и доверенность.</p>
+            <p class="text-right">
                 Наблюдательный совет
-            </h4>
+            </p>
         </div>
     </div>
 </div>
-
-<style>
-    h4 {
-        text-indent: 20px;
-    }
-</style>

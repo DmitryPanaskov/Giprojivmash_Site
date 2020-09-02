@@ -1,0 +1,31 @@
+﻿@model Giprojivmash.WEB.Models.About.AboutPageViewModel
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8">
+
+        </div>
+    </div>
+</div>

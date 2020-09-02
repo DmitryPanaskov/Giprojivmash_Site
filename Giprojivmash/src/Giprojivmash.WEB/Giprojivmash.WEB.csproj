@@ -5,6 +5,7 @@
     <AssemblyName>Giprojivmash.WEB</AssemblyName>
     <RootNamespace>Giprojivmash.WEB</RootNamespace>
     <ApplicationIcon></ApplicationIcon>
+    <UserSecretsId>3fdf77f5-4e98-4dc6-9b59-0c8513f31963</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
