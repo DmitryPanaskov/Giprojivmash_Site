@@ -238,7 +238,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Екатерина",
                         LastName = "Шаповалова",
                         Patronymic = "Игоревна",
-                        Photo = "chiefEngineer.png",
+                        Photo = "chief_engineer.png",
                         PositionType = PositionType.Manager,
                     },
                     new ContactEntity
@@ -537,8 +537,8 @@ namespace Giprojivmash.DAL.Context
                     new ContactDataEntity
                     {
                          ContactId = 7,
-                         Data = "AnatolyMarachkin@gipro.gomel.by",
-                         SubData = "AnatolyMarachkin@gipro.gomel.by",
+                         Data = "AnatolyMarochkin@gipro.gomel.by",
+                         SubData = "AnatolyMarochkin@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity

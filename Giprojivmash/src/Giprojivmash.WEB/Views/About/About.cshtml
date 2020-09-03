@@ -9,17 +9,17 @@
             <ul class="nav-vertical-menu">
                 @for (var i = 0; i < Model.Sidebar.Count; i++)
                 {
-                @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
                     {
-                <li class="nav-link-vertival-menu current">
-                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                </li>
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
                     }
                     else
                     {
-                <li class="nav-link-vertival-menu">
-                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                </li>
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
                     }
                 }
             </ul>
@@ -27,8 +27,8 @@
         <div class="col-md-8">
             <p class="text-indent text-justify">
                 ОАО «Гипроживмаш» специализируется на выполнении проектных работы по расширению,
-                реконструкции и техническому перевооружению промышленных предприятий, объектов здравохранения, образования, предприятий
-                коммунанльного назначения всех видов собственности, выполнении всех видов инженерно-изыскательских работ, осуществляет
+                реконструкции и техническому перевооружению промышленных предприятий, объектов здравохранения и образования, предприятий
+                коммунанльного назначения всех видов собственности, выполняет все виды инженерно-изыскательских работ, проводит
                 авторский надзор за строительством проектируемых объектов.
             </p>
             <div class="row">
@@ -52,18 +52,18 @@
                 </div>
                 <div class="col-md-6">
                     <div class="col-md-12">
-                        ОАО «Гипроживмаш» осуществляет следующие виды деятельности:
-                        <a target="_blank" asp-action="Design" asp-controller="Service" >Проектирование</a>
-                        <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service" >Обоснование инвестиций</a>
-                        <a target="_blank" asp-action="Geodesy" asp-controller="Service" >Инженерно-геодезические изыскания</a>
-                        <a target="_blank" asp-action="Ecology" asp-controller="Service" >Инженерно-экологические изыскания</a>
-                        <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service" >Промышленная безопасность</a>
-                        <a target="_blank" asp-action="SystemSafefty" asp-controller="Service" >Системы безопасности</a>
+                        ОАО «Гипроживмаш» осуществляет следующие виды услуг:<br />
+                        <a target="_blank" asp-action="Design" asp-controller="Service">Проектирование</a><br />
+                        <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service">Обоснование инвестиций</a><br />
+                        <a target="_blank" asp-action="Geodesy" asp-controller="Service">Инженерно-геодезические изыскания</a><br />
+                        <a target="_blank" asp-action="Ecology" asp-controller="Service">Инженерно-экологические изыскания</a><br />
+                        <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service">Промышленная безопасность</a><br />
+                        <a target="_blank" asp-action="SystemSafefty" asp-controller="Service">Системы безопасности</a><br />
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                     <p class="text-indent text-justify">
                         Персонал ОАО «Гипроживмаш» представлен 164 профессиональными специалистами с большим опытом работы,
                         компетентность которых подтверждена дипломами и сертификатами.
@@ -80,7 +80,11 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-12">
+                 <img />
 
+                   
+                </div>
             </div>
         </div>
     </div>
