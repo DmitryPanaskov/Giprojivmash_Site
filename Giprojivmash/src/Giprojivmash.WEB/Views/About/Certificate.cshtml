@@ -1,0 +1,86 @@
+﻿@model Giprojivmash.WEB.Models.About.AboutPageViewModel
+@{
+    ViewData["Title"] = "Certificate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8 col-sm-12">
+            <h1>@Model.PageName</h1>
+            <h4>Лицензии</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="/images/certificates/сertificate.jpg">
+                </div>
+                <div class="col-md-8">
+                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по использованию атомной энергии и источников ионизирующего излучения.pdf">
+                        По использованию атомной энергии
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по охранной деятельности (проектирование).pdf">
+                        По охранной деятельности
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по пожарной безопаности.pdf">
+                        По пожарной безопаности
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по промышленной безопаcности.pdf">
+                        По промышленной безопаcности
+                    </a>
+                    <br />
+                </div>
+            </div>
+            <h4>Аттестаты соответствия</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="/images/certificates/certificate_of_conformity.jpg">
+                </div>
+                <div class="col-md-8">
+                    <a data-fancybox="gallery" href="/files/certificates_conformity/Генпроектировщик 1 категории.pdf">
+                        Генпроектировщик 1 кат.
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates_conformity/Инженерно-геодезические изыскания 3 категории.pdf">
+                        Инженерно-геодезические изыскания 3 категории
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates_conformity/ОБ обследование зданий и сооружений 1 категории.pdf">
+                        Об обследование зданий и сооружений 1 категории
+                    </a>
+                    <br />
+                    <a data-fancybox="gallery" href="/files/certificates_conformity/Проектирование по разделам 1 категории.pdf">
+                        Проектирование по разделам 1 категории
+                    </a>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/fancyBox/jquery.fancybox.min.js"></script>
+}
+
+

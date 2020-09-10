@@ -1,0 +1,418 @@
+﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{
+    <link rel="stylesheet" type="text/css" href="~/lib/slick-carousel/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/slick-carousel/slick-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/fancyBox/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main-slider.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main-fancybox.min.css">
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-sm-none d-md-none d-xl-block d-lg-block col-6">
+            <div class="slider-wrap">
+                <div class="slider-for">
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/himzavod/1.jpg">
+                            <img class="img-fluid" src="~/images/portfolio/himzavod/1.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/himzavod/2.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/himzavod/2.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/himzavod/3.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/himzavod/3.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/himzavod/4.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/himzavod/4.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/himzavod/5.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/himzavod/5.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/himzavod/1.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/himzavod/2.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/himzavod/3.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/himzavod/4.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/himzavod/5.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xl-6 col-lg-6">
+            <h3>Реконструкция здания ТЭС ОАО «Гомельский химический завод»</h3>
+            <div class="icon-bar">
+                <i class="fa fa-map-marker"></i>
+                <div class="content">
+                    <a target="_blank" href="https://yandex.by/maps/-/CCQxBHu0-C">
+                        ул. Химзаводская, 5,
+                        г. Гомель, 246026,
+                        Республика Беларусь
+                    </a>
+                </div>
+            </div>
+            <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                <div>
+                    <img class="img-fluid" src="~/images/portfolio/himzavod/1.jpg">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Год постройки</h4>
+                    <p>2017-2018</p>
+                </div>
+                <div class="col-6">
+                    <h4>Площадь объекта</h4>
+                    <p>3456 кв. м.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Формат работ</h4>
+                    <p>Проектирование</p>
+                </div>
+                <div class="col-6">
+                    <h4>Тип здания</h4>
+                    <p>Объект промышленного назначения</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-justify">
+                Здание ТЭС цеха ПВК располагается на территории ОАО «Гомельский химический завод». Здание отдельно стоящее, с размерами 96,25х36 в условных осях 1-18, А–И, и состоит из нескольких объемов. Во внутреннем объёме здания ТЭС цеха ПВК размещены четыре паровых котла со вспомогательным оборудованием, группа сетевых и подпиточных насосов, пароводяные теплообменники, операторская, ремонтная мастерская, лаборатория, комплектная трансформаторная подстанция (КТП), служебно-бытовые помещения.
+            </p>
+            <p class="text-justify">
+                Проектом предусматривается:
+            </p>
+            <ul>
+                <li>демонтаж парового котла ГМ-50-1 №2 со вспомогательным оборудованием;</li>
+                <li>установка двух паровых котла номинальной паропроизводительностью одного котла 25 т/ч рабочее давление пара на выходе из котла 1,3-1,4 МПа, температура насыщенного пара 194-200<sup>0</sup>С, расчетный КПД - не менее 93% со вспомогательным оборудованием в здании ТЭС в осях 9-15, Б-Д;</li>
+                <li>установка новых питательных насосов в количестве 3 шт., нового ГРУ для газоснабжения новых паровых котлов, поагрегатный учет газа, нового парового РУ, нового сепаратора непрерывной продувки.</li>
+                <li>в соответствии с требованиями ТНПА предусмотреть клапан на вводе в котельную для автоматического отключения подачи газа, сблокированный с системой контроля загазованности.</li>
+            </ul>
+            <p class="text-justify">
+                Марки устанавливаемых двух паровых котлов Е-25-1,4ГМ (ДЕ-25-14-ГМ-О) ОАО «Бийский котельный завод»  производительностью 25 т/ч Рраб=1,3 МПа в здании ТЭС цеха ПВК приняты на  основании контракта поставки оборудования.
+            </p>
+            <table class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <td rowspan="2">
+                            <p class="text-center">Наименование</p>
+                        </td>
+                        <td rowspan="2">
+                            <p class="text-center">Единица измерения</p>
+                        </td>
+                        <td colspan="2">
+                            <p class="text-center">Показатель</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-center">После реконструкции</p>
+                        </td>
+                        <td>
+                            <p class="text-center">До реконструкции</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p class="text-center">1</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">2</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">3</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">4</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Расчетная мощность</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">МВт</span></p>
+                            <p class="text-center">Гкал/ч</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">46,33</span></p>
+                            <p class="text-center">39,84</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">46,33</span></p>
+                            <p class="text-center">39,84</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Установленная рабочая мощность котельной</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">МВт</span></p>
+                            <p class="text-center">Гкал/ч</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">46,88</span></p>
+                            <p class="text-center">40,32</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">93,97</span></p>
+                            <p class="text-center">80,8</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовая выработка теплоты</p>
+                            <p>вырабатываемая:</p>
+                            <p>&nbsp;паровыми котлами</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">тыс. ГДж</p>
+                            <p class="text-center">тыс. Гкал</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">84,310</span></p>
+                            <p class="text-center">20,141</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">84,310</span></p>
+                            <p class="text-center">20,141</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовой отпуск теплоты потребителям</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">тыс. ГДж</p>
+                            <p class="text-center">тыс. Гкал</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">82,273</span></p>
+                            <p class="text-center">19,654</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">82,273</span></p>
+                            <p class="text-center">19,654</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовое число часов использования установленной производительности</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">ч</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center"><span style="text-decoration: underline;">&nbsp;</span></p>
+                            <p class="text-center">500</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">250</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовой расход топлива:</p>
+                            <p>- газ&nbsp;&nbsp; (основной вид топлива)</p>
+                            <p>Жидкое топливо</p>
+                            <p>- мазут М 100</p>
+                            <p>(резервная работа – max 120 часов)</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">тыс. м<sup>3</sup></p>
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">т</p>
+                            <p class="text-center">&nbsp;</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">2705,8</p>
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">389,9</p>
+                            <p class="text-center"><span style="text-decoration: underline;">&nbsp;</span></p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">2942,03</p>
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">403</p>
+                            <p class="text-center">&nbsp;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>- условного, в том числе:</p>
+                            <p>- газ (основной вид топлива)</p>
+                            <p>-мазут (резервная работа – max 120 часов)</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p>&nbsp;</p>
+                            <p class="text-center">тыс. Т.У.Т.</p>
+                            <p class="text-center">тыс. Т.У.Т.&nbsp;</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p>&nbsp;</p>
+                            <p class="text-center">3,094</p>
+                            <p class="text-center">0,527</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">&nbsp;</p>
+                            <p class="text-center">3,364</p>
+                            <p class="text-center">0,545</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Установленная мощность токоприемников</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p style="text-align: center;">кВт</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">1820</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">1950</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовой расход электроэнергии</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p style="text-align: center;">тыс. кВт*ч</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">563,12</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">635,4</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Годовой расход воды</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p style="text-align: center;">тыс. м<sup>3</sup></p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">-</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">-</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Численность персонала</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p style="text-align: center;">чел.</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">44</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">44</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-text-top">
+                            <p>Удельные показатели на 1 МВт установленной мощности котельной:</p>
+                            <p>- мощность&nbsp; токоприемников</p>
+                            <p>- численность персонала</p>
+                            <p>- удельный расход условного топлива на 1 ГДж (1 Гкал) отпущенного тепла</p>
+                            <p>Расход электроэнергии&nbsp;&nbsp; всего в т. ч.:</p>
+                            <p>- собственные нужды (производство тепловой энергии)</p>
+                            <p>- вспомогательные нужды</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">кВт/МВт</p>
+                            <p class="text-center">чел./МВт</p>
+                            <p class="text-center"><span style="text-decoration: underline;">т.у.т./ГДж</span></p>
+                            <p class="text-center">т.у.т./Гкал</p>
+                            <p class="text-center">кВт/Гкал</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">38,8</p>
+                            <p class="text-center">0,94</p>
+                            <p class="text-center"><span style="text-decoration: underline;">0,038</span></p>
+                            <p class="text-center">0,157</p>
+                            <p class="text-center">27,96</p>
+                            <p class="text-center">16,36</p>
+                            <p class="text-center">11,6</p>
+                        </td>
+                        <td class="align-text-top">
+                            <p class="text-center">20,75</p>
+                            <p class="text-center">0,47</p>
+                            <p class="text-center"><span style="text-decoration: underline;">0,0409</span></p>
+                            <p class="text-center">0,171</p>
+                            <p class="text-center">31,6</p>
+                            <p class="text-center">20,0</p>
+                            <p class="text-center">11,6</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="~/lib/slick-carousel/slick.min.js"></script>
+    <script src="~/lib/fancyBox/jquery.fancybox.min.js"></script>
+    <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    </script>
+}
+

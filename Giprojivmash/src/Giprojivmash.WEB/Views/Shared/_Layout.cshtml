@@ -13,9 +13,8 @@
     <link rel="shortcut icon" href="/images/logo/logo_gipro_blue.png" type="image/png">
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/lib/grayScale/css/gray.min.css" />
-    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
+    @RenderSection("Head", required: false)
 </head>
 <body>
     <header>
@@ -31,46 +30,33 @@
                         <li class="nav-item">
                             <a class="nav-link text-uppercase" asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
                         </li>
-                        @{
-                            /*
-                            <li class="nav-item dropdown">
-                                <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Услуги
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-uppercase" asp-action="Design" asp-controller="Service"><span class="flag-icon flag-icon-ru"></span> Проектирование</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="InvestmentJustification" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Обоснование инвестиций</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="Geodesy" asp-controller="Service"><span class="flag-icon flag-icon-gb"></span> Инженерно-геодезические изыскания</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="Ecology" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Инженерно-экологические изыскания</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="IndustrialSafety" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Промышленная безопасность</a>
-                                    <a class="dropdown-item text-uppercase" asp-action="SystemSafefty" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Системы безопасности</a>
-                                </div>
-                            </li>
-                            */
-                        }
-                        @{
-                            /*
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Услуги
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-uppercase" asp-action="Design" asp-controller="Service"><span class="flag-icon flag-icon-ru"></span> Проектирование</a>
+                                <a class="dropdown-item text-uppercase" asp-action="InvestmentJustification" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Обоснование инвестиций</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Geodesy" asp-controller="Service"><span class="flag-icon flag-icon-gb"></span> Инженерно-геодезические изыскания</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Ecology" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Инженерно-экологические изыскания</a>
+                                <a class="dropdown-item text-uppercase" asp-action="IndustrialSafety" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Промышленная безопасность</a>
+                                <a class="dropdown-item text-uppercase" asp-action="SystemSafefty" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Системы безопасности</a>
+                            </div>
+                        </li>
                             <li class="nav-item">
-                                <a class="nav-link text-uppercase" asp-area="" asp-controller="Home" asp-action="">Портфолио</a>
+                                <a class="nav-link text-uppercase" asp-area="" asp-controller="Portfolio" asp-action="Portfolio">Портфолио</a>
                             </li>
-                            */
-                        }
-
                         <li class="nav-item dropdown">
                             <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 О нас
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @{
-                                    /*
                                 <a class="dropdown-item text-uppercase" asp-action="About" asp-controller="About"><span class="flag-icon flag-icon-gb"></span> О нас</a>
                                 <a class="dropdown-item text-uppercase" asp-action="History" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> История</a>
-                                <a class="dropdown-item text-uppercase" asp-action="Certificate" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Сертификаты</a>
-                                <a class="dropdown-item text-uppercase" asp-action="Vacancy" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
-                                    */
-                                }
+                                <a class="dropdown-item text-uppercase" asp-action="Bim" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> BIM технология</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Certificate" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Лицензии и сертификаты</a>
                                 <a class="dropdown-item text-uppercase" asp-action="Shareholder" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Акционерам</a>
-
+                                <a class="dropdown-item text-uppercase" asp-action="Vacancy" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -101,7 +87,7 @@
                         <img class="img-fluid" src="~/images/logo/logo_gipro_white.png" alt="Гипроживмаш" />
                     </a>
                 </div>
-                <div class="col-md-12 col-xl-4">
+                <div class="col-md-6 col-sm-12 col-xl-4">
                     <h3 class="text-center">СВЯЖИТЕСЬ С НАМИ</h3>
                     <hr class="border-white w-50" />
                     <div class="icon-bar">
@@ -151,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-none d-md-block col-xl-4">
+                <div class="d-none d-md-block col-md-6 col-xl-4">
                     <h3 class="text-center">БЫСТРЫЕ ССЫЛКИ</h3>
                     <hr class="border-white w-50" />
                     <div class="content text-center">
@@ -170,7 +156,6 @@
 
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/aosAnimate/aos.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
     @{

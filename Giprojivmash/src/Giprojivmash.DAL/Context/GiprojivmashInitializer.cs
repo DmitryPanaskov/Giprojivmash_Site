@@ -31,7 +31,7 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 1;
                         Description = "Проектирование зданий и сооружений I и II уровней ответственности",
-                        PhotoTitle = "design.png",
+                        PhotoTitle = "design.jpg",
                         DescriptionShort = "Комплексные решения в проектировании объектов любой сложности",
                         Title = "Проектирование",
                     },
@@ -39,15 +39,15 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 2;
                         Description = "Обоснование инвестиций",
-                        PhotoTitle = "engineering.png",
+                        PhotoTitle = "engineering.jpg",
                         DescriptionShort = "Инженерные и консультационные услуги на профессиональном уровне",
                         Title = "Обоснование инвестиций",
                     },
                     new ServiceFirstLayerEntity
                     {
                         // id = 3;
-                        Description = "Инженерно-геодезические изыскания",
-                        PhotoTitle = "geodesy.png",
+                        Description = "Работы и услуги, состовляющие инженерно-геодезические деятельность специального назначения.",
+                        PhotoTitle = "geodesy.jpg",
                         DescriptionShort = "Проводим работыя с использованием высокоточное оборудование и современное програмное обеспечение",
                         Title = "Инженерно-геодезические изыскания",
                     },
@@ -55,7 +55,7 @@ namespace Giprojivmash.DAL.Context
                     {
                          // id = 4;
                         Description = "Инженерно-экологические изыскания",
-                        PhotoTitle = "ecology.png",
+                        PhotoTitle = "ecology.jpg",
                         DescriptionShort = "Проводим работы с использованием современного оборудование и современное програмное обеспечение",
                         Title = "Инженерно-экологические изыскания",
                     },
@@ -63,7 +63,7 @@ namespace Giprojivmash.DAL.Context
                     {
                          // id = 5;
                         Description = "Промышленная безопасность",
-                        PhotoTitle = "industrialSafety.png",
+                        PhotoTitle = "industrialSafety.jpg",
                         DescriptionShort = "Проектирование технических устройств применяемых на опасных производственных объектах",
                         Title = "Промышленная безопасность",
                     },
@@ -71,7 +71,7 @@ namespace Giprojivmash.DAL.Context
                     {
                          // id = 6;
                         Description = "Проектирование систем пожаробезопасности и систем охраны",
-                        PhotoTitle = "safety.png",
+                        PhotoTitle = "safety.jpg",
                         DescriptionShort = "Проектирование систем пожаробезопасности и систем охраны",
                         Title = "Системы безопасности",
                     },
@@ -112,7 +112,9 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ServiceSecondLayerEntity
                     {
-                         // id = 4;
+                        // id = 4;
+                        ServiceFirstLayerId = 3,
+                        Description = "C",
                     },
                     new ServiceSecondLayerEntity
                     {
@@ -229,7 +231,7 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Шило",
                         Patronymic = "Иванович",
                         PositionType = PositionType.Manager,
-                        Photo = "director.png",
+                        Photo = "director.jpg",
                     },
                     new ContactEntity
                     {
@@ -238,7 +240,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Екатерина",
                         LastName = "Шаповалова",
                         Patronymic = "Игоревна",
-                        Photo = "chief_engineer.png",
+                        Photo = "chief_engineer.jpg",
                         PositionType = PositionType.Manager,
                     },
                     new ContactEntity

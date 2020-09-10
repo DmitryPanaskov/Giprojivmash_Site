@@ -38,6 +38,6 @@
     <ProjectReference Include="..\Giprojivmash.DAL\Giprojivmash.DAL.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Portfolio\" />
+    <Folder Include="wwwroot\images\honors\" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,19 @@
   {
     "outputFileName": "wwwroot/css/site.min.css",
     "inputFiles": [
-      "wwwroot/css/*.css"
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/cube.min.css",
+    "inputFiles": [
+      "wwwroot/css/cube.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/main-slider.min.css",
+    "inputFiles": [
+      "wwwroot/css/main-slider.css"
     ]
   },
   {
@@ -21,6 +33,12 @@
     "outputFileName": "wwwroot/js/animateNumber-config.min.js",
     "inputFiles": [
       "wwwroot/js/animateNumber-config.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/fancybox-config.min.js",
+    "inputFiles": [
+      "wwwroot/js/fancybox-config.js"
     ]
   }
 ]

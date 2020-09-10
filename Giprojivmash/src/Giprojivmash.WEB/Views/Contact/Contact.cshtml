@@ -42,11 +42,11 @@
                         @{
                             if (person.Photo != null)
                             {
-                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/@person.Photo" />
+                                <img class="img img-fluid rounded-circle" alt="@person.Description" src="~/images/photos/@person.Photo" />
                             }
                             else
                             {
-                                <img class="img img-fluid rounded-circle" alt="100x100" src="~/images/photos/img_not_available.png" />
+                                <img class="img img-fluid rounded-circle" alt="" src="~/images/photos/img_not_available.jpg" />
                             }
                         }
                     </div>

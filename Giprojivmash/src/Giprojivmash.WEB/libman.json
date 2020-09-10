@@ -15,10 +15,6 @@
       "destination": "wwwroot/lib/fontawesome/"
     },
     {
-      "library": "flag-icon-css@3.4.6",
-      "destination": "wwwroot/lib/flagicons/"
-    },
-    {
       "library": "particles.js@2.0.0",
       "destination": "wwwroot/lib/particles/"
     },
@@ -33,6 +29,14 @@
     {
       "library": "jquery.gray@1.6.0",
       "destination": "wwwroot/lib/grayScale/"
+    },
+    {
+      "library": "fancybox@3.5.7",
+      "destination": "wwwroot/lib/fancyBox/"
+    },
+    {
+      "library": "slick-carousel@1.8.1",
+      "destination": "wwwroot/lib/slick-carousel/"
     }
   ]
 }

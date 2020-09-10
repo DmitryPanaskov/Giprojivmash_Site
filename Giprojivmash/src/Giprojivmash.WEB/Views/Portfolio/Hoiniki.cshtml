@@ -1,0 +1,190 @@
+﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{
+    <link rel="stylesheet" type="text/css" href="~/lib/slick-carousel/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/slick-carousel/slick-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/fancyBox/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main-slider.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main-fancybox.min.css">
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="d-none d-sm-none d-md-none d-xl-block d-lg-block col-6">
+            <div class="slider-wrap">
+                <div class="slider-for">
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/0.jpg">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/0.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/2.jpg">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/2.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/3.jpg">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/3.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/4.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/4.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/5.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/5.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/6.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/6.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/7.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/7.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/8.JPG">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/8.jpg">
+                        </a>
+                    </div>
+                    <div>
+                        <a data-fancybox="gallery" href="~/images/portfolio/hoiniki/9.jpg">
+                            <img class="img-fluid" src="~/images/portfolio/hoiniki/9.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/0.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/2.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/3.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/4.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/5.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/6.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/7.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/8.jpg">
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="~/images/portfolio/hoiniki/9.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xl-6 col-lg-6">
+            <h3>Модернизация ОАО «Хойникский завод ЖБИ»</h3>
+            <div class="icon-bar">
+                <i class="fa fa-map-marker"></i>
+                <div class="content">
+                    <a target="_blank" href="https://yandex.by/maps/-/CCQxB8XZDD">
+                        ул. Революционная, 1,
+                        г. Хойники, 247618
+                        Гомельская область,
+                        Республика Беларусь
+                    </a>
+                </div>
+            </div>
+            <div class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                <div>
+                    <img class="img-fluid" src="~/images/portfolio/hoiniki/0.jpg">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Год постройки</h4>
+                    <p>2014-2017</p>
+                </div>
+                <div class="col-6">
+                    <h4>Площадь объекта</h4>
+                    <p>Территории в ограде 3,8 га</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h4>Формат работ</h4>
+                    <p>Проектирование</p>
+                </div>
+                <div class="col-6">
+                    <h4>Тип здания</h4>
+                    <p>Объект промышленного назначения</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p class="text-justify">
+                Проектно-сметная документация по объекту «Модернизация и техническое переоснащение ОАО «Хойникский завод железобетонных изделий» (двухстадийное проектирование: Архитектурный проект, Строительный проект) была выполнена в полном объеме, получено положительное экспертное заключение (№2187 от 23.08.2013 г.) по стадии «Архитектурный проект».
+            </p>
+            <p class="text-justify">
+                Проектом предусматривается модернизация и техническое переоснащение ОАО «Хойникский завод железобетонных изделий».
+            </p>
+            <p class="text-justify">
+                Реконструкции подлежат следующие здания и сооружения:
+            </p>
+            <ul>
+                <li>Главный производственный корпус, размерами в плане 144,00х54,00 м;</li>
+                <li>Бетоносмесительный цех, размерами в плане 12,80х6,90 м;</li>
+                <li>Административно-бытовой корпус, размерами в плане 42,00х12,00 м, примыкающий к северному торцу главного производственного корпуса;</li>
+                <li>Склад заполнителей, размерами в плане 42,00х12,00 м;</li>
+                <li>Склад цемента;</li>
+                <li>Компрессорная станция, размерами в плане 12,50х7,60 м;</li>
+                <li>Склад готовой продукции, размерами в плане 144,00х36,00 м;</li>
+            </ul>
+            <p class="text-justify">Проектом предусматривается строительство нового бетоносмесительного цеха, котельной для собственных нужд завода, КТПБ-2х630кВА, открытого склада временного хранения инертных материалов, инженерных систем и коммуникаций.</p>
+            <p class="text-justify">Реализация инвестиционного проекта осуществляется поэтапно с выделением пусковых комплексов.</p>
+            <p class="text-justify">Проектно-сметная документация I пускового комплекса прошла экспертизу в ДРУП «Госстройэкспертиза по Гомельской области» и по результатам было получено положительное экспертное заключение №1484 от 21.07.2014 г.</p>
+            <p class="text-justify">Проектно-сметная документация II пускового комплекса прошла экспертизу в ДРУП «Госстройэкспертиза по Гомельской области» и по результатам было получено положительное экспертное заключение №2617 от 19.11.2014 г.</p>
+            <p class="text-justify">Проектно-сметная документация III пускового комплекса прошла экспертизу в ДРУП «Госстройэкспертиза по Гомельской области» и по результатам было получено положительное экспертное заключение №668 от 14.04.2015 г.</>
+            <p class="text-justify">В настоящее время модернизация Филиала «Хойникский завод железобетонных изделий» ОАО «Мозырский домостроительный комбинат» находится в стадии завершения.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="~/lib/slick-carousel/slick.min.js"></script>
+    <script src="~/lib/fancyBox/jquery.fancybox.min.js"></script>
+    <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    </script>
+}

@@ -37,6 +37,7 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult Index()
         {
             var model = new IndexViewModel();
+            model.PageTitle = "Проектный институ в Гомеле";
             var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
             model.ServiceFirstLayerList = _mapper.Map<List<ServiceFirstLayerViewModel>>(serviceFirstLayerList);
             return View(model);

@@ -55,13 +55,34 @@ namespace Giprojivmash.WEB.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        [Route("/BIM-технология")]
+        public IActionResult Bim()
+        {
+            var model = new BimPageViewModel();
+            model.PageName = "BIM технология";
+            model.PageTitle = "BIM (информационное моделирование объектов) как технология будущего которая имеет ряд преимуществ, которые позвояляют экономить на проетировании и строительстве";
+            model.Sidebar = InitSidebar();
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("/Лицензии-и-сертификаты")]
+        public IActionResult Certificate()
+        {
+            var model = new AboutPageViewModel();
+            model.PageName = "Лицензии и сертификаты";
+            model.PageTitle = "Лицензии и сертификаты, права и допуски на выполнение услуг";
+            model.Sidebar = InitSidebar();
+            return View(model);
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<>")]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
         private List<SidebarLineViewModel> InitSidebar()
         {
             var sidebar = new List<SidebarLineViewModel>
             {
-                /*
                 new SidebarLineViewModel
                 {
                     SidebarAction = "About",
@@ -74,22 +95,24 @@ namespace Giprojivmash.WEB.Controllers
                 },
                 new SidebarLineViewModel
                 {
-                    SidebarAction = "Certificate",
-                    SidebarName = "Сертификаты",
+                    SidebarAction = "Bim",
+                    SidebarName = "BIM технология",
                 },
-                */
+                new SidebarLineViewModel
+                {
+                    SidebarAction = "Certificate",
+                    SidebarName = "Лицензии и сертификаты",
+                },
                 new SidebarLineViewModel
                 {
                     SidebarAction = "Shareholder",
                     SidebarName = "Акционерам",
                 },
-                /*
                 new SidebarLineViewModel
                 {
                     SidebarAction = "Vacancy",
                     SidebarName = "Выкансии",
                 },
-                */
             };
             return sidebar;
         }
