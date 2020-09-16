@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS page;
-
 DROP TABLE IF EXISTS contactdata;
 DROP TABLE IF EXISTS contact;
 
@@ -9,21 +7,7 @@ DROP TABLE IF EXISTS history;
 DROP TABLE IF EXISTS portfoliophoto;
 DROP TABLE IF EXISTS portfolio;
 
-DROP TABLE IF EXISTS servicethirdlayer;
-DROP TABLE IF EXISTS servicesecondlayer;
-DROP TABLE IF EXISTS servicefirstlayer;
-
 DROP TABLE IF EXISTS vacancy;
-
-DROP TABLE IF EXISTS department;
-
-CREATE TABLE page(
-    Id int NOT NULL AUTO_INCREMENT,
-    PageName varchar(50),
-    Title varchar(500),
-    Keyword varchar(500),
-    PRIMARY KEY (Id))
-    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
@@ -71,40 +55,11 @@ CREATE TABLE portfoliophoto(
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE servicefirstlayer(
-    Id int NOT NULL AUTO_INCREMENT,
-    Description varchar(1000),
-    Title varchar(500),
-    PhotoTitle varchar(50),
-    DescriptionShort varchar(500),
-    PRIMARY KEY (Id))
-    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-    
-CREATE TABLE servicesecondlayer(
-    Id int NOT NULL AUTO_INCREMENT,
-    ServiceFirstLayerId int NOT NULL,
-    Description varchar(1000),
-    PRIMARY KEY (Id))
-    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-    
-CREATE TABLE servicethirdlayer(
-    Id int NOT NULL AUTO_INCREMENT,
-    ServiceSecondLayerId int NOT NULL,
-    Description varchar(1000),
-    PRIMARY KEY (Id))
-    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
 CREATE TABLE vacancy(
     Id int NOT NULL AUTO_INCREMENT,
     Position varchar(500),
     Description varchar(1000),
     NubmerPhone varchar(50),
     SubNubmerPhone varchar(50),
-    PRIMARY KEY (Id))
-    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-CREATE TABLE department(
-    Id int NOT NULL AUTO_INCREMENT,
-    Name varchar(50),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

@@ -14,27 +14,6 @@ namespace GiprojivmashIntegrationTests
                 new GenericRepository<PageEntity>(context));
         }
 
-        public static IServiceFirstLayerService GetServiceFirstLayerService(GiprojivmashContext context)
-        {
-            return new ServiceFirstLayerService(
-                new GenericRepository<ServiceFirstLayerEntity>(context),
-                new GenericRepository<ServiceSecondLayerEntity>(context),
-                new GenericRepository<ServiceThirdLayerEntity>(context));
-        }
-
-        public static IServiceSecondLayerService GetServiceSecondLayerService(GiprojivmashContext context)
-        {
-            return new ServiceSecondLayerService(
-                new GenericRepository<ServiceSecondLayerEntity>(context),
-                new GenericRepository<ServiceThirdLayerEntity>(context));
-        }
-
-        public static IServiceThirdLayerService GetServiceThirdLayerService(GiprojivmashContext context)
-        {
-            return new ServiceThirdLayerService(new GenericRepository<ServiceThirdLayerEntity>(context),
-                new GenericRepository<ServiceSecondLayerEntity>(context));
-        }
-
         public static IContactService GetContact(GiprojivmashContext context)
         {
             return new ContactService(new GenericRepository<ContactEntity>(context),

@@ -1,6 +1,6 @@
 ﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+
 @{
-    ViewData["Title"] = "Portfolio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -113,8 +113,34 @@
             <p class="text-justify">
                 В 2015 году предприятие закончило крупнейшую реконструкцию своих структурных подразделений, которую выполнили специалисты
             </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6">
+            <form>
+                <button type="submit" class="btn btn-orange" asp-action="Himzavod" asp-controller="Portfolio">
+                    <span class="fa fa-angle-double-left btn-orange-icon"></span>
+                    <span class="btn-orange-caption">
+                        Реконструкция здания тепловой электро станции <br />
+                        ОАО «Гомельский химический завод»
+                    </span>
+                </button>
+            </form>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+            <form>
+                <button type="submit" class="btn btn-orange" asp-action="Hoiniki" asp-controller="Portfolio">
+                    <span class="btn-orange-caption">
+                        Модернизация зданий и сооружений<br />
+                        ОАО «Хойникский завод ЖБИ»
+                    </span>
+                    <span class="fa fa-angle-double-right btn-orange-icon"></span>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
+
 
 @section Scripts{
     <script type="text/javascript" src="~/lib/slick-carousel/slick.min.js"></script>
@@ -138,8 +164,3 @@
     </script>
 }
 
-
-
-@{
-
-}

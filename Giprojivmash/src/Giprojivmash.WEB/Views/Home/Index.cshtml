@@ -1,11 +1,13 @@
 ﻿@model Giprojivmash.WEB.Models.Home.IndexViewModel
 @{
-    ViewData["Title"] = "Главная";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/lib/grayScale/css/gray.min.css" />
-<link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
+@section Head{
+    <link rel="stylesheet" href="~/lib/grayScale/css/gray.min.css" />
+    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
+}
+
 
 <div class="container-fluid">
     <div class="d-none d-md-block w-100">
@@ -49,17 +51,56 @@
         </div>
     </div>
     <div class="row">
-        @for (var i = 0; i < Model.ServiceFirstLayerList.Count; i++)
-        {
-            <a href="#" class="col-md-4 a-block">
-                <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/@Model.ServiceFirstLayerList.ElementAt(i).PhotoTitle)">
-                    <span class="caption">
-                        <span class="name">@Model.ServiceFirstLayerList.ElementAt(i).Title</span>
-                        <span class="description">@Model.ServiceFirstLayerList.ElementAt(i).DescriptionShort</span>
-                    </span>
-                </div>
-            </a>
-        }
+        <a asp-action="Design" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/design.jpg)">
+                <span class="caption">
+                    <span class="name">Проектирование</span>
+                    <span class="description">Комплексные решения в проектировании объектов любой сложности</span>
+                </span>
+            </div>
+        </a>
+        <a asp-action="InvestmentJustification" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/engineering.jpg)">
+                <span class="caption">
+                    <span class="name">Обоснование инвестиций</span>
+                    <span class="description">Инженерные и консультационные услуги на профессиональном уровне</span>
+                </span>
+            </div>
+        </a>
+        <a asp-action="Geodesy" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/geodesy.jpg)">
+                <span class="caption">
+                    <span class="name">Инженерно-геодезические изыскания</span>
+                    <span class="description">Проводим работыя с использованием высокоточное оборудование и современное програмное обеспечение</span>
+                </span>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a asp-action="Ecology" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/ecology.jpg)">
+                <span class="caption">
+                    <span class="name">Инженерно-экологические изыскания</span>
+                    <span class="description">Проводим работы с использованием современного оборудование и современное програмное обеспечение</span>
+                </span>
+            </div>
+        </a>
+        <a asp-action="IndustrialSafety" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/industrialSafety.jpg)">
+                <span class="caption">
+                    <span class="name">Промышленная безопасность</span>
+                    <span class="description">Проектирование технических устройств применяемых на опасных производственных объектах</span>
+                </span>
+            </div>
+        </a>
+        <a asp-action="SystemSafefty" asp-controller="Service" class="col-md-4 a-block p-1">
+            <div class="thumbnail" data-aos="fade-left" style="background-image: url(/images/services/safety.jpg)">
+                <span class="caption">
+                    <span class="name">Системы безопасности</span>
+                    <span class="description">Проектирование систем пожаробезопасности и систем охраны</span>
+                </span>
+            </div>
+        </a>
     </div>
     <div class="row mt-3 mb-3">
         <div class="d-none d-sm-block col-sm-4 mb-3" data-aos="fade-up">
@@ -97,112 +138,35 @@
 
 @{/*
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 info w-100">
-                    <h1 class="text-center">САЙТ В РАЗРАБОТКЕ</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="d-none d-sm-block timer w-100">
-                    <script src="//megatimer.ru/get/24a6d2fc91092eae592a83755e5a473d.js"></script>
-                </div>
-                <div class="d-block d-sm-none timer w-100">
-                    <script src="//megatimer.ru/get/8fd3c064a1e47b1f4962277b6649d903.js"></script>
-                </div>
-            </div>
-        </div>
+                              <div class="container-fluid">
+                                  <div class="row">
+                                      <div class="col-md-12 info w-100">
+                                          <h1 class="text-center">САЙТ В РАЗРАБОТКЕ</h1>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="d-none d-sm-block timer w-100">
+                                          <script src="//megatimer.ru/get/24a6d2fc91092eae592a83755e5a473d.js"></script>
+                                      </div>
+                                      <div class="d-block d-sm-none timer w-100">
+                                          <script src="//megatimer.ru/get/8fd3c064a1e47b1f4962277b6649d903.js"></script>
+                                      </div>
+                                  </div>
+                              </div>
 
-        <style>
-            .info {
-                margin-top: 220px;
-                margin-bottom: 50px;
-            }
+                              <style>
+                                  .info {
+                                      margin-top: 220px;
+                                      margin-bottom: 50px;
+                                  }
 
-            .timer {
-                margin-bottom: 220px;
-            }
-        </style>
-          */
+                                  .timer {
+                                      margin-bottom: 220px;
+                                  }
+                              </style>
+                                */
 }
-<style>
-    .thumbnail {
-        background-size: cover;
-        width: 100%;
-        padding: 35%;
-        -webkit-filter: brightness(80%);
-        filter: brightness(80%);
-        /*
-        -webkit-transition: all .15s;
-        transition: all .15s;
-            */
-    }
 
-        .thumbnail:hover {
-            -webkit-filter: brightness(100%);
-            filter: brightness(100%);
-        }
-
-            .thumbnail:hover .caption {
-                height: 60%;
-                top: 20%
-            }
-
-            .thumbnail:hover .description {
-                position: relative;
-                opacity: 1;
-                visibility: visible;
-                -webkit-transition: all .3s linear;
-                transition: all .3s linear;
-            }
-
-
-
-    .caption {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-        position: absolute;
-        background-color: rgba(0, 105, 155, 0.7);
-        width: 70%;
-        height: 50%;
-        top: 25%;
-        left: 15%;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        line-height: 1.4;
-        /*
-        -webkit-transition: all .15s linear;
-        transition: all .15s linear;
-            */
-    }
-
-        .caption .name {
-            width: 100%;
-            color: white;
-            text-transform: uppercase;
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .caption .description {
-            width: 100%;
-            visibility: hidden;
-            position: absolute;
-            opacity: 0;
-            font-size: 13px;
-        }
-</style>
 
 @section Scripts{
     <script src="~/lib/particles/particles.min.js"></script>

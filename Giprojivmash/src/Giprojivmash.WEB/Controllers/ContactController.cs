@@ -37,7 +37,9 @@ namespace Giprojivmash.WEB.Controllers
             model.Contact = _mapper.Map<ContactViewModel>(_contactService.GetAll().First(m => m.PositionType == PositionType.General));
             model.ContactDataList = _mapper.Map<List<ContactDataViewModel>>(_contactDataService.GetContactDataListByPositionType(PositionType.General));
             model.PageName = "Контакты";
-            model.PageTitle = "Контакты, схема проезда, карта, приемная, телефон, время работы, обед";
+            model.PageTitle = "Контакты, схема проезда, карта, приемная, телефон, время работы, обед, почта";
+            model.PageKeyword = "контакты ОАО Гипроживмаш, гиприк, время работы, как проехать";
+            model.PageDescription = "Актуальные контакты на официальном сайте ОАО Гипроживмаш, схема проезда, время работы, расскажем как добраться до нас";
             model.Sidebar = InitSidebar();
             return View("General", model);
         }
@@ -50,6 +52,9 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "Руководство";
             model.Sidebar = InitSidebar();
             model.PageTitle = "Контакты руководства (администрация, ауп)";
+            model.PageKeyword = "директор, главный инженер, заместитель директора ОАО Гипроживмаш,электронный адрес почта, телефон, факс";
+            model.PageDescription = "Директор сейчас на ОАО Гипроживмаше, телефон, факс, приемная, администрация, почта, электронный адрес";
+            model.Sidebar = InitSidebar();
             return View("Contact", model);
         }
 
@@ -58,9 +63,11 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult ChiefProjectEngineer()
         {
             var model = InitializeContactPageViewModel(PositionType.ChiefProjectEngineer);
+            model.PageKeyword = "гипы, работают, главный инженер проекта, ОАО Гипроживмаш";
+            model.PageDescription = "Главные инженеры проектов (гип) на ОАО Гипроживмаше, телефон, факс, почта";
             model.PageName = "Главные инженеры проектов";
             model.Sidebar = InitSidebar();
-            model.PageTitle = "Контакты гипов (главных инженеров проекта)";
+            model.PageTitle = "Контакты гланых инженеров проектов";
             return View("Contact", model);
         }
 
@@ -73,7 +80,8 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "Отделы";
             model.PageKeyword = "бухгалтер, отдел кадров, плановый отдел, юрист, генплан, архитектор, строительный, сметный," +
                 " электроснабжение, водоснабжение, канализация, газоснабжение, вентиляция, контакты";
-            model.PageTitle = "Телефон бухгалтерии (главного бухгалтера), отдела кадров, планово-производственного отдела, " +
+            model.PageTitle = "Телефон отделов ОАО Гипроживмаш";
+            model.PageDescription = "Телефоны отделов ОАО Гипроживмаш: бухгалтерии(главного бухгалтера), отдела кадров, планово-производственного отдела, " +
                 "планово-экономического отдела, юриста, отдела качества," +
                 " генерального плана, архитектурного-планировочного, строительного, сметно-экономического,  электроснабжения," +
                 "слаботочных систем, водоснабжение , канализация, теплоснабжение, газоснабжение, вентиляция, генплана, отдела";

@@ -1,6 +1,6 @@
 ﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+
 @{
-    ViewData["Title"] = "Portfolio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -206,7 +206,24 @@
             <p class="text-justify">Реализация проектных решений второго и третьего пусковых комплексов начата в 2017 году.</p>
         </div>
     </div>
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-6 offset-md-6">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <form>
+                    <button type="submit" class="btn btn-orange" asp-action="Himzavod" asp-controller="Portfolio">
+                        <span class="btn-orange-caption">
+                            Реконструкция здания тепловой электро станции <br />
+                            ОАО «Гомельский химический завод»
+                        </span>
+                        <span class="fa fa-angle-double-right btn-orange-icon"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 @section Scripts{
     <script type="text/javascript" src="~/lib/slick-carousel/slick.min.js"></script>

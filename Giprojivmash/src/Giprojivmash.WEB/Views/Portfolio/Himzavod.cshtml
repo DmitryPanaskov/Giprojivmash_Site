@@ -1,6 +1,6 @@
 ﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+
 @{
-    ViewData["Title"] = "Portfolio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -390,6 +390,30 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6">
+            <form>
+                <button type="submit" class="btn btn-orange" asp-action="Kristall" asp-controller="Portfolio">
+                    <span class="fa fa-angle-double-left btn-orange-icon"></span>
+                    <span class="btn-orange-caption">
+                        Возведение и реконструкция <br />
+                        "КРИСТАЛЛ-ХОЛДИНГ"
+                    </span>
+                </button>
+            </form>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6">
+            <form>
+                <button type="submit" class="btn btn-orange" asp-action="Gomeldrev" asp-controller="Portfolio">
+                    <span class="btn-orange-caption">
+                        Строительство завода <br />
+                        ОАО «Гомельдрев» г. Речица
+                    </span>
+                    <span class="fa fa-angle-double-right btn-orange-icon"></span>
+                </button>
+            </form>
         </div>
     </div>
 </div>

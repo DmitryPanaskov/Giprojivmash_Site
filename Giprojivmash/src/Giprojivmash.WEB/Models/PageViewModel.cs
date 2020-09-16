@@ -7,5 +7,7 @@
         public string PageTitle { get; set; }
 
         public string PageKeyword { get; set; }
+
+        public string PageDescription { get; set; }
     }
 }

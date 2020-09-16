@@ -1,7 +1,10 @@
 ﻿@model Giprojivmash.WEB.Models.About.AboutPageViewModel
 @{
-    ViewData["Title"] = "Certificate";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Head{
+    <link rel="stylesheet" type="text/css" href="~/lib/fancyBox/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main-fancybox.min.css">
 }
 
 <div class="container">
@@ -29,24 +32,32 @@
             <h1>@Model.PageName</h1>
             <h4>Лицензии</h4>
             <div class="row">
-                <div class="col-md-4">
-                    <img class="img-fluid" src="/images/certificates/сertificate.jpg">
+                <div class="col-4">
+                    <a class="a-block" data-fancybox="gallery" href="/images/certificates/certificates/Лицензия по использованию атомной энергии и источников ионизирующего излучения.jpg">
+                        <img class="img-fluid" src="/images/certificates/certificate_.jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates/Лицензия по охранной деятельности (проектирование).jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates/Лицензия по пожарной безопаности.jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates/Лицензия по промышленной безопаcности.jpg">
+                    </a>
                 </div>
-                <div class="col-md-8">
-                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по использованию атомной энергии и источников ионизирующего излучения.pdf">
-                        По использованию атомной энергии
+                <div class="col-8">
+                    <a href="/files/certificates/Лицензия по промышленной безопаcности.pdf" download="/files/certificates/Лицензия по использованию атомной энергии и источников ионизирующего излучения.pdf">
+                        <span class="fa fa-download mr-2"></span>  По использованию атомной энергии.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по охранной деятельности (проектирование).pdf">
-                        По охранной деятельности
+                    <a href="/files/certificates/Лицензия по промышленной безопаcности.pdf" download="/files/certificates/Лицензия по охранной деятельности (проектирование).pdf">
+                        <span class="fa fa-download mr-2"></span> По охранной деятельности.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по пожарной безопаности.pdf">
-                        По пожарной безопаности
+                    <a href="/files/certificates/Лицензия по пожарной безопаности.pdf" download="/files/certificates/Лицензия по пожарной безопаности.pdf">
+                        <span class="fa fa-download mr-2"></span>По пожарной безопаности.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates/Лицензия по промышленной безопаcности.pdf">
-                        По промышленной безопаcности
+                    <a href="/files/certificates/Лицензия по промышленной безопаcности.pdf" download="/files/certificates/Лицензия по промышленной безопаcности.pdf">
+                        <span class="fa fa-download mr-2"></span> По промышленной безопаcности.pdf
                     </a>
                     <br />
                 </div>
@@ -54,25 +65,46 @@
             <h4>Аттестаты соответствия</h4>
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-fluid" src="/images/certificates/certificate_of_conformity.jpg">
+                    <a class="a-block" data-fancybox="gallery" href="/images/certificates/certificates_conformity/Генпроектировщик 1 категории.jpg">
+                        <img class="img-fluid" src="/images/certificates/certificate_of_conformity_.jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates_conformity/ОБ обследование зданий и сооружений 1 категории.jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates_conformity/Инженерно-геодезические изыскания 3 категории.jpg">
+                    </a>
+                    <a class="d-none" data-fancybox="gallery" href="/images/certificates/certificates/Лицензия по промышленной безопаcности.jpg">
+                    </a>
                 </div>
                 <div class="col-md-8">
-                    <a data-fancybox="gallery" href="/files/certificates_conformity/Генпроектировщик 1 категории.pdf">
-                        Генпроектировщик 1 кат.
+                    <a href="/files/certificates_conformity/Генпроектировщик 1 категории.pdf" download="/files/certificates_conformity/Генпроектировщик 1 категории.pdf">
+                        <span class="fa fa-download mr-2"></span>Генпроектировщик 1 категории.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates_conformity/Инженерно-геодезические изыскания 3 категории.pdf">
-                        Инженерно-геодезические изыскания 3 категории
+                    <a href="/files/certificates_conformity/Инженерно-геодезические изыскания 3 категории.pdf" download="/files/certificates_conformity/Инженерно-геодезические изыскания 3 категории.pdf">
+                        <span class="fa fa-download mr-2"></span>Инженерно-геодезические изыскания 3 категории.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates_conformity/ОБ обследование зданий и сооружений 1 категории.pdf">
-                        Об обследование зданий и сооружений 1 категории
+                    <a href="/files/certificates_conformity/ОБ обследование зданий и сооружений 1 категории.pdf" download="/files/certificates_conformity/ОБ обследование зданий и сооружений 1 категории.pdf">
+                        <span class="fa fa-download mr-2"></span>Об обследование зданий и сооружений 1 категории.pdf
                     </a>
                     <br />
-                    <a data-fancybox="gallery" href="/files/certificates_conformity/Проектирование по разделам 1 категории.pdf">
-                        Проектирование по разделам 1 категории
+                    <a href="/files/certificates_conformity/Проектирование по разделам 1 категории.pdf" download="/files/certificates_conformity/Проектирование по разделам 1 категории.pdf">
+                        <span class="fa fa-download mr-2"></span>Проектирование по разделам 1 категории.pdf
                     </a>
                     <br />
+                </div>
+            </div>
+            <h4>Сертификат соответствия</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="a-block" data-fancybox="gallery" href="/images/certificates/iso/Сертификат СТБ ISO 9001-2015.jpg">
+                        <img class="img-fluid" src="/images/certificates/iso/Сертификат СТБ ISO 9001-2015.jpg">
+                    </a>
+                </div>
+                <div class="col-md-8">
+                    <a href="/files/iso/Сертификат  СТБ ISO 9001-2015 (04.22) БелГИМ.PDF" download="/files/iso/Сертификат  СТБ ISO 9001-2015 (04.22) БелГИМ.PDF">
+                        <span class="fa fa-download mr-2"></span>Сертификат  СТБ ISO 9001-2015.pdf
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
-using Giprojivmash.BLL.Interfaces;
 using Giprojivmash.DataModels.Enums;
 using Giprojivmash.WEB.Models;
 using Giprojivmash.WEB.Models.Service;
@@ -13,22 +11,13 @@ namespace Giprojivmash.WEB.Controllers
     public class ServiceController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IServiceFirstLayerService _serviceFirstLayerService;
-        private readonly IServiceSecondLayerService _serviceSecondLayerService;
-        private readonly IServiceThirdLayerService _serviceThirdLayerService;
         private readonly IMapper _mapper;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
-        public ServiceController(ILogger<HomeController> logger, IMapper mapper,
-        IServiceFirstLayerService serviceFirstLayerService,
-        IServiceSecondLayerService serviceSecondLayerService,
-        IServiceThirdLayerService serviceThirdLayerService)
+        public ServiceController(ILogger<HomeController> logger, IMapper mapper)
             : base(logger, mapper)
         {
             _mapper = mapper;
-            _serviceFirstLayerService = serviceFirstLayerService;
-            _serviceSecondLayerService = serviceSecondLayerService;
-            _serviceThirdLayerService = serviceThirdLayerService;
             _logger = logger;
         }
 
@@ -36,9 +25,13 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/проектирование")]
         public IActionResult Design()
         {
-            var model = InitializeServiceViewModel(ServiceType.Design);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.Design;
             model.PageTitle = "Оказание услуг по проектированию в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageKeyword = "проектирование, зданий, сооружений, кто делает, обоснование, услуги по проектированию, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
             model.PageName = "Проектирование";
+            model.PageDescription = "Проектная организация в Гомеле - ОАО Гипроживмаш предлагает услуги проектирования, разработку проектной документации, канализации, отопления, вентиляции";
+            model.Sidebar = InitSidebar();
             return View("Service", model);
         }
 
@@ -46,9 +39,13 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/обоснование-инвестиций")]
         public IActionResult InvestmentJustification()
         {
-            var model = InitializeServiceViewModel(ServiceType.InvestmentJustification);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.InvestmentJustification;
             model.PageTitle = "Оказание услуг по разработке обоснования инвестиций в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
+            model.PageKeyword = "обоснование инвестиций, кто делает, обоснование, услуги по обоснованию инвестиций, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
             model.PageName = "Обоснование инвестиций";
+            model.PageDescription = "ОАО Гипроживмаш предлагает услуги обоснования инвестиций в строительстве в Гомеле, разработка обоснований инвестиций это первый шаг к строительству";
+            model.Sidebar = InitSidebar();
             return View("Service", model);
         }
 
@@ -56,9 +53,13 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/инженерно-геодезические-изыскания")]
         public IActionResult Geodesy()
         {
-            var model = InitializeServiceViewModel(ServiceType.Geodesy);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.Geodesy;
             model.PageTitle = "Оказание услуг по проведению инженерно-геодезических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             model.PageName = "Инженерно-геодезические изыскания";
+            model.PageKeyword = "инженерно-геодезические изыскания, кто делает, геодезия, сервис, услуги геодезии, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
+            model.PageDescription = "ОАО Гипроживмаш предлагает сервис и услуги по инженерно-геодезическим изысканиям, услуги геодезии в Гомеле";
+            model.Sidebar = InitSidebar();
             return View("Service", model);
         }
 
@@ -66,9 +67,13 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/инженерно-экологические-изыскания")]
         public IActionResult Ecology()
         {
-            var model = InitializeServiceViewModel(ServiceType.Ecology);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.Ecology;
             model.PageTitle = "Оказание услуг по проведению инженерно-экологических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             model.PageName = "Инженерно-экологические изыскания";
+            model.PageKeyword = "инженерно-экологические изыскания, кто делает, экология, сервис, услуги экологии, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
+            model.PageDescription = "ОАО Гипроживмаш предлагает сервис и услуги по инженерно-экологическим изысканиям, услуги экологии в Гомеле";
+            model.Sidebar = InitSidebar();
             return View("Service", model);
         }
 
@@ -76,9 +81,13 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/промышленная-безопасность")]
         public IActionResult IndustrialSafety()
         {
-            var model = InitializeServiceViewModel(ServiceType.IndustrialSafety);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.IndustrialSafety;
             model.PageTitle = "Оказание услуг в области промышленной безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             model.PageName = "Промышленная безопасность";
+            model.PageKeyword = "промышленная безопасность,кто делает,  услуги по промышленной безопасности, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
+            model.PageDescription = "ОАО Гипроживмаш предлагает услуги в сфере проектирования промышленной безопасности, проектирование опасного производства, радиционных объектов";
+            model.Sidebar = InitSidebar();
             return View("Service", model);
         }
 
@@ -86,25 +95,15 @@ namespace Giprojivmash.WEB.Controllers
         [Route("/услуги/системы-безопасности")]
         public IActionResult SystemSafefty()
         {
-            var model = InitializeServiceViewModel(ServiceType.SystemSafefty);
+            var model = new ServicePageViewModel();
+            model.ServiceType = ServiceType.SystemSafefty;
             model.PageTitle = "Оказание услуг по проектированию систем пожарабезопасности, системы охраны и безопасности в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
             model.PageName = "Системы безопасности";
-            return View("Service", model);
-        }
-
-        private ServicePageViewModel InitializeServiceViewModel(ServiceType service)
-        {
-            var model = new ServicePageViewModel();
-            var serviceFirstLayerList = _serviceFirstLayerService.GetAll();
-            var serviceSecondLayerList = _serviceSecondLayerService.GetAll();
-            var serviceThirdLayerList = _serviceThirdLayerService.GetAll();
-            var currentFirstService = serviceFirstLayerList.ElementAt((int)service);
-
-            model.CurrentServiceFirstLayer = _mapper.Map<ServiceFirstLayerViewModel>(currentFirstService);
-            model.ServiceSecondLayerList = _mapper.Map<List<ServiceSecondLayerViewModel>>(serviceSecondLayerList);
-            model.ServiceThirdLayerList = _mapper.Map<List<ServiceThirdLayer>>(serviceThirdLayerList);
+            model.PageKeyword = "системы безопасности,кто делает, услуги по системам безопасности, камеры, охрана объекта, сигнализация, извещатели," +
+                " пожарная безопасность, план эвакуации, пожарные извещатели, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
+            model.PageDescription = "ОАО Гипроживмаш предлагает услуги в сфере проектирования систем безопасности, охрана объектов, заводов, пожарная охрана и безопасноть";
             model.Sidebar = InitSidebar();
-            return model;
+            return View("Service", model);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<>")]

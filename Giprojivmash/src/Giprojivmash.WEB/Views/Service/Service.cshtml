@@ -1,4 +1,5 @@
 ﻿@model Giprojivmash.WEB.Models.Service.ServicePageViewModel
+@using Giprojivmash.DataModels.Enums
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -25,28 +26,40 @@
             </ul>
         </div>
         <div class="col-lg-8">
-            <h1>@Model.CurrentServiceFirstLayer.Title</h1>
-            <p>
-                @Model.CurrentServiceFirstLayer.Description
-            </p>
+            <h1>@Model.Title</h1>
             @{
-                var serviceSecondLayerList = Model.ServiceSecondLayerList.Where(m => m.ServiceFirstLayerId == Model.CurrentServiceFirstLayer.Id).ToList();
-            }
-            @for (var i = 0; i < serviceSecondLayerList.Count; i++)
-            {
-                var currentSecondService = Model.ServiceSecondLayerList.ElementAt(i);
-                <p class="pl-3">
-                    @currentSecondService.Description
-                </p>
-                var serviceThirdLAyerList = Model.ServiceThirdLayerList.Where(m => m.ServiceSecondLayerId == currentSecondService.Id).ToList();
-                @for (var j = 0; j < serviceThirdLAyerList.Count; j++)
+                var service = "";
+                switch (Model.ServiceType)
                 {
-                    <p class="pl-5">
-                        @serviceThirdLAyerList.ElementAt(j).Description
-                    </p>
+                    case ServiceType.Design:
+                        service = "проектирования";
+                        @await Html.PartialAsync("_design")
+                        break;
+                    case ServiceType.Ecology:
+                        service = "инженерно-экологического изыскания";
+                        @await Html.PartialAsync("_ecology")
+                        break;
+                    case ServiceType.Geodesy:
+                        service = "инженерно-геологического изыскания";
+                        @await Html.PartialAsync("_geodesy")
+                        break;
+                    case ServiceType.IndustrialSafety:
+                        service = "промышленной безопасностия";
+                        @await Html.PartialAsync("_industrialSafety")
+                        break;
+                    case ServiceType.InvestmentJustification:
+                        service = "проведения обоснования ивестиций";
+                        @await Html.PartialAsync("_investmentJustification")
+                        break;
+                    case ServiceType.SystemSafefty:
+                        service = "проектирования систем безопасности";
+                        @await Html.PartialAsync("_systemSafefty")
+                        break;
                 }
             }
-            <p>
+            <p class="text-justify">
+                При выполнении работ используется высокоточное оборудование и современное программное обеспечение. Результатом нашей работы
+                является высокое качество, соответствующее всем техническим стандартам, принятым для @service.
             </p>
         </div>
     </div>

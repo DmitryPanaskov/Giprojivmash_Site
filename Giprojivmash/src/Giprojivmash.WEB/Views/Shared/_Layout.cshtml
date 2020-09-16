@@ -5,9 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="@ViewData["Robots"]" />
-    <meta name="description" content="@ViewData["Description"]" />
-    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="description" content="@Model." />
+    <meta name="keywords" content="@Model.PageKeyword" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ОАО "ГИПРОЖИВМАШ" | @Model.PageTitle </title>
     <link rel="shortcut icon" href="/images/logo/logo_gipro_blue.png" type="image/png">
@@ -75,7 +74,9 @@
             </div>
         </nav>
     </header>
-    @RenderBody()
+    <div class="main">
+        @RenderBody()
+    </div>
     <div class="preloader row h-100 justify-content-center align-items-center">
         <img class="img" src="/images/preloader.gif" />
     </div>
@@ -143,6 +144,12 @@
                     <div class="content text-center">
                         <a asp-action="Shareholder" asp-controller="About">Акционерам</a><br>
                         <a asp-action="Manager" asp-controller="Contact">Руководство</a><br>
+                        <a asp-action="Vacancy" asp-controller="About">Вакансии</a><br>
+                        <a asp-action="Bim" asp-controller="About">BIM технология</a><br>
+                        <a asp-action="Certificate" asp-controller="About">Лицензии и сертификаты</a><br>
+                        <a asp-action="Design" asp-controller="Service">Проектирование</a><br>
+                        <a asp-action="Geodesy" asp-controller="Service">Инженерно-геодезические изыскания</a><br>
+                        <a asp-action="SystemSafefty" asp-controller="Service">Системы безопасности</a><br>
                     </div>
                 </div>
                 <div class="d-none d-md-none d-xl-block col-xl-2">

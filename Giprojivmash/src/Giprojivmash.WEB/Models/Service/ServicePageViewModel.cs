@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
+using Giprojivmash.DataModels.Enums;
 
 namespace Giprojivmash.WEB.Models.Service
 {
     public class ServicePageViewModel : LayoutViewModel
     {
-        public ServiceFirstLayerViewModel CurrentServiceFirstLayer { get; internal set; }
+        public string Title { get; set; }
 
-        public IList<ServiceSecondLayerViewModel> ServiceSecondLayerList { get; internal set; }
+        public IList<SidebarLineViewModel> Sidebar { get; internal set; }
 
-        public IList<ServiceThirdLayer> ServiceThirdLayerList { get; internal set; }
-
-        public IList<SidebarLineViewModel> Sidebar { get;  internal set; }
+        public ServiceType ServiceType { get; set; }
     }
 }

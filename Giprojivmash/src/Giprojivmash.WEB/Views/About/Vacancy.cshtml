@@ -1,8 +1,122 @@
-﻿@model Giprojivmash.WEB.Models.About.VacancyViewModel 
+﻿@model Giprojivmash.WEB.Models.About.VacancyPageViewModel
 @{
-    ViewData["Title"] = "Vacancy";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h4 class="text-center">
-    К сожалению, в настоящий момент у нас нет открытых вакансий
-</h4>
+@{
+    /*
+    <h4 class="text-center">
+        К сожалению, в настоящий момент у нас нет открытых вакансий.
+    </h4>
+    */
+}
+<div class="container">
+    <div class="row">
+        <div class="d-none d-lg-block col-lg-4">
+            <ul class="nav-vertical-menu">
+                @for (var i = 0; i < Model.Sidebar.Count; i++)
+                {
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    {
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="col-lg-8 col-sm-12">
+            <h1>@Model.PageName</h1>
+            <hr />
+            <h2>
+                Гланый конструктор
+            </h2>
+            <h5>
+                Отдел строителей
+            </h5>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>
+                        Требования:
+                    </h5>
+                    <p>
+                        Профильное высшее образование.
+                    </p>
+                    <p>
+                        Опыт работы более 5 лет.
+                    </p>
+                    <p>
+                        Знание AutoCAD обязательно.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>
+                        Обязанности:
+                    </h5>
+                    <p>
+                        Разработка конструктивного раздела проекта.
+                    </p>
+                    <p>
+                        Разработка проектной документации.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>
+                        Условия работы:
+                    </h5>
+                    <ul>
+                        <li>
+                            заработная плата по результатам собеседования;
+                        </li>
+                        <li>
+                            работа на территории работодателя;
+                        </li>
+                        <li>
+                            полный рабочий день;
+                        </li>
+                        <li>
+                            оформление по ТК РБ;
+                        </li>
+                        <li>
+                            полный соц.пакет;
+                        </li>
+                        <li>
+                            премии к праздникам;
+                        </li>
+                        <li>
+                            частичная оплата спортивных комплексов;
+                        </li>
+                        <li>
+                            частичная оплата мобильной связи;
+                        </li>
+                        <li>
+                            настольный теннис на территории;
+                        </li>
+                        <li>
+                            возможность профессионального и карьерного роста.
+                        </li>
+                    </ul>
+                    <h5>
+                        Контакты
+                    </h5>
+                    <p>
+                        И.о начальника строительного отдела:<br />
+                        <b>Шкундалев</b> Владимир Петрович<br />
+                        <a href="tel:+375232213054">
+                            +375 232 21-30-54
+                        </a>
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

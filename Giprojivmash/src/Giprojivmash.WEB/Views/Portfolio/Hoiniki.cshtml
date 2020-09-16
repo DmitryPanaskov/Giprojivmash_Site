@@ -1,6 +1,6 @@
 ﻿@model Giprojivmash.WEB.Models.Portfolio.PortfolioPageViewModel
+
 @{
-    ViewData["Title"] = "Portfolio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -165,7 +165,21 @@
             <p class="text-justify">В настоящее время модернизация Филиала «Хойникский завод железобетонных изделий» ОАО «Мозырский домостроительный комбинат» находится в стадии завершения.</p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6">
+            <form>
+                <button type="submit" class="btn btn-orange" asp-action="Gomeldrev" asp-controller="Portfolio">
+                    <span class="fa fa-angle-double-left btn-orange-icon"></span>
+                    <span class="btn-orange-caption">
+                        Строительство завода <br />
+                        ОАО «Гомельдрев» г. Речица
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
+
 
 @section Scripts{
     <script type="text/javascript" src="~/lib/slick-carousel/slick.min.js"></script>

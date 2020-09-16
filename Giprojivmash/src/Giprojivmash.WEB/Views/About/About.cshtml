@@ -1,6 +1,5 @@
 ﻿@model Giprojivmash.WEB.Models.About.AboutPageViewModel
 @{
-    ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -29,15 +28,15 @@
                 }
             </ul>
         </div>
-        <div class="col-md-8">
-            <p class="text-indent text-justify">
+        <div class="col-md-12 col-lg-8">
+            <p class="text-justify">
                 ОАО «Гипроживмаш» специализируется на выполнении проектных работы по расширению,
                 реконструкции и техническому перевооружению промышленных предприятий, объектов здравохранения и образования, предприятий
                 коммунанльного назначения всех видов собственности, выполняет все виды инженерно-изыскательских работ, проводит
                 авторский надзор за строительством проектируемых объектов.
             </p>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-sm-12 col-md-6">
                     <div class="wrap">
                         <div class="cube">
                             <div class="front gip">
@@ -55,26 +54,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="col-md-12">
-                        ОАО «Гипроживмаш» осуществляет следующие виды услуг:<br />
-                        <a target="_blank" asp-action="Design" asp-controller="Service">Проектирование</a><br />
-                        <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service">Обоснование инвестиций</a><br />
-                        <a target="_blank" asp-action="Geodesy" asp-controller="Service">Инженерно-геодезические изыскания</a><br />
-                        <a target="_blank" asp-action="Ecology" asp-controller="Service">Инженерно-экологические изыскания</a><br />
-                        <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service">Промышленная безопасность</a><br />
-                        <a target="_blank" asp-action="SystemSafefty" asp-controller="Service">Системы безопасности</a><br />
-                    </div>
+                <div class="col-sm-12 col-md-6">
+                    ОАО «Гипроживмаш» осуществляет следующие виды услуг:<br />
+                    <a target="_blank" asp-action="Design" asp-controller="Service">Проектирование</a><br />
+                    <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service">Обоснование инвестиций</a><br />
+                    <a target="_blank" asp-action="Geodesy" asp-controller="Service">Инженерно-геодезические изыскания</a><br />
+                    <a target="_blank" asp-action="Ecology" asp-controller="Service">Инженерно-экологические изыскания</a><br />
+                    <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service">Промышленная безопасность</a><br />
+                    <a target="_blank" asp-action="SystemSafefty" asp-controller="Service">Системы безопасности</a><br />
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <p class="text-indent text-justify">
+                <div class="col-12">
+                    <p class="text-justify">
                         Персонал ОАО «Гипроживмаш» представлен 164 профессиональными специалистами с большим опытом работы,
                         компетентность которых подтверждена дипломами и сертификатами.
                         Ряд сотрудников в совершенстве владеют <a target="_blank" asp-action="Bim" asp-controller="About">BIM технологией</a>.
                     </p>
-                    <p class="text-indent text-justify">
+                    <p class="text-justify">
                         ОАО «Гипроживмаш» представляет интересы заказчика по организации и проведению всех видов экспертиз,
                         согласований проектно-сметной документации, результатов комплексных инженерных изысканий в
                         Главгосстройэкспертиза (в том числе экспертизы промышленной безопасности).
@@ -85,14 +82,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-12">
                     <img />
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 

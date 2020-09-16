@@ -14,6 +14,10 @@ body {
         line-height: 1rem;
     }
 
+.main {
+    min-height: 400px;
+}
+
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -221,6 +225,36 @@ a {
             display: none;
         }
 
+.btn-orange {
+    display: inline-flex;
+    width: 100%;
+    color: #f8b617;
+    background-color: white;
+    border-color: #f8b617;
+    margin-bottom: 0.5rem;
+}
+
+    .btn-orange:hover {
+        color: white;
+        background-color: #f8b617;
+        border-color: white;
+    }
+
+    .btn-orange:focus {
+        box-shadow: 0 0 0 0.2rem #ffc107;
+    }
+
+    .btn-orange-caption {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .btn-orange-icon {
+        display: inline-block;
+        font-size: 3em;
+        width: 50px!important;
+    }
+
 h1 {
     text-transform: uppercase;
 }
@@ -343,7 +377,82 @@ canvas {
     width: 100%;
 }
 
+.thumbnail {
+    background-size: cover;
+    width: 100%;
+    padding: 35%;
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%);
+    /*
+        -webkit-transition: all .15s;
+        transition: all .15s;
+            */
+}
 
+    .thumbnail:hover {
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+    }
+
+        .thumbnail:hover .caption {
+            height: 60%;
+            top: 20%
+        }
+
+        .thumbnail:hover .description {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all .3s linear;
+            transition: all .3s linear;
+        }
+
+
+
+.caption {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    position: absolute;
+    background-color: rgba(0, 105, 155, 0.7);
+    width: 70%;
+    height: 50%;
+    top: 25%;
+    left: 15%;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.4;
+    /*
+        -webkit-transition: all .15s linear;
+        transition: all .15s linear;
+            */
+}
+
+    .caption .name {
+        width: 100%;
+        color: white;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .caption .description {
+        width: 100%;
+        visibility: hidden;
+        position: absolute;
+        opacity: 0;
+        font-size: 13px;
+    }
 
 .current {
     background-color: rgba(248,182,23,1);

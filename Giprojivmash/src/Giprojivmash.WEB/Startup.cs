@@ -33,16 +33,10 @@ namespace Giprojivmash.WEB
             string connectionString = _configuration.GetConnectionString("GiprojivmashConnection");
             services.AddDbContext<GiprojivmashContext>(options => options.UseMySQL(connectionString));
 
-            services.AddScoped<IServiceFirstLayerService, ServiceFirstLayerService>();
-            services.AddScoped<IServiceSecondLayerService, ServiceSecondLayerService>();
-            services.AddScoped<IServiceThirdLayerService, ServiceThirdLayerService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IContactDataService, ContactDataService>();
             services.AddScoped<IVacancyService, VacancyService>();
 
-            services.AddScoped<IRepository<ServiceFirstLayerEntity>, GenericRepository<ServiceFirstLayerEntity>>();
-            services.AddScoped<IRepository<ServiceSecondLayerEntity>, GenericRepository<ServiceSecondLayerEntity>>();
-            services.AddScoped<IRepository<ServiceThirdLayerEntity>, GenericRepository<ServiceThirdLayerEntity>>();
             services.AddScoped<IRepository<ContactEntity>, GenericRepository<ContactEntity>>();
             services.AddScoped<IRepository<ContactDataEntity>, GenericRepository<ContactDataEntity>>();
             services.AddScoped<IRepository<VacancyEntity>, GenericRepository<VacancyEntity>>();
