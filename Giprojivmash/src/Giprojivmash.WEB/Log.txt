@@ -1,4 +1,4 @@
-16.09.2020 17:01:42
+18.09.2020 14:50:00
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
  ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'NumberPhone' in 'field list'
    at MySql.Data.MySqlClient.MySqlStream.ReadPacket()

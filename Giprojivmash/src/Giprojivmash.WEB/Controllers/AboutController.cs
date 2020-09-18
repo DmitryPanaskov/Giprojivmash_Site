@@ -60,7 +60,7 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/BIM-технология")]
+        [Route("/bim-технология")]
         public IActionResult Bim()
         {
             var model = new BimPageViewModel();
@@ -73,12 +73,23 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/Лицензии-и-сертификаты")]
+        [Route("/история")]
+        public IActionResult History()
+        {
+            var model = new HistoryPageViewModel();
+            model.PageName = "История";
+            model.PageTitle = "История и летопись";
+            model.PageKeyword = "история,старое здание, Гипроживмаш на Ленина, Гипросельмаш";
+            model.Sidebar = InitSidebar();
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("/лицензии-и-сертификаты")]
         public IActionResult Certificate()
         {
-            var model = new AboutPageViewModel();
+            var model = new CertificatePageViewModel();
             model.PageName = "Лицензии и сертификаты";
-            model.PageTitle = "Лицензии и сертификаты, права и допуски на выполнение услуг";
             model.PageTitle = "Лицензии и сертификаты ОАО Гипроживмаш, сертификат качества, сертификат соответствия, разрешение на выполнение услуг";
             model.PageKeyword = "лицензия и сертификаты, допуск, разрешение, аттестат, проектирование, РБ, Гомель";
             model.Sidebar = InitSidebar();
@@ -96,13 +107,11 @@ namespace Giprojivmash.WEB.Controllers
                     SidebarAction = "About",
                     SidebarName = "О нас",
                 },
-                /*
                 new SidebarLineViewModel
                 {
                     SidebarAction = "History",
                     SidebarName = "История",
                 },
-                */
                 new SidebarLineViewModel
                 {
                     SidebarAction = "Bim",

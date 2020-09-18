@@ -2,7 +2,7 @@
 
 namespace Giprojivmash.WEB.Models.About
 {
-    public class AboutPageViewModel : LayoutViewModel
+    public class CertificatePageViewModel : LayoutViewModel
     {
         public IList<SidebarLineViewModel> Sidebar { get; internal set; }
     }

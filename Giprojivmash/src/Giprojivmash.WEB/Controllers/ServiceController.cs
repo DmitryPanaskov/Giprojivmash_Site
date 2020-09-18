@@ -64,15 +64,15 @@ namespace Giprojivmash.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("/услуги/инженерно-экологические-изыскания")]
+        [Route("/услуги/экологическое проектирование")]
         public IActionResult Ecology()
         {
             var model = new ServicePageViewModel();
             model.ServiceType = ServiceType.Ecology;
             model.PageTitle = "Оказание услуг по проведению инженерно-экологических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
-            model.PageName = "Инженерно-экологические изыскания";
-            model.PageKeyword = "инженерно-экологические изыскания, кто делает, экология, сервис, услуги экологии, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
-            model.PageDescription = "ОАО Гипроживмаш предлагает сервис и услуги по инженерно-экологическим изысканиям, услуги экологии в Гомеле";
+            model.PageName = " экологическое проектирование";
+            model.PageKeyword = " экологическое проектирование, экология, сервис, услуги экологии, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
+            model.PageDescription = "ОАО Гипроживмаш предлагает сервис и услуги по экологическому проектирование, услуги экологии в Гомеле";
             model.Sidebar = InitSidebar();
             return View("Service", model);
         }
@@ -129,7 +129,7 @@ namespace Giprojivmash.WEB.Controllers
                 new SidebarLineViewModel
                 {
                     SidebarAction = "Ecology",
-                    SidebarName = "Инженерно-экологические изыскания",
+                    SidebarName = "Экологическое проектирование",
                 },
                 new SidebarLineViewModel
                 {
