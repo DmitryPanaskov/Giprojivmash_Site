@@ -115,31 +115,34 @@ a .navbar-brand {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background-color: rgba(0,105,155,1);
+    background-color: white;
     text-align: center;
     width: 100%;
     line-height: 1rem;
 }
 
     .nav-vertical-menu li {
-        color: #fff;
+        color: #00699b;
         width: 100%;
         list-style: none;
     }
 
         .nav-vertical-menu li :hover {
             color: #fff;
-            background-color: rgba(248,182,23,1);
+            background-color: #f8b617;
             width: 100%;
         }
 
     .nav-vertical-menu a {
-        color: white;
+        color: #204c73;
         text-transform: uppercase;
         text-decoration: none;
         display: inline-block;
         padding: 1rem;
         position: relative;
+        line-height: 500px;
+        line-height: 1.5rem;
+        font-weight: bold;
     }
 
         .nav-vertical-menu a:after {
@@ -147,7 +150,7 @@ a .navbar-brand {
         }
 
 .current {
-    background-color: rgba(248,182,23,1);
+    background-color: #f8b617;
 }
 
 /**********/
@@ -244,17 +247,17 @@ a {
         box-shadow: 0 0 0 0.2rem #ffc107;
     }
 
-    .btn-orange-caption {
-        display: inline-block;
-        width: 100%;
-    }
+.btn-orange-caption {
+    display: inline-block;
+    width: 100%;
+}
 
-    .btn-orange-icon {
-        display: inline-block;
-        font-size: 3em;
-        width: 50px!important;
-        margin: auto;
-    }
+.btn-orange-icon {
+    display: inline-block;
+    font-size: 3em;
+    width: 50px !important;
+    margin: auto;
+}
 
 h1 {
     text-transform: uppercase;
@@ -317,17 +320,18 @@ canvas {
 
 .slogan-box {
     position: absolute;
-    justify-content: space-evenly;
-    right: 10%;
-    background-color: #4599be;
-    opacity: .5;
-    transform: translateY(-180%);
+    opacity: .7;
+    left: 0;
+    right: 0;
+    transform: translateY(-380%);
 }
 
     .slogan-box p {
-        color: #fff;
-        font-size: 2rem;
-        margin: 1rem;
+        color: #204c73;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        text-align: center;
     }
 
 #particles-js {
@@ -459,6 +463,32 @@ canvas {
     background-color: rgba(248,182,23,1);
 }
 
+
+/********/
+.animate {
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .7;
+    }
+}
+
+
+.show {
+    -webkit-animation-name: show;
+    animation-name: show;
+}
+
+
 /*Малые девайсы («ландшафтные телефоны», >= 576px)*/
 @media (min-width: 576px) {
     .navbar-expand-sm
@@ -493,7 +523,4 @@ canvas {
 
 /*Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
 @media (min-width: 1200px) {
-    .slogan-box {
-        right: 20%;
-    }
 }
