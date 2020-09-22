@@ -25,3 +25,12 @@ $('#proj_sng').animateNumber(
         easing: 'swing',
         duration: 3000
     });
+$('#count_pl').animateNumber(
+    {
+        number: 164,
+        color: "#fab702"
+    },
+    {
+        easing: 'swing',
+        duration: 3000
+    });

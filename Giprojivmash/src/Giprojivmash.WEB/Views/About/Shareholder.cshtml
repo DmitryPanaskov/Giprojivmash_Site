@@ -8,23 +8,25 @@
             <ul class="nav-vertical-menu">
                 @for (var i = 0; i < Model.Sidebar.Count; i++)
                 {
-                @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
+                    @if (Model.Sidebar.ElementAt(i).SidebarName == Model.PageName)
                     {
-                <li class="nav-link-vertival-menu current">
-                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                </li>
+                        <li class="nav-link-vertival-menu current">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
                     }
                     else
                     {
-                <li class="nav-link-vertival-menu">
-                    <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
-                </li>
+                        <li class="nav-link-vertival-menu">
+                            <a asp-action="@Model.Sidebar.ElementAt(i).SidebarAction" asp-controller="About" aria-selected="false">@Model.Sidebar.ElementAt(i).SidebarName</a>
+                        </li>
                     }
                 }
             </ul>
         </div>
         <div class="col-lg-8 col-sm-12">
             <h1 class="d-block d-sm-block d-sm-none d-lg-none d-xl-none">@Model.PageName</h1>
+            @{
+                /*
             <p class="text-center">
                 <b>
                     УВАЖАЕМЫЕ АКЦИОНЕРЫ ОАО «Гипроживмаш»!
@@ -44,6 +46,29 @@
             <p class="text-right">
                 Наблюдательный совет
             </p>
+                */
+            }
+            <h4>Документы для акционеров</h4>
+            <a href="~/files/shareholder/Информация о реорганизации открытого акционерного общества Гипроживмаш.pdf" download="~/files/shareholder/Информация о реорганизации открытого акционерного общества Гипроживмаш.pdf"> <span class="fa fa-download mr-2"></span>Информация о реорганизации открытого акционерного общества Гипроживмаш</a><br />
+            <a href="~/files/shareholder/Balans2019.pdf" download="~/files/shareholder/Balans2019.pdf"> <span class="fa fa-download mr-2"></span>Баланс акционерного общества Гипроживмаш за 2019 год</a><br />
+            <a href="~/files/shareholder/Audit2019.pdf" download="~/files/shareholder/Audit2019.pdf"> <span class="fa fa-download mr-2"></span>Аудит акционерного общества Гипроживмаш за 2019 год</a><br />
+            <a href="~/files/shareholder/Godovoi2019.pdf" download="~/files/shareholder/Godovoi2019.pdf"> <span class="fa fa-download mr-2"></span>Годовой отчёт акционерного общества Гипроживмаш за 2019 год</a><br />
+            <a href="~/files/shareholder/IpoPrior.pdf" download="~/files/shareholder/IpoPrior.pdf"> <span class="fa fa-download mr-2"></span>Информация о совершении крупной сделки кредит, ипотека Приорбанк 30.07.2019</a><br />
+            <a href="~/files/shareholder/Ipoteka_27_06_19.pdf" download="~/files/shareholder/Ipoteka_27_06_19.pdf"> <span class="fa fa-download mr-2"></span>Информация о совершении крупной сделки - ипотека по кредиту 27.06.2019</a><br />
+            <a href="~/files/shareholder/Sdelka19_04_2019.pdf" download="~/files/shareholder/Sdelka19_04_2019.pdf"> <span class="fa fa-download mr-2"></span>Информация о совершении крупной сделки в кредит 19.04.2019</a><br />
+            <a href="~/files/shareholder/Balans2018.pdf" download="~/files/shareholder/Balans2018.pdf"> <span class="fa fa-download mr-2"></span>Баланс акционерного общества Гипроживмаш за 2018 год</a><br />
+            <a href="~/files/shareholder/Audit2018.pdf" download="~/files/shareholder/Audit2018.pdf"> <span class="fa fa-download mr-2"></span>Аудит акционерного общества Гипроживмаш за 2018 год</a><br />
+            <a href="~/files/shareholder/Godovoi2018.pdf" download="~/files/shareholder/Godovoi2018.pdf"> <span class="fa fa-download mr-2"></span>Годовой отчёт акционерного общества Гипроживмаш за 2018 год</a><br />
+            <a href="~/files/shareholder/Reestr_27_03_2019.pdf" download="~/files/shareholder/Reestr_27_03_2019.pdf"> <span class="fa fa-download mr-2"></span>Регламент работы ОАО «Гипроживмаш» с реестром владельцев ценных бумаг</a><br />
+            <a href="~/files/shareholder/Info_28_03_19.pdf" download="~/files/shareholder/Info_28_03_19.pdf"> <span class="fa fa-download mr-2"></span>Оперативная информация Общества 27.03.2019</a><br />
+            <a href="~/files/shareholder/Report2017.pdf" download="~/files/shareholder/Report2017.pdf"> <span class="fa fa-download mr-2"></span>Годовой отчёт акционерного общества Гипроживмаш за 2017 год</a><br />
+            <a href="~/files/shareholder/ReferentOAO.pdf" download="~/files/shareholder/ReferentOAO.pdf"> <span class="fa fa-download mr-2"></span>Положение о секретаре наблюдательного совета Гипроживмаш</a><br />
+            <a href="~/files/shareholder/Info_29_03_18.pdf" download="~/files/shareholder/Info_29_03_18.pdf"> <span class="fa fa-download mr-2"></span>Оперативная информация Общества 29.03.2018</a><br />
+            <a href="~/files/shareholder/InfoDemidov.pdf" download="~/files/shareholder/InfoDemidov.pdf"> <span class="fa fa-download mr-2"></span>Информация о совершении сделки, в отношении которой имеется заинтересованность аффилированных лиц эмитента</a><br />
+            <a href="~/files/shareholder/Report2016.pdf" download="~/files/shareholder/Report2016.pdf"> <span class="fa fa-download mr-2"></span>Годовой отчёт акционерного общества Гипроживмаш за 2016 год</a><br />
+            <a href="~/files/shareholder/Polojenie_info.pdf" download="~/files/shareholder/Polojenie_info.pdf">  <span class="fa fa-download mr-2"></span>Положение о предоставлении информации Гипроживмаш</a><br />
+            <a href="~/files/shareholder/Polojenie_sovet.pdf" download="~/files/shareholder/Polojenie_sovet.pdf"> <span class="fa fa-download mr-2"></span>Положение о наблюдательном совете Гипроживмаш</a><br />
+            <a href="~/files/shareholder/Oper_info.pdf" download="~/files/shareholder/Oper_info.pdf"> <span class="fa fa-download mr-2"></span>Оперативная информация Общества</a><br />
         </div>
     </div>
 </div>

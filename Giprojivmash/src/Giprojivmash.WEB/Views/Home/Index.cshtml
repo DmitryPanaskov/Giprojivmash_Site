@@ -13,8 +13,8 @@
     <div class="d-none d-md-block w-100">
         <div id="particles-js">
         </div>
-        <div class="slogan-box d-flex" >
-            <p>
+        <div class="slogan-box">
+            <p class="slogan-caption">
                 ВОПЛОЩАЕМ ВАШИ ИДЕИ В РЕАЛЬНОСТЬ
             </p>
         </div>
@@ -128,7 +128,7 @@
                 <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/himzavod.png" />
             </a>
         </div>
-        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos-delay="100"  data-aos="fade-up">
+        <div class="d-none d-sm-block col-sm-4 mb-3" data-aos-delay="100" data-aos="fade-up">
             <a target="_blank" class="link-btn" href="http://kristall.by/">
                 <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/kristall.png" />
             </a>
@@ -145,5 +145,10 @@
     <script src="~/lib/aosAnimate/aos.js"></script>
     <script>
         AOS.init({ disable: 'mobile' });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.slogan-caption').addClass('animate show');
+        });
     </script>
 }

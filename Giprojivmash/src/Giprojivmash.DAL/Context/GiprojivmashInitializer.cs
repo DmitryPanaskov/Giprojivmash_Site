@@ -144,9 +144,9 @@ namespace Giprojivmash.DAL.Context
                     {
                         // id = 14
                         Position = "Строительный отдел",
-                        FirstName = "Владимир",
-                        LastName = "Шкундалев",
-                        Patronymic = "Петрович",
+                        FirstName = "Сергей",
+                        LastName = "Старотиторов",
+                        Patronymic = "Владимирович",
                         PositionType = PositionType.HeadOfDepartment,
                     },
                     new ContactEntity
@@ -444,8 +444,8 @@ namespace Giprojivmash.DAL.Context
                     new ContactDataEntity
                     {
                          ContactId = 14,
-                         Data = "ShkundavlevVladimir@gipro.gomel.by",
-                         SubData = "ShkundavlevVladimir@gipro.gomel.by",
+                         Data = "SergeyStarotitorov@gipro.gomel.by",
+                         SubData = "SergeyStarotitorov@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
@@ -486,8 +486,8 @@ namespace Giprojivmash.DAL.Context
                     new ContactDataEntity
                     {
                          ContactId = 17,
-                         Data = "komarPetr@gipro.gomel.by",
-                         SubData = "komarPetr@gipro.gomel.by",
+                         Data = "PetrKomar@gipro.gomel.by",
+                         SubData = "PertKomar@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity

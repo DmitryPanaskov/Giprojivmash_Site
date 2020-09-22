@@ -5,6 +5,7 @@
 
 @section Head{
     <link rel="stylesheet" type="text/css" href="~/css/cube.min.css" />
+    <link rel="stylesheet" href="~/lib/aosAnimate/aos.css" />
 }
 
 <div class="container">
@@ -57,18 +58,18 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     ОАО «Гипроживмаш» осуществляет следующие виды услуг:<br />
-                    <a target="_blank" asp-action="Design" asp-controller="Service">Проектирование</a><br />
-                    <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service">Обоснование инвестиций</a><br />
-                    <a target="_blank" asp-action="Geodesy" asp-controller="Service">Инженерно-геодезические изыскания</a><br />
-                    <a target="_blank" asp-action="Ecology" asp-controller="Service">Экологическое проектирование</a><br />
-                    <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service">Промышленная безопасность</a><br />
-                    <a target="_blank" asp-action="SystemSafefty" asp-controller="Service">Системы безопасности</a><br />
+                    <a target="_blank" asp-action="Design" asp-controller="Service" data-aos="fade-up" data-aos-delay="300">Проектирование</a><br />
+                    <a target="_blank" asp-action="InvestmentJustification" asp-controller="Service" data-aos="fade-up" data-aos-delay="600">Обоснование инвестиций</a><br />
+                    <a target="_blank" asp-action="Geodesy" asp-controller="Service" data-aos="fade-up" data-aos-delay="900">Инженерно-геодезические изыскания</a><br />
+                    <a target="_blank" asp-action="Ecology" asp-controller="Service" data-aos="fade-up" data-aos-delay="1200">Экологическое проектирование</a><br />
+                    <a target="_blank" asp-action="IndustrialSafety" asp-controller="Service" data-aos="fade-up" data-aos-delay="1500">Промышленная безопасность</a><br />
+                    <a target="_blank" asp-action="SystemSafefty" asp-controller="Service" data-aos="fade-up" data-aos-delay="1800">Системы безопасности</a><br />
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <p class="text-justify">
-                        Персонал ОАО «Гипроживмаш» представлен 164 профессиональными специалистами с большим опытом работы,
+                        Персонал ОАО «Гипроживмаш» представлен <span class="stat-numeric" id="count_pl">0</span> профессиональными специалистами с большим опытом работы,
                         компетентность которых подтверждена дипломами и сертификатами.
                         Ряд сотрудников в совершенстве владеют <a target="_blank" asp-action="Bim" asp-controller="About">BIM технологией</a>.
                     </p>
@@ -101,4 +102,19 @@
         </div>
     </div>
 </div>
+
+<style>
+    .stat-numeric{
+        font-size: 1rem;
+    }
+</style>
+
+@section Scripts{
+    <script src="~/lib/animateNumber/jquery.animateNumber.min.js"></script>
+    <script src="~/js/animateNumber-config.min.js"></script>
+    <script src="~/lib/aosAnimate/aos.js"></script>
+    <script>
+        AOS.init({ disable: 'mobile' });
+    </script>
+}
 
