@@ -48,6 +48,7 @@ namespace GiprojivmashIntegrationTests
                 Patronymic = "Created",
                 Description = "Created",
                 Photo = "Created",
+                IndexNumber = 3,
                 PositionType = PositionType.Manager,
             });
 
@@ -65,6 +66,7 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "1",
                     Photo = "1",
                     Position = "1",
+                    IndexNumber = 1,
                     PositionType = PositionType.Manager,
                 },
                 new ContactEntity
@@ -76,6 +78,7 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "2",
                     Photo = "2",
                     Position = "2",
+                    IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
                 },
                 new ContactEntity
@@ -87,6 +90,7 @@ namespace GiprojivmashIntegrationTests
                     Description = "Created",
                     Photo = "Created",
                     Position = "Created",
+                    IndexNumber = 3,
                     PositionType = PositionType.Manager,
                 },
             });
@@ -108,6 +112,7 @@ namespace GiprojivmashIntegrationTests
                 Patronymic = "Updated",
                 Photo = "Updated",
                 Position = "Updated",
+                IndexNumber = 1,
                 PositionType = PositionType.Manager,
             });
 
@@ -125,6 +130,7 @@ namespace GiprojivmashIntegrationTests
                     Description = "Updated",
                     Photo = "Updated",
                     Position = "Updated",
+                    IndexNumber = 1,
                     PositionType = PositionType.Manager,
                 },
                 new ContactEntity
@@ -136,6 +142,7 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "2",
                     Photo = "2",
                     Position = "2",
+                    IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
                 },
             });
@@ -165,6 +172,7 @@ namespace GiprojivmashIntegrationTests
                     Patronymic = "2",
                     Position = "2",
                     Photo = "2",
+                    IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
                 },
             });

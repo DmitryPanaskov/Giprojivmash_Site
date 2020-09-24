@@ -1,4 +1,4 @@
-18.09.2020 14:50:00
+24.09.2020 11:34:07
 Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
  ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'NumberPhone' in 'field list'
    at MySql.Data.MySqlClient.MySqlStream.ReadPacket()
@@ -21,8 +21,8 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updatin
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerVacancy(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 595
-   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 16
-   at Giprojivmash.WEB.Program.Main(String[] args) in C:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerVacancy(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 595
+   at Giprojivmash.DAL.Context.GiprojivmashInitializer.InitializerAsync(GiprojivmashContext context) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.DAL\Context\GiprojivmashInitializer.cs:line 16
+   at Giprojivmash.WEB.Program.Main(String[] args) in c:\Панаськов Д.А\Projects\Giprojivmash_Site\Giprojivmash\src\Giprojivmash.WEB\Program.cs:line 24
 ConnectionString: server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;
 --------------------------------------------------------------
