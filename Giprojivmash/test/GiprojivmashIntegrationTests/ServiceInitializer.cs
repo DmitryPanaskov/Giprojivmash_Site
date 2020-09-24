@@ -8,12 +8,6 @@ namespace GiprojivmashIntegrationTests
 {
     public static class ServiceInitializer
     {
-        public static IPageService GetPageService(GiprojivmashContext context)
-        {
-            return new PageService(
-                new GenericRepository<PageEntity>(context));
-        }
-
         public static IContactService GetContact(GiprojivmashContext context)
         {
             return new ContactService(new GenericRepository<ContactEntity>(context),
@@ -51,11 +45,6 @@ namespace GiprojivmashIntegrationTests
         public static IVacancyService GetVacancy(GiprojivmashContext context)
         {
             return new VacancyService(new GenericRepository<VacancyEntity>(context));
-        }
-
-        public static IDepartmentService GetDepartment(GiprojivmashContext context)
-        {
-            return new DepartmentService(new GenericRepository<DepartmentEntity>(context));
         }
     }
 }

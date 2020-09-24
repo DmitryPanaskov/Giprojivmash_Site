@@ -10,38 +10,6 @@ namespace GiprojivmashIntegrationTests
 {
     public static class IntegrationTestInitializer
     {
-        public static async Task SetPageTest(GiprojivmashContext context)
-        {
-            Validator(context);
-            var pages = new List<PageEntity>
-            {
-                new PageEntity
-                {
-                    PageKeyword = "1",
-                    PageName = "1",
-                    PageTitle = "1",
-                },
-                new PageEntity
-                {
-                    PageKeyword = "2",
-                    PageName = "2",
-                    PageTitle = "2",
-                },
-                new PageEntity
-                {
-                    PageKeyword = "3",
-                    PageName = "3",
-                    PageTitle = "3",
-                },
-            };
-
-            foreach (var page in pages)
-            {
-                await context.Pages.AddAsync(page);
-                await context.SaveChangesAsync();
-            }
-        }
-
         public static async Task SetContact(GiprojivmashContext context)
         {
             Validator(context);
@@ -55,6 +23,7 @@ namespace GiprojivmashIntegrationTests
                     Description = "1",
                     Photo = "1",
                     Position = "1",
+                    IndexNumber = 1,
                     PositionType = PositionType.Manager,
                 },
                 new ContactEntity
@@ -65,6 +34,7 @@ namespace GiprojivmashIntegrationTests
                     Description = "2",
                     Photo = "2",
                     Position = "2",
+                    IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
                 },
             };
@@ -235,28 +205,6 @@ namespace GiprojivmashIntegrationTests
             foreach (var portfolioPhoto in portfolioPhotos)
             {
                 await context.PortfolioPhotos.AddAsync(portfolioPhoto);
-                await context.SaveChangesAsync();
-            }
-        }
-
-        public static async Task SetDepartment(GiprojivmashContext context)
-        {
-            Validator(context);
-            var departments = new List<DepartmentEntity>
-            {
-                new DepartmentEntity
-                {
-                    Name = "1",
-                },
-                new DepartmentEntity
-                {
-                    Name = "2",
-                },
-            };
-
-            foreach (var department in departments)
-            {
-                await context.Departments.AddAsync(department);
                 await context.SaveChangesAsync();
             }
         }
