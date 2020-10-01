@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Панель управления</title>
+    <link rel="shortcut icon" href="/images/logo/logo_gipro_blue.png" type="image/png">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.min.css" />
+    @RenderSection("Head", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
+            <div class="container">
+                <div class="navbar-brand">ОАО ГИПРОЖИВМАШ</div>
+                <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

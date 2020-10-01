@@ -9,8 +9,8 @@ namespace Giprojivmash.DAL.Entities
 
         public string Description { get; set; }
 
-        public string NumberPhone { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public string SubNumberPhone { get; set; }
+        public string SubPhoneNumber { get; set; }
     }
 }

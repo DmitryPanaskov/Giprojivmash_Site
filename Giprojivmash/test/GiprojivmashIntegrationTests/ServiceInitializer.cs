@@ -46,5 +46,10 @@ namespace GiprojivmashIntegrationTests
         {
             return new VacancyService(new GenericRepository<VacancyEntity>(context));
         }
+
+        public static IUserService GetUser(GiprojivmashContext context)
+        {
+            return new UserService(new IdentityRepository(context));
+        }
     }
 }

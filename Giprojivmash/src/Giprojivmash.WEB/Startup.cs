@@ -7,6 +7,7 @@ using Giprojivmash.DAL.Interfaces;
 using Giprojivmash.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,9 +30,8 @@ namespace Giprojivmash.WEB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "<>")]
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
             string connectionString = _configuration.GetConnectionString("GiprojivmashConnection");
-            services.AddDbContext<GiprojivmashContext>(options => options.UseMySQL(connectionString));
+            services.AddDbContext<GiprojivmashContext>(options => options.UseMySQL(connectionString, m => m.MigrationsAssembly("Giprojivmash.BLL")));
 
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<IContactDataService, ContactDataService>();
@@ -40,6 +40,11 @@ namespace Giprojivmash.WEB
             services.AddScoped<IRepository<ContactEntity>, GenericRepository<ContactEntity>>();
             services.AddScoped<IRepository<ContactDataEntity>, GenericRepository<ContactDataEntity>>();
             services.AddScoped<IRepository<VacancyEntity>, GenericRepository<VacancyEntity>>();
+
+            services.AddIdentity<UserEntity, IdentityRole>()
+               .AddEntityFrameworkStores<GiprojivmashContext>();
+
+            services.AddControllersWithViews();
 
             var config = new MapperConfiguration(c =>
             {
@@ -68,6 +73,8 @@ namespace Giprojivmash.WEB
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

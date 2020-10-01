@@ -9,16 +9,26 @@ DROP TABLE IF EXISTS portfolio;
 
 DROP TABLE IF EXISTS vacancy;
 
+/*Identity*/
+DROP TABLE IF EXISTS AspNetRoleClaims;
+DROP TABLE IF EXISTS AspNetRoles;
+DROP TABLE IF EXISTS AspNetUserClaims;
+DROP TABLE IF EXISTS AspNetUserLogins;
+DROP TABLE IF EXISTS AspNetUserRoles;
+DROP TABLE IF EXISTS AspNetUsers;
+DROP TABLE IF EXISTS AspNetUserTokens;
+
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
     Position varchar(50),
     Photo varchar(50),
-    Description varchar(500),
-    FirstName varchar(500),
-    LastName varchar(500),
-    Patronymic varchar(500),
+    Description varchar(450),
+    FirstName varchar(256),
+    LastName varchar(256),
+    Patronymic varchar(450),
     PositionType int,
     IndexNumber int,
+    Gender int,
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -33,7 +43,7 @@ CREATE TABLE contactdata(
 
 CREATE TABLE history(
     Id int NOT NULL AUTO_INCREMENT,
-    Description varchar(5000),
+    Description varchar(450),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -46,7 +56,7 @@ CREATE TABLE historyphoto(
 
 CREATE TABLE portfolio(
     Id int NOT NULL AUTO_INCREMENT,
-    Description varchar(5000),
+    Description varchar(450),
     PRIMARY KEY (Id));
 
 CREATE TABLE portfoliophoto(
@@ -58,9 +68,74 @@ CREATE TABLE portfoliophoto(
 
 CREATE TABLE vacancy(
     Id int NOT NULL AUTO_INCREMENT,
-    Position varchar(500),
+    Position varchar(450),
     Description varchar(1000),
-    NubmerPhone varchar(50),
-    SubNubmerPhone varchar(50),
+    PhoneNubmer varchar(50),
+    SubPhoneNubmer varchar(50),
     PRIMARY KEY (Id))
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+     /*Identity*/
+CREATE TABLE AspNetRoleClaims(
+    Id int NOT NULL AUTO_INCREMENT,
+    ClaimType varchar(450),
+    ClaimValue varchar(450),
+    RoleId varchar(450) NOT NULL,
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetRoles(
+    Id varchar(256) NOT NULL,
+    ConcurrencyStamp text,
+    Name varchar(256),
+    NormalizedName varchar(256),
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetUserClaims(
+    Id int NOT NULL AUTO_INCREMENT,
+    ClaimType text,
+    ClaimValue text,
+    UserId varchar(450) NOT NULL,
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetUserLogins(
+    LoginProvider varchar(450) NOT NULL,
+    ProviderKey varchar(450) NOT NULL,
+    ProviderDisplayName text,
+    UserId varchar(450) NOT NULL)
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetUserRoles(
+    UserId varchar(256) NOT NULL,
+    RoleId varchar(256) NOT NULL)
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetUsers(
+	Id varchar(256) NOT NULL,
+	AccessFailedCount int NOT NULL,
+    Discriminator text,
+	ConcurrencyStamp text,
+	Email varchar(256),
+	EmailConfirmed bit NOT NULL,
+	LockoutEnabled bit NOT NULL,
+	LockoutEnd timestamp,
+	NormalizedEmail varchar(256),
+	NormalizedUserName varchar(256),
+	PasswordHash text,
+	PhoneNumber text,
+	PhoneNumberConfirmed bit NOT NULL,
+	SecurityStamp text,
+	TwoFactorEnabled bit NOT NULL,
+	UserName varchar(256),
+    PRIMARY KEY (Id))
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE AspNetUserTokens(
+	UserId varchar(256) NOT NULL,
+	LoginProvider varchar(450) NOT NULL,
+	Name varchar(450) NOT NULL,
+	Value text)
+    DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+

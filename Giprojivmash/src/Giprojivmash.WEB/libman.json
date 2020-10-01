@@ -37,6 +37,14 @@
     {
       "library": "slick-carousel@1.8.1",
       "destination": "wwwroot/lib/slick-carousel/"
+    },
+    {
+      "library": "jquery-validate@1.19.2",
+      "destination": "wwwroot/lib/validation/"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/validation-unobtrusive"
     }
   ]
 }

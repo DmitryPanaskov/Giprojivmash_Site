@@ -1,10 +1,12 @@
-﻿using Giprojivmash.DAL.Entities;
+﻿using System;
+using Giprojivmash.DAL.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Giprojivmash.DAL.Context
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S125:Sections of code should not be commented out", Justification = "<>")]
-    public class GiprojivmashContext : DbContext
+    public class GiprojivmashContext : IdentityDbContext<UserEntity>
     {
         public GiprojivmashContext(DbContextOptions options)
             : base(options)
@@ -29,6 +31,8 @@ namespace Giprojivmash.DAL.Context
         public virtual DbSet<PortfolioPhotoEntity> PortfolioPhotos { get; set; }
 
         public virtual DbSet<VacancyEntity> Vacancies { get; set; }
+
+        public virtual DbSet<UserEntity> ApplicationUsers { get; set; }
 
         private static DbContextOptions GetOptions(string connectionString)
         {

@@ -9,7 +9,7 @@
     });
 $('#proj_rb').animateNumber(
     {
-        number: 300,
+        number: 3000,
         color: "#fab702"
     },
     {

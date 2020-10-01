@@ -48,6 +48,7 @@ namespace GiprojivmashIntegrationTests
                 Patronymic = "Created",
                 Description = "Created",
                 Photo = "Created",
+                Gender = Gender.Male,
                 IndexNumber = 3,
                 PositionType = PositionType.Manager,
             });
@@ -68,6 +69,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "1",
                     IndexNumber = 1,
                     PositionType = PositionType.Manager,
+                    Gender = Gender.Male,
                 },
                 new ContactEntity
                 {
@@ -80,6 +82,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "2",
                     IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
+                    Gender = Gender.Male,
                 },
                 new ContactEntity
                 {
@@ -92,6 +95,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "Created",
                     IndexNumber = 3,
                     PositionType = PositionType.Manager,
+                    Gender = Gender.Male,
                 },
             });
         }
@@ -114,6 +118,7 @@ namespace GiprojivmashIntegrationTests
                 Position = "Updated",
                 IndexNumber = 1,
                 PositionType = PositionType.Manager,
+                Gender = Gender.Male,
             });
 
             var list = serviceContact.GetAll();
@@ -132,6 +137,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "Updated",
                     IndexNumber = 1,
                     PositionType = PositionType.Manager,
+                    Gender = Gender.Male,
                 },
                 new ContactEntity
                 {
@@ -144,6 +150,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "2",
                     IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
+                    Gender = Gender.Male,
                 },
             });
         }

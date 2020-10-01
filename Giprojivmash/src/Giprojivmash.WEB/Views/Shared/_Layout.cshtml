@@ -1,10 +1,10 @@
 ﻿@model Giprojivmash.WEB.Models.LayoutViewModel
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="@Model." />
+    <meta name="description" content="@Model.PageDescription" />
     <meta name="keywords" content="@Model.PageKeyword" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ОАО "ГИПРОЖИВМАШ" | @Model.PageTitle </title>
@@ -12,13 +12,31 @@
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/site.min.css" />
+    <link rel="stylesheet" href="~/css/preloader.min.css" />
     @RenderSection("Head", required: false)
 </head>
 <body>
+    <section class="preloader row h-100 justify-content-center align-items-center">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube-1"></div>
+            <div class="sk-cube sk-cube-2"></div>
+            <div class="sk-cube sk-cube-3"></div>
+            <div class="sk-cube sk-cube-4"></div>
+            <div class="sk-cube sk-cube-5"></div>
+            <div class="sk-cube sk-cube-6"></div>
+            <div class="sk-cube sk-cube-7"></div>
+            <div class="sk-cube sk-cube-8"></div>
+            <div class="sk-cube sk-cube-9"></div>
+        </div>
+    </section>
     <header>
         <nav class="navbar navbar-expand-lg navbar-toggleable-lg box-shadow mb-3">
             <div class="container">
-                <div class="navbar-brand">ОАО ГИПРОЖИВМАШ</div>
+                <a class="a-block" asp-action="Index" asp-controller="Home">
+                    <div class="navbar-brand">
+                        ОАО ГИПРОЖИВМАШ
+                    </div>
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -41,9 +59,9 @@
                                 <a class="dropdown-item text-uppercase" asp-action="SystemSafefty" asp-controller="Service"><span class="flag-icon flag-icon-by"></span> Системы безопасности</a>
                             </div>
                         </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-uppercase" asp-area="" asp-controller="Portfolio" asp-action="Portfolio">Портфолио</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" asp-area="" asp-controller="Portfolio" asp-action="Portfolio">Портфолио</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 О нас
@@ -51,8 +69,8 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item text-uppercase" asp-action="About" asp-controller="About"><span class="flag-icon flag-icon-gb"></span> О нас</a>
                                 <a class="dropdown-item text-uppercase" asp-action="History" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> История</a>
-                                <a class="dropdown-item text-uppercase" asp-action="Bim" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> BIM технология</a>
                                 <a class="dropdown-item text-uppercase" asp-action="Certificate" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Лицензии и сертификаты</a>
+                                <a class="dropdown-item text-uppercase" asp-action="Bim" asp-controller="About"><span class="flag-icon flag-icon-ru"></span> BIM технология</a>
                                 <a class="dropdown-item text-uppercase" asp-action="Shareholder" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Акционерам</a>
                                 <a class="dropdown-item text-uppercase" asp-action="Vacancy" asp-controller="About"><span class="flag-icon flag-icon-by"></span> Вакансии</a>
                             </div>
@@ -75,9 +93,6 @@
     </header>
     <div class="main">
         @RenderBody()
-    </div>
-    <div class="preloader row h-100 justify-content-center align-items-center">
-        <img class="img" src="/images/preloader.gif" />
     </div>
     <footer>
         <div class="container">
@@ -112,6 +127,7 @@
                             <a href="tel:+375232532738">
                                 +375 232 53-27-38
                             </a>
+                            (приемная)
                         </div>
                     </div>
                     <div class="icon-bar">
@@ -120,6 +136,7 @@
                             <a href="fax:+375232535030">
                                 +375 232 53-50-30
                             </a>
+                            (факс)
                         </div>
                     </div>
                     <div class="icon-bar">
@@ -159,31 +176,35 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        window.onload = function () {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 300);
+        }
+    </script>
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
-    @{
-        /*
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript">
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
-                m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-            ym(66682234, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/66682234" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-    */
-    }
+    ym(66682234, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/66682234" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </body>
 </html>

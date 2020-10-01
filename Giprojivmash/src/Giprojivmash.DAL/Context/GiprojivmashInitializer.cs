@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Giprojivmash.DAL.Entities;
 using Giprojivmash.DataModels.Enums;
+using Microsoft.AspNetCore.Identity;
 
 namespace Giprojivmash.DAL.Context
 {
@@ -14,6 +15,7 @@ namespace Giprojivmash.DAL.Context
             InitializerContact(context);
             InitializerContactData(context);
             InitializerVacancy(context);
+            InitializerUser(context);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Major Code Smell", "S138:Functions should not have too many lines of code", Justification = "<>")]
@@ -29,6 +31,8 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "ОАО Гипроживмаш",
                         Position = "Приемная",
                         PositionType = PositionType.General,
+                        IndexNumber = 1,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -39,6 +43,8 @@ namespace Giprojivmash.DAL.Context
                         Patronymic = "Иванович",
                         PositionType = PositionType.Manager,
                         Photo = "director.jpg",
+                        IndexNumber = 2,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -49,6 +55,8 @@ namespace Giprojivmash.DAL.Context
                         Patronymic = "Игоревна",
                         Photo = "chief_engineer.jpg",
                         PositionType = PositionType.Manager,
+                        IndexNumber = 3,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -58,6 +66,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Дубов",
                         Patronymic = "Александрович",
                         PositionType = PositionType.Manager,
+                        IndexNumber = 4,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -67,6 +77,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Грибанов",
                         Patronymic = "Юрьевич",
                         PositionType = PositionType.ChiefProjectEngineer,
+                        IndexNumber = 5,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -76,15 +88,18 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Сергей",
                         Patronymic = "Валерьевич",
                         PositionType = PositionType.ChiefProjectEngineer,
+                        IndexNumber = 6,
                     },
                     new ContactEntity
                     {
                         // id = 7
-                        Position = "Главный инженер проекта",
+                        Position = "Главный констуктор",
                         LastName = "Марочкин",
                         FirstName = "Анатолий",
                         Patronymic = "Вячеславович",
-                        PositionType = PositionType.ChiefProjectEngineer,
+                        PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 12,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -94,6 +109,8 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Ирина",
                         Patronymic = "Михайловна",
                         PositionType = PositionType.ChiefProjectEngineer,
+                        IndexNumber = 8,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -103,15 +120,19 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Черноокая",
                         Patronymic = "Герасимовна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 9,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
                         // id = 10
-                        Position = "Юрисконсульт",
+                        Position = "Ведущий юрисконсульт",
                         FirstName = "Ольга",
                         LastName = "Игнатова",
                         Patronymic = "Васильевна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 11,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -121,6 +142,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Кричевская",
                         Patronymic = "Анатольевна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 12,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -130,6 +153,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Заяц",
                         Patronymic = "Викторовна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 13,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -139,6 +164,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Горбатовская",
                         Patronymic = "Владимировна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 14,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -148,6 +175,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Старотиторов",
                         Patronymic = "Владимирович",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 15,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -157,6 +186,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Цилько",
                         Patronymic = "Павловна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 16,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -166,6 +197,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Сиротко",
                         Patronymic = "Евгеньевич",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 17,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -175,6 +208,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Комар",
                         Patronymic = "Анатольевич",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 18,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -184,6 +219,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Мураль",
                         Patronymic = "Михайловна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 19,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -193,6 +230,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Судаков",
                         Patronymic = "Григорьевич",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 20,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -202,6 +241,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Россол",
                         Patronymic = "Григорьевна",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 21,
+                        Gender = Gender.Female,
                     },
                     new ContactEntity
                     {
@@ -211,6 +252,8 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Гончаров",
                         Patronymic = "Владимирович",
                         PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 22,
+                        Gender = Gender.Male,
                     },
                     new ContactEntity
                     {
@@ -220,6 +263,52 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Гуцева",
                         Patronymic = "Алексеевна",
                         PositionType = PositionType.ChiefProjectEngineer,
+                        IndexNumber = 23,
+                        Gender = Gender.Female,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 23
+                        Position = "Планово-производственный отдел ",
+                        FirstName = "Дмитрий",
+                        LastName = "Негреев",
+                        Patronymic = "Николаевич",
+                        PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 10,
+                        Gender = Gender.Male,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 24
+                        Position = "Эксплуатационно-техничекий отдел",
+                        FirstName = "Виталий",
+                        LastName = "Дриндель",
+                        Patronymic = "Владимирович",
+                        PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 24,
+                        Gender = Gender.Male,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 25
+                        Position = "Заместитель главного инженера",
+                        FirstName = "Виктор",
+                        LastName = "Саулин",
+                        Patronymic = "Иванович",
+                        PositionType = PositionType.Manager,
+                        IndexNumber = 25,
+                        Gender = Gender.Male,
+                    },
+                    new ContactEntity
+                    {
+                        // id = 26
+                        Position = "Сектор автоматизации проектных работ",
+                        FirstName = "Виктор",
+                        LastName = "Емельянцев",
+                        Patronymic = "Юрьевич",
+                        PositionType = PositionType.HeadOfDepartment,
+                        IndexNumber = 21,
+                        Gender = Gender.Male,
                     },
                 };
 
@@ -339,8 +428,8 @@ namespace Giprojivmash.DAL.Context
                     new ContactDataEntity
                     {
                          ContactId = 7,
-                         Data = "+375 232 53-27-39",
-                         SubData = "+375232532739",
+                         Data = "+375 232 21-30-54",
+                         SubData = "+375232213054",
                          ContactDataType = ContactDataType.WorkTelephone,
                     },
                     new ContactDataEntity
@@ -560,6 +649,55 @@ namespace Giprojivmash.DAL.Context
                          SubData = "AllaGutseva@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
                     },
+                    new ContactDataEntity
+                    {
+                         ContactId = 23,
+                         Data = "+375 232 53-61-03",
+                         SubData = "+375232536103",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 23,
+                         Data = "DmitryNegreev@gipro.gomel.by",
+                         SubData = "DmitryNegreev@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 24,
+                         Data = "+375 232 21-30-50",
+                         SubData = "+375232213050",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 24,
+                         Data = "VitalyDrindel@gipro.gomel.by",
+                         SubData = "VitalyDrindel@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 25,
+                         Data = "+375 232 53-61-08",
+                         SubData = "+375232536108",
+                         ContactDataType = ContactDataType.WorkTelephone,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 25,
+                         Data = "VictorSaulin@gipro.gomel.by",
+                         SubData = "VictorSaulin@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 26,
+                         Data = "VictorEmelyantsev@gipro.gomel.by",
+                         SubData = "VictorEmelyantsev@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
                 };
 
                 foreach (var item in contactEntities)
@@ -584,8 +722,8 @@ namespace Giprojivmash.DAL.Context
                            "- Высшее образование," +
                            "- Знание английского языка " +
                            "Заработная плата по результатам собеседования.",
-                           NumberPhone = "+375 (232) 53-27-04",
-                           SubNumberPhone = "+375232532704",
+                           PhoneNumber = "+375 (232) 53-27-04",
+                           SubPhoneNumber = "+375232532704",
                     },
                 };
 
@@ -594,6 +732,27 @@ namespace Giprojivmash.DAL.Context
                     context.Set<VacancyEntity>().Add(item);
                     context.SaveChanges();
                 }
+            }
+        }
+
+        private static void InitializerUser(GiprojivmashContext context)
+        {
+            if (!context.ApplicationUsers.Any())
+            {
+                context.ApplicationUsers.Add(new UserEntity
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "post@gipro.gomel.by",
+                    UserName = "Admin",
+                    PasswordHash = new PasswordHasher<UserEntity>().HashPassword(new UserEntity(), "Admin@246050"),
+                    AccessFailedCount = 10,
+                    EmailConfirmed = false,
+                    LockoutEnabled = false,
+                    PhoneNumberConfirmed = false,
+                    TwoFactorEnabled = false,
+                    PhoneNumber = null,
+                });
+                context.SaveChanges();
             }
         }
 

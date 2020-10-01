@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Giprojivmash.DAL.Context;
 using Giprojivmash.DAL.Entities;
 using Giprojivmash.DataModels.Enums;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace GiprojivmashIntegrationTests
@@ -25,6 +26,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "1",
                     IndexNumber = 1,
                     PositionType = PositionType.Manager,
+                    Gender = Gender.Male,
                 },
                 new ContactEntity
                 {
@@ -36,6 +38,7 @@ namespace GiprojivmashIntegrationTests
                     Position = "2",
                     IndexNumber = 2,
                     PositionType = PositionType.ChiefProjectEngineer,
+                    Gender = Gender.Male,
                 },
             };
 
@@ -90,13 +93,13 @@ namespace GiprojivmashIntegrationTests
                 {
                      Position = "1",
                      Description = "1",
-                     NumberPhone = "1",
+                     PhoneNumber = "1",
                 },
                 new VacancyEntity
                 {
                      Position = "2",
                      Description = "2",
-                     NumberPhone = "2",
+                     PhoneNumber = "2",
                 },
             };
 
@@ -209,6 +212,26 @@ namespace GiprojivmashIntegrationTests
             }
         }
 
+        public static async Task SetUser(GiprojivmashContext context)
+        {
+            Validator(context);
+            var passwordHasher = new PasswordHasher<UserEntity>();
+            var user = new UserEntity
+            {
+                Id = "09c4597a-3267-4cf9-8942-86dcae7f18e3",
+                Email = "post@gipro.gomel.by",
+                UserName = "Admin",
+                PasswordHash = passwordHasher.HashPassword(new UserEntity(), "123456"),
+                AccessFailedCount = 10,
+                EmailConfirmed = false,
+                LockoutEnabled = false,
+                PhoneNumberConfirmed = false,
+                TwoFactorEnabled = false,
+            };
+            await context.ApplicationUsers.AddAsync(user);
+            await context.SaveChangesAsync();
+        }
+
         public static string GetConnectionString()
         {
             return "server=localhost;user id=root;password=12345;persistsecurityinfo=True;database=giprojivmash_site;Charset=utf8;";
@@ -280,10 +303,10 @@ namespace GiprojivmashIntegrationTests
             await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE vacancy");
         }
 
-        public static async Task ClearDepartment(GiprojivmashContext context)
+        public static async Task ClearUser(GiprojivmashContext context)
         {
             Validator(context);
-            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE department");
+            await context.Database.ExecuteSqlRawAsync(@"TRUNCATE TABLE aspnetusers");
         }
 
         private static void Validator(GiprojivmashContext context)

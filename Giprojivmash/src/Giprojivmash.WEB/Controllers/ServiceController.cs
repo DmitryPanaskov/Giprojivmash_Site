@@ -70,7 +70,7 @@ namespace Giprojivmash.WEB.Controllers
             var model = new ServicePageViewModel();
             model.ServiceType = ServiceType.Ecology;
             model.PageTitle = "Оказание услуг по проведению инженерно-экологических работ (изысканий) в Беларуси, РБ, Минск, Брест, Витебск, Гродно, Гомель, Могилев";
-            model.PageName = " экологическое проектирование";
+            model.PageName = "Экологическое проектирование";
             model.PageKeyword = " экологическое проектирование, экология, сервис, услуги экологии, гомель, брест, витебск, гродно, гомель, минск, область, беларусь, рб";
             model.PageDescription = "ОАО Гипроживмаш предлагает сервис и услуги по экологическому проектирование, услуги экологии в Гомеле";
             model.Sidebar = InitSidebar();

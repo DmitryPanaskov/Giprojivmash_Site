@@ -12,6 +12,8 @@ namespace Giprojivmash.DAL.Entities
 
         public string LastName { get; set; }
 
+        public Gender Gender { get; set; }
+
         public string Patronymic { get; set; }
 
         public string Photo { get; set; }

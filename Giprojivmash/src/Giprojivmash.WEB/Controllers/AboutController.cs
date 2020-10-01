@@ -43,7 +43,7 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "Вакансии";
             model.PageTitle = "Вакансии, работа";
             model.PageKeyword = "вакансии, проектный институт ОАО Гипроживмаш";
-            model.PageDescription = "Актуальные вакансии ОАО Гипроживмаш, работа в Гипроживмаш";
+            model.PageDescription = "Актуальные вакансии ОАО Гипроживмаш, работа в ОАО Гипроживмаш, зарплата в ОАО Гипроживмаш, требуются сотрудники ОАО Гипроживмаш";
             model.Sidebar = InitSidebar();
             return View(model);
         }
@@ -55,6 +55,7 @@ namespace Giprojivmash.WEB.Controllers
             var model = new ShareholderPageViewModel();
             model.PageName = "Акционерам";
             model.PageTitle = "Информация акционерам";
+            model.PageDescription = "Акционерное общество Гипроживмаш, документы для акционерво, информация для акционеров ОАО Гипроживмаш, баланс, прибыль и убытки Гипроживмаш";
             model.Sidebar = InitSidebar();
             return View(model);
         }
@@ -67,7 +68,8 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "BIM технология";
             model.PageTitle = "BIM (информационное моделирование объектов)";
             model.PageKeyword = "BIM, информационное моделирование объектов, гомель, беларусь, технология будущего, разработка BIM";
-            model.PageDescription = "BIM (информационное моделирование объектов) как технология будущего которая имеет ряд преимуществ, которые позвояляют экономить на проетировании и строительстве";
+            model.PageDescription = "BIM (информационное моделирование объектов) в Гомеле как технология будущего которая" +
+                " имеет ряд преимуществ, которые позвояляют экономить на проетировании и строительстве";
             model.Sidebar = InitSidebar();
             return View(model);
         }
@@ -80,6 +82,8 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "История";
             model.PageTitle = "История и летопись";
             model.PageKeyword = "история,старое здание, Гипроживмаш на Ленина, Гипросельмаш";
+            model.PageDescription = "Самый лучший, самый надежный и самый старый проектный институт в Гомеле и" +
+                " в Республике Беларусь прозднует свое 50-летие, на странице история и летопись нашего предприятия";
             model.Sidebar = InitSidebar();
             return View(model);
         }
@@ -92,6 +96,7 @@ namespace Giprojivmash.WEB.Controllers
             model.PageName = "Лицензии и сертификаты";
             model.PageTitle = "Лицензии и сертификаты ОАО Гипроживмаш, сертификат качества, сертификат соответствия, разрешение на выполнение услуг";
             model.PageKeyword = "лицензия и сертификаты, допуск, разрешение, аттестат, проектирование, РБ, Гомель";
+            model.PageDescription = "Лецензии и сертификаты разврешения на работу и допуски к работам ОАО Гипроживмаш";
             model.Sidebar = InitSidebar();
             return View(model);
         }
@@ -114,13 +119,13 @@ namespace Giprojivmash.WEB.Controllers
                 },
                 new SidebarLineViewModel
                 {
-                    SidebarAction = "Bim",
-                    SidebarName = "BIM технология",
+                    SidebarAction = "Certificate",
+                    SidebarName = "Лицензии и сертификаты",
                 },
                 new SidebarLineViewModel
                 {
-                    SidebarAction = "Certificate",
-                    SidebarName = "Лицензии и сертификаты",
+                    SidebarAction = "Bim",
+                    SidebarName = "BIM технология",
                 },
                 new SidebarLineViewModel
                 {

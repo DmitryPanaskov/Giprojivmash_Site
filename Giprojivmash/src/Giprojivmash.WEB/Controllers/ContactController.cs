@@ -122,7 +122,7 @@ namespace Giprojivmash.WEB.Controllers
         private ContactPageViewModel InitializeContactPageViewModel(PositionType position)
         {
             var model = new ContactPageViewModel();
-            model.ContactList = _mapper.Map<List<ContactViewModel>>(_contactService.GetAll().Where(m => m.PositionType == position));
+            model.ContactList = _mapper.Map<List<ContactViewModel>>(_contactService.GetAll().Where(m => m.PositionType == position).OrderBy(m=>m.IndexNumber));
             model.ContactDataList = _mapper.Map<List<ContactDataViewModel>>(_contactDataService.GetContactDataListByPositionType(position));
             return model;
         }

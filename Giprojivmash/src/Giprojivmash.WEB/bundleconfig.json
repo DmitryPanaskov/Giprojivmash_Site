@@ -40,5 +40,11 @@
     "inputFiles": [
       "wwwroot/js/fancybox-config.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/Preloader.min.css",
+    "inputFiles": [
+      "wwwroot/css/Preloader.css"
+    ]
   }
 ]
