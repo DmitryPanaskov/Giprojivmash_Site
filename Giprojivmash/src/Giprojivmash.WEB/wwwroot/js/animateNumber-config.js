@@ -1,6 +1,6 @@
 ﻿$('#years').animateNumber(
     {
-        number: 45,
+        number: 50,
         color: "#fab702"
     },
     {
@@ -28,6 +28,15 @@ $('#proj_sng').animateNumber(
 $('#count_pl').animateNumber(
     {
         number: 164,
+        color: "#fab702"
+    },
+    {
+        easing: 'swing',
+        duration: 3000
+    });
+$('#customer').animateNumber(
+    {
+        number: 1000,
         color: "#fab702"
     },
     {

@@ -1,0 +1,19 @@
+TRUNCATE TABLE contactdata;
+TRUNCATE TABLE contact;
+
+TRUNCATE TABLE historyphoto;
+TRUNCATE TABLE history;
+
+TRUNCATE TABLE portfoliophoto;
+TRUNCATE TABLE portfolio;
+
+TRUNCATE TABLE vacancy;
+
+/*Identity*/
+TRUNCATE TABLE AspNetRoleClaims;
+TRUNCATE TABLE AspNetRoles;
+TRUNCATE TABLE AspNetUserClaims;
+TRUNCATE TABLE AspNetUserLogins;
+TRUNCATE TABLE AspNetUserRoles;
+TRUNCATE TABLE AspNetUsers;
+TRUNCATE TABLE AspNetUserTokens;

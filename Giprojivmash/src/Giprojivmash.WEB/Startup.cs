@@ -44,6 +44,8 @@ namespace Giprojivmash.WEB
             services.AddIdentity<UserEntity, IdentityRole>()
                .AddEntityFrameworkStores<GiprojivmashContext>();
 
+            services.AddHttpContextAccessor();
+
             services.AddControllersWithViews();
 
             var config = new MapperConfiguration(c =>

@@ -20,12 +20,11 @@ DROP TABLE IF EXISTS AspNetUserTokens;
 
 CREATE TABLE contact(
     Id int NOT NULL AUTO_INCREMENT,
-    Position varchar(50),
+    Position varchar(450),
     Photo varchar(50),
-    Description varchar(450),
     FirstName varchar(256),
     LastName varchar(256),
-    Patronymic varchar(450),
+    Patronymic varchar(256),
     PositionType int,
     IndexNumber int,
     Gender int,
@@ -85,7 +84,7 @@ CREATE TABLE AspNetRoleClaims(
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE AspNetRoles(
-    Id varchar(256) NOT NULL,
+    Id varchar(128) NOT NULL,
     ConcurrencyStamp text,
     Name varchar(256),
     NormalizedName varchar(256),
@@ -104,16 +103,16 @@ CREATE TABLE AspNetUserLogins(
     LoginProvider varchar(450) NOT NULL,
     ProviderKey varchar(450) NOT NULL,
     ProviderDisplayName text,
-    UserId varchar(450) NOT NULL)
+    UserId varchar(128) NOT NULL)
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE AspNetUserRoles(
-    UserId varchar(256) NOT NULL,
-    RoleId varchar(256) NOT NULL)
+    UserId varchar(128) NOT NULL,
+    RoleId varchar(128) NOT NULL)
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE AspNetUsers(
-	Id varchar(256) NOT NULL,
+	Id varchar(128) NOT NULL,
 	AccessFailedCount int NOT NULL,
     Discriminator text,
 	ConcurrencyStamp text,
@@ -133,7 +132,7 @@ CREATE TABLE AspNetUsers(
     DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE AspNetUserTokens(
-	UserId varchar(256) NOT NULL,
+	UserId varchar(128) NOT NULL,
 	LoginProvider varchar(450) NOT NULL,
 	Name varchar(450) NOT NULL,
 	Value text)

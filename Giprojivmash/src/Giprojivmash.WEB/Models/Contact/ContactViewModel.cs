@@ -14,8 +14,6 @@ namespace Giprojivmash.WEB.Models.Contact
 
         public string Photo { get; set; }
 
-        public string Description { get; set; }
-
         public string Position { get; internal set; }
 
         public PositionType PositionType { get; set; }

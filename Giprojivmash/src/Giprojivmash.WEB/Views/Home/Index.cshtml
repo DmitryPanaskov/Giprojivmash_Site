@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-12">
-            <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ </h3>
+            <h3 class="text-center"><span class="stat-numeric" id="years">0</span> ЛЕТ В ПРОЕКТИРОВАНИИ И БОЛЕЕ <span class="stat-numeric" id="customer">0</span> ЗАКАЗЧИКОВ </h3>
             <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_rb">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РЕСПУБЛИКИ БЕЛАРУСЬ </h3>
             <h3 class="text-center">БОЛЕЕ <span class="stat-numeric" id="proj_sng">0</span> ПРОЕКТОВ НА ТЕРРИТОРИИ РОССИИ, УКРАИНЫ, КАЗАХСТАНА, ЛИТВЫ </h3>
         </div>
@@ -51,7 +51,9 @@
     </div>
     <div class="row">
         <a asp-action="Design" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-left" data-aos-delay="0" style="background-image: url(/images/services/design.jpg)">
+            <div class="thumbnail" data-aos="fade-left">
+                <div class="background" style="background-image: url(/images/services/design.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name">Проектирование</span>
                     <span class="description d-none d-xl-block">Комплексные решения в проектировании объектов любой сложности</span>
@@ -59,7 +61,9 @@
             </div>
         </a>
         <a asp-action="InvestmentJustification" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-left" data-aos-delay="150" style="background-image: url(/images/services/engineering.jpg)">
+            <div class="thumbnail" data-aos="fade-left" data-aos-delay="150">
+                <div class="background" style="background-image: url(/images/services/engineering.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name">Обоснование инвестиций</span>
                     <span class="description  d-none d-xl-block">Инженерные и консультационные услуги на профессиональном уровне</span>
@@ -67,7 +71,9 @@
             </div>
         </a>
         <a asp-action="Geodesy" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-left" data-aos-delay="300" style="background-image: url(/images/services/geodesy.jpg)">
+            <div class="thumbnail" data-aos="fade-left" data-aos-delay="300">
+                <div class="background" style="background-image: url(/images/services/geodesy.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name">Инженерно-геодезические изыскания</span>
                     <span class="description  d-none d-xl-block">Проводим работы с использованием высокоточного оборудования и современного програмного обеспечение</span>
@@ -77,7 +83,9 @@
     </div>
     <div class="row">
         <a asp-action="Ecology" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-right" data-aos-delay="300" style="background-image: url(/images/services/ecology.jpg)">
+            <div class="thumbnail" data-aos="fade-right" data-aos-delay="300">
+                <div class="background" style="background-image: url(/images/services/ecology.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name"> Экологическое проектирование</span>
                     <span class="description  d-none d-xl-block">Проводим работы с использованием высокоточного оборудования и современного програмного обеспечение</span>
@@ -85,7 +93,9 @@
             </div>
         </a>
         <a asp-action="IndustrialSafety" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-right" data-aos-delay="150" style="background-image: url(/images/services/industrialSafety.jpg)">
+            <div class="thumbnail" data-aos="fade-right" data-aos-delay="150">
+                <div class="background" style="background-image: url(/images/services/industrialSafety.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name">Промышленная безопасность</span>
                     <span class="description  d-none d-xl-block">Проектирование технических устройств применяемых на опасных производственных объектах</span>
@@ -93,7 +103,9 @@
             </div>
         </a>
         <a asp-action="SystemSafefty" asp-controller="Service" class="col-md-4 a-block p-1">
-            <div class="thumbnail" data-aos="fade-right" data-aos-delay="0" style="background-image: url(/images/services/safety.jpg)">
+            <div class="thumbnail" data-aos="fade-right" data-aos-delay="0">
+                <div class="background" style="background-image: url(/images/services/safety.jpg)">
+                </div>
                 <span class="caption">
                     <span class="name">Системы безопасности</span>
                     <span class="description  d-none d-xl-block">Проектирование систем пожаробезопасности и систем охраны</span>
@@ -106,145 +118,217 @@
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row" data-aos="fade-up">
+                    <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://www.liftmach.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/1.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/1.jpg" />
                             </a>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://www.belorusneft.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/1.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/1.jpg" />
                             </a>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://www.gomelglass.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/2.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/2.jpg" />
                             </a>
                         </div>
                     </div>
-                    <div class="row" data-aos="fade-up" data-aos-delay="150">
+                    <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://belsteel.com/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/3.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/3.jpg" />
                             </a>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://oaogsm.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/2.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/2.jpg" />
                             </a>
                         </div>
                         <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://stankogomel.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/4.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/4.jpg" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://www.uks-kontakt.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/5.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/5.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://gocore.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/3.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/3.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://kristall.by//">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/6.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/6.jpg" />
                             </a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://8marta.com/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/7.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/7.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://gomelenergo.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/4.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/4.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://spartak.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/8.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/8.jpg" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://www.rw.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/9.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/9.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://www.gomselmash.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/5.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/5.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://vsz.gomel.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/10.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/10.jpg" />
                             </a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://www.transoil.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/11.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/11.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://www.gomelavto.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/6.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/6.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://mnpz.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/12.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/12.jpg" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://www.gomeldrev.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/13.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/13.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://alcopack.by//">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/7.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/7.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/14.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/14.jpg" />
                             </a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://ingman.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/15.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/15.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="http://belfert.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/8.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/8.jpg" />
                             </a>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-4 mb-3" data-aos="fade-up" data-aos-delay="150">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
                             <a target="_blank" class="link-btn" href="https://gomelvodokanal.by/">
-                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/16.png" />
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/16.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://mozles.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/17.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://lukoil.by/ru/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/9.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://www.ztklestur.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/18.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://www.rcrm.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/19.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://beltelecom.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/10.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://www.rmkk.by/en/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/20.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://gomelraton.com/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/21.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://bgs.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/11.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://bpovc.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/22.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://gokb.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/23.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="https://belarusbank.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/long/12.jpg" />
+                            </a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 mb-3">
+                            <a target="_blank" class="link-btn" href="http://bvgroup.by/">
+                                <img class="img img-fluid grayscale grayscale-fade" src="~/images/partners/short/24.jpg" />
                             </a>
                         </div>
                     </div>
@@ -276,5 +360,11 @@
         $('#carousel').on('slid.bs.carousel', function () {
             AOS.refresh();
         });
+    </script>
+    <script>
+        $('.thumbnail').hover(
+            function () { $().addClass('hover') },
+            function () { $(this).removeClass('hover') }
+        );
     </script>
 }

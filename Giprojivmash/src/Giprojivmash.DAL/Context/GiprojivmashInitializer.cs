@@ -42,7 +42,7 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Шило",
                         Patronymic = "Иванович",
                         PositionType = PositionType.Manager,
-                        Photo = "director.jpg",
+                        Photo = "Shilo.jpg",
                         IndexNumber = 2,
                         Gender = Gender.Male,
                     },
@@ -53,7 +53,7 @@ namespace Giprojivmash.DAL.Context
                         FirstName = "Екатерина",
                         LastName = "Шаповалова",
                         Patronymic = "Игоревна",
-                        Photo = "chief_engineer.jpg",
+                        Photo = "Shapovalova.jpg",
                         PositionType = PositionType.Manager,
                         IndexNumber = 3,
                         Gender = Gender.Female,
@@ -68,6 +68,7 @@ namespace Giprojivmash.DAL.Context
                         PositionType = PositionType.Manager,
                         IndexNumber = 4,
                         Gender = Gender.Male,
+                        Photo = "Dubov.jpg",
                     },
                     new ContactEntity
                     {
@@ -79,6 +80,7 @@ namespace Giprojivmash.DAL.Context
                         PositionType = PositionType.ChiefProjectEngineer,
                         IndexNumber = 5,
                         Gender = Gender.Male,
+                        Photo = "Gribanov.jpg",
                     },
                     new ContactEntity
                     {
@@ -89,17 +91,19 @@ namespace Giprojivmash.DAL.Context
                         Patronymic = "Валерьевич",
                         PositionType = PositionType.ChiefProjectEngineer,
                         IndexNumber = 6,
+                        Photo = "Kovalev.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 7
-                        Position = "Главный констуктор",
-                        LastName = "Марочкин",
-                        FirstName = "Анатолий",
-                        Patronymic = "Вячеславович",
+                        Position = "Начальник сектора автоматизации проектных работ",
+                        FirstName = "Виктор",
+                        LastName = "Емельянцев",
+                        Patronymic = "Юрьевич",
                         PositionType = PositionType.HeadOfDepartment,
-                        IndexNumber = 12,
+                        IndexNumber = 21,
                         Gender = Gender.Male,
+                        Photo = "Emelyantsev.jpg",
                     },
                     new ContactEntity
                     {
@@ -111,17 +115,19 @@ namespace Giprojivmash.DAL.Context
                         PositionType = PositionType.ChiefProjectEngineer,
                         IndexNumber = 8,
                         Gender = Gender.Female,
+                        Photo = "Petrenko.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 9
-                        Position = "Бухгалтерия",
+                        Position = "Главный бухгалтер",
                         FirstName = "Елена",
                         LastName = "Черноокая",
                         Patronymic = "Герасимовна",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 9,
                         Gender = Gender.Female,
+                        Photo = "Chernookaya.jpg",
                     },
                     new ContactEntity
                     {
@@ -133,11 +139,12 @@ namespace Giprojivmash.DAL.Context
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 11,
                         Gender = Gender.Female,
+                        Photo = "Ignatova.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 11
-                        Position = "Отдел кадров",
+                        Position = "Ведущий специалист отдела кадров",
                         FirstName = "Жанна",
                         LastName = "Кричевская",
                         Patronymic = "Анатольевна",
@@ -148,7 +155,7 @@ namespace Giprojivmash.DAL.Context
                     new ContactEntity
                     {
                         // id = 12
-                        Position = "Отдел генплана",
+                        Position = "Начальник отдела генплана",
                         FirstName = "Наталья",
                         LastName = "Заяц",
                         Patronymic = "Викторовна",
@@ -159,18 +166,19 @@ namespace Giprojivmash.DAL.Context
                     new ContactEntity
                     {
                         // id = 13
-                        Position = "Архитектурно-планировочный отдел",
+                        Position = "Начальник архитектурно-планировочного отдела",
                         FirstName = "Александра",
                         LastName = "Горбатовская",
                         Patronymic = "Владимировна",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 14,
                         Gender = Gender.Female,
+                        Photo = "Gorbatovskaya.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 14
-                        Position = "Строительный отдел",
+                        Position = "Начальник строительного отдела",
                         FirstName = "Сергей",
                         LastName = "Старотиторов",
                         Patronymic = "Владимирович",
@@ -181,79 +189,86 @@ namespace Giprojivmash.DAL.Context
                     new ContactEntity
                     {
                         // id = 15
-                        Position = "Сметно-экономический отдел",
+                        Position = "Начальник сметно-экономического отдела",
                         FirstName = "Наталья",
                         LastName = "Цилько",
                         Patronymic = "Павловна",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 16,
                         Gender = Gender.Female,
+                        Photo = "Tsilko.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 16
-                        Position = "Отдел электроснабжения и электроосвещения",
+                        Position = "Начальник отдела электроснабжения и электроосвещения",
                         FirstName = "Андрей",
                         LastName = "Сиротко",
                         Patronymic = "Евгеньевич",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 17,
                         Gender = Gender.Male,
+                        Photo = "Sirotko.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 17
-                        Position = "Отдел автоматизации и слаботочных систем",
+                        Position = "Начальник отдела автоматизации и слаботочных систем",
                         FirstName = "Петр",
                         LastName = "Комар",
                         Patronymic = "Анатольевич",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 18,
                         Gender = Gender.Male,
+                        Photo = "Komar.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 18
-                        Position = "Отдел водоснабжения и канализации",
+                        Position = "Начальник отдела водоснабжения и канализации",
                         FirstName = "Лариса",
                         LastName = "Мураль",
                         Patronymic = "Михайловна",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 19,
                         Gender = Gender.Female,
+                        Photo = "Mural.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 19
-                        Position = "Отдел теплоснабжения, газоснабжения и вентиляции",
+                        Position = "Начальник отдела теплоснабжения, газоснабжения и вентиляции",
                         FirstName = "Андрей",
                         LastName = "Судаков",
                         Patronymic = "Григорьевич",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 20,
                         Gender = Gender.Male,
+                        Photo = "Sudakov.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 20
-                        Position = "Технологический отдел",
+                        Position = "Начальник технологического отдела",
                         FirstName = "Светлана",
                         LastName = "Россол",
                         Patronymic = "Григорьевна",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 21,
                         Gender = Gender.Female,
+                        Photo = "Rossol.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 21
-                        Position = "Отдел качества и выпуска проектной продукции",
+                        Position = "Начальник отдела качества и выпуска проектной продукции",
                         FirstName = "Александр",
                         LastName = "Гончаров",
                         Patronymic = "Владимирович",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 22,
                         Gender = Gender.Male,
+                        Photo = "Goncharov.jpg",
                     },
                     new ContactEntity
                     {
@@ -269,24 +284,26 @@ namespace Giprojivmash.DAL.Context
                     new ContactEntity
                     {
                         // id = 23
-                        Position = "Планово-производственный отдел ",
+                        Position = "Начальник планово-производственного отдела",
                         FirstName = "Дмитрий",
                         LastName = "Негреев",
                         Patronymic = "Николаевич",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 10,
                         Gender = Gender.Male,
+                        Photo = "Negreev.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 24
-                        Position = "Эксплуатационно-техничекий отдел",
+                        Position = "Начальник эксплуатационно-технического отдела",
                         FirstName = "Виталий",
                         LastName = "Дриндель",
                         Patronymic = "Владимирович",
                         PositionType = PositionType.HeadOfDepartment,
                         IndexNumber = 24,
                         Gender = Gender.Male,
+                        Photo = "Drindel.jpg",
                     },
                     new ContactEntity
                     {
@@ -298,17 +315,19 @@ namespace Giprojivmash.DAL.Context
                         PositionType = PositionType.Manager,
                         IndexNumber = 25,
                         Gender = Gender.Male,
+                        Photo = "Saulin.jpg",
                     },
                     new ContactEntity
                     {
                         // id = 26
-                        Position = "Сектор автоматизации проектных работ",
-                        FirstName = "Виктор",
-                        LastName = "Емельянцев",
-                        Patronymic = "Юрьевич",
+                        Position = "Начальник отдела обмерных и обследовательских работ",
+                        FirstName = "Владимир",
+                        LastName = "Шкундалев",
+                        Patronymic = "Петрович",
                         PositionType = PositionType.HeadOfDepartment,
-                        IndexNumber = 21,
+                        IndexNumber = 20,
                         Gender = Gender.Male,
+                        Photo = "Shkundalev.jpg",
                     },
                 };
 
@@ -378,10 +397,10 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
-                      ContactId = 3,
-                      Data = "EkaterinaShapovalova@gipro.gomel.by",
-                      SubData = "EkaterinaShapovalova@gipro.gomel.by",
-                      ContactDataType = ContactDataType.Email,
+                         ContactId = 3,
+                         Data = "EkaterinaShapovalova@gipro.gomel.by",
+                         SubData = "EkaterinaShapovalova@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
                     {
@@ -423,20 +442,6 @@ namespace Giprojivmash.DAL.Context
                          ContactId = 6,
                          Data = "SergeyKovalev@gipro.gomel.by",
                          SubData = "SergeyKovalev@gipro.gomel.by",
-                         ContactDataType = ContactDataType.Email,
-                    },
-                    new ContactDataEntity
-                    {
-                         ContactId = 7,
-                         Data = "+375 232 21-30-54",
-                         SubData = "+375232213054",
-                         ContactDataType = ContactDataType.WorkTelephone,
-                    },
-                    new ContactDataEntity
-                    {
-                         ContactId = 7,
-                         Data = "AnatolyMarochkin@gipro.gomel.by",
-                         SubData = "AnatolyMarochkin@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
                     },
                     new ContactDataEntity
@@ -693,10 +698,24 @@ namespace Giprojivmash.DAL.Context
                     },
                     new ContactDataEntity
                     {
-                         ContactId = 26,
+                         ContactId = 7,
                          Data = "VictorEmelyantsev@gipro.gomel.by",
                          SubData = "VictorEmelyantsev@gipro.gomel.by",
                          ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 26,
+                         Data = "VladimirShkundalev@gipro.gomel.by",
+                         SubData = "VladimirShkundalev@gipro.gomel.by",
+                         ContactDataType = ContactDataType.Email,
+                    },
+                    new ContactDataEntity
+                    {
+                         ContactId = 26,
+                         Data = "+375 232 21-30-54",
+                         SubData = "+375232213054",
+                         ContactDataType = ContactDataType.WorkTelephone,
                     },
                 };
 
@@ -716,7 +735,6 @@ namespace Giprojivmash.DAL.Context
                 {
                     new VacancyEntity
                     {
-                           Position = "Начальник отдела.",
                            Description = "На постоянную работу требуется начальник отдела. Требования: " +
                            "- Водительское удостворение категории B" +
                            "- Высшее образование," +

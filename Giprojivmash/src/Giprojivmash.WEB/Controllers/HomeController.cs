@@ -25,7 +25,7 @@ namespace Giprojivmash.WEB.Controllers
         public IActionResult Index()
         {
             var model = new IndexViewModel();
-            model.PageTitle = "Проектный институ в Гомеле";
+            model.PageTitle = "Проектный институт в Гомеле";
             model.PageName = "ОАО Гипроживмаш";
             model.PageKeyword = "Самый лучший, надежный, специалисты, проектный институт, " +
                 "Гомель, Беларуси, РБ, проектирование, разработка строительной документации, гиприк, геодезия, экология, сметная";

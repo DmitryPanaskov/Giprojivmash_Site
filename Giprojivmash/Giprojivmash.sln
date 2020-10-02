@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4E45AE7F-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySQL", "MySQL", "{3481C727-0797-4045-873B-2D2279F99D11}"
 	ProjectSection(SolutionItems) = preProject
+		ClearData.txt = ClearData.txt
 		MySQL\CreateTables.txt = MySQL\CreateTables.txt
 	EndProjectSection
 EndProject
@@ -28,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.WEB", "src\Gip
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiprojivmashIntegrationTests", "test\GiprojivmashIntegrationTests\GiprojivmashIntegrationTests.csproj", "{453AD2B9-C487-4DC8-B57F-11CDC5FFA394}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giprojivmash.DataModels", "Giprojivmash.DataModels\Giprojivmash.DataModels.csproj", "{04FFB59A-8104-46C5-A0A4-B9F0CFE41A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Giprojivmash.DataModels", "Giprojivmash.DataModels\Giprojivmash.DataModels.csproj", "{04FFB59A-8104-46C5-A0A4-B9F0CFE41A6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
