@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Giprojivmash.DataModels\Giprojivmash.DataModels.csproj" />
+    <ProjectReference Include="..\Giprojivmash.DataModels\Giprojivmash.DataModels.csproj" />
   </ItemGroup>
 
 </Project>
