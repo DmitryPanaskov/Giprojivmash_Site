@@ -125,7 +125,7 @@ namespace Giprojivmash.DAL.Context
                         LastName = "Черноокая",
                         Patronymic = "Герасимовна",
                         PositionType = PositionType.HeadOfDepartment,
-                        IndexNumber = 9,
+                        IndexNumber = 3,
                         Gender = Gender.Female,
                         Photo = "Chernookaya.jpg",
                     },
